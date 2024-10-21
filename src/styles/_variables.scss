@@ -1,0 +1,76 @@
+/* Colors */
+$color-gray-0: #f9f9f9;
+$color-gray-05: #f6f6f6;
+$color-gray-1: #eee;
+$color-gray-2: #e6e6e6;
+$color-gray-3: #ccc;
+$color-gray-4: #bbb;
+$color-gray-5: #999;
+$color-gray-6: #575757;
+$color-gray-65: #525252;
+$color-gray-7: #2c2c2c;
+$color-gray-8: #252525;
+$color-gray-9: #1f1f1f;
+$color-gray-10: #181818;
+
+$color-green: #5eddac;
+$color-orange: #ff7e22;
+$color-yellow: #fca62a;
+$color-light-yellow: #fcd37a;
+$color-pink: #f57ad0;
+$color-lavender: #a180f9;
+$color-violet: #ff75f8;
+$color-blue: #59abf7;
+$color-purple: #673ece;
+$color-indigo: #4e5dff;
+$color-indigo-dark: #431dee;
+$color-indigo-light: #a6aaff;
+$color-indigo-muted: #f1f2fd;
+
+$color-category-link: #dd4eb2;
+
+$color-primary: $color-indigo;
+$color-primary-light: $color-indigo-light;
+$color-primary-dark: $color-indigo-dark;
+$color-primary-muted: $color-indigo-muted;
+
+$color-highlight: $color-yellow;
+
+/* Borders */
+$border-color: $color-gray-3;
+$border-color-hover: $color-gray-4;
+$border-radius: 12px;
+
+/* Background colors */
+$background-color: $color-gray-2;
+$navbar-background-color: $color-gray-0;
+$card-background-color: $color-gray-0;
+$button-background-color: $color-gray-05;
+
+/* Links and Misc */
+$link: $color-indigo;
+$scrollbar-color: $color-gray-3;
+$scrollbar-track: $color-gray-4;
+
+/* Font colors */
+$font-color-base: $color-gray-7;
+$font-color-muted: $color-gray-6;
+$font-color-heading: $color-gray-9;
+$font-color-bright: $color-gray-9;
+
+
+$button-border-color-hover: $color-gray-5;
+$button-border-color: $color-gray-4;
+$button-background-color: $color-gray-05;
+
+/* Sizs */
+$content-width: 860px;
+$content-width--small: 560px;
+$content-width--medium: 700px;
+$navbar-height-small: 60px;
+
+$breakpoint-small: 700px;
+$breakpoint-medium: 900px;
+$breakpoint-medium-lg: 1024px;
+$breakpoint-large: 1200px;
+$breakpoint-xlarge: 1600px;

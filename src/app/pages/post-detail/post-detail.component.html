@@ -1,0 +1,19 @@
+<app-container>
+  <app-hero [title]="postMeta.title"></app-hero>
+
+  <article class="article__content" [innerHTML]="content"></article>
+  
+  @if (!postMeta.comments_off) {
+    <app-blog-sidebar
+      [date]="postMeta.date"
+      [tags]="postMeta.tags"
+    ></app-blog-sidebar>
+    
+    <app-container>
+      <section id="comments" class="segment">
+        <h3>Comments</h3>
+        <app-comments />
+      </section>
+    </app-container>
+  }
+</app-container>

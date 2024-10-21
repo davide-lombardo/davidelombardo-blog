@@ -1,0 +1,28 @@
+<header class="hero" [ngClass]="{ 'index': index() }">
+  @if (subTitle()) {
+    <div class="hero__subtitle">
+      @if (highlight()) {
+        <span class="hero__subtitle--highlight">{{ highlight() }}</span>
+      }
+      {{ subTitle() }}
+    </div>
+  }
+  @if (title()) {
+    <h1 class="hero__title">{{ title() }}</h1>
+  }
+  @if (description()) {
+    <p class="hero__description">
+      {{ description() }}
+    </p>
+
+    @if (hasLink()) {
+      <p>
+        <a class="hero__link" [routerLink]="['/tags']" className="button small">
+          view all tags
+        </a>
+      </p>
+    }
+  }
+
+  <ng-content></ng-content>
+</header>

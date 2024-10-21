@@ -1,0 +1,28 @@
+@if(showYears()) {
+  @for (year of years; track year) {
+    <section class="segment" [attr.key]="year">
+      <h2 class="year">{{ year }}</h2>
+      <div class="posts">
+        @for (node of postsByYear[year]; track node; let last = $last) {
+          <app-post
+            [node]="node"
+            [query]="query()"
+            [prefix]="prefix()"
+            [isLast]="last"
+          ></app-post>
+        }
+      </div>
+    </section>
+  }
+} @else {
+  <div class="posts">
+    @for (node of data(); track node; let last = $last) {
+      <app-post
+        [node]="node"
+        [query]="query()"
+        [prefix]="prefix()"
+        [isLast]="last"
+      ></app-post>
+    }
+  </div>
+}

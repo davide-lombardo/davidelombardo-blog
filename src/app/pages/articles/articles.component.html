@@ -1,0 +1,13 @@
+<app-container>
+  <app-hero [title]="title" [description]="description"></app-hero>  <!-- TODO [hasLink]="true" -->
+  
+  <section class="segment">
+    @if (posts().length > 0) {
+      <app-post-list [data]="posts()" prefix="posts" [showYears]="true"></app-post-list>
+    } @else {
+      <p>no articles are found</p>
+    }
+  </section>
+</app-container>
+
+

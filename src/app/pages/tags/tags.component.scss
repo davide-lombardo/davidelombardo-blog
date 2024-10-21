@@ -1,0 +1,51 @@
+@import '../../../styles/variables';
+@import '../../../styles/typography';
+
+.alphabetical-tags {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid $border-color !important;
+}
+
+.alphabetical-tags:last-child {
+  border-bottom: none;
+}
+
+.alphabetical-tags h3 {
+  width: 30px;
+  margin: 0;
+  color: $color-primary;
+}
+
+.tags,
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+a.tag {
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid $button-border-color;
+  border-radius: $border-radius;
+  color: $color-gray-8;
+  background: $button-background-color !important;
+  text-decoration: none !important;
+}
+
+a.tag:hover {
+  color: $font-color-bright;
+  border-color: $button-border-color-hover;
+  text-decoration: none;
+}
+
+a.tag.active {
+  color: $color-highlight;
+  border-color: $color-highlight;
+  font-weight: 600;
+}

@@ -1,0 +1,28 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.segment {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: $breakpoint-small) {
+  .segment {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+
+
+
+
+::ng-deep {
+  .article {
+    &__content {
+      a {
+        @include styled-link($color-indigo);
+      }
+    }
+  }
+  
+}

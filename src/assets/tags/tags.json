@@ -1,0 +1,11 @@
+{
+  "tags": {
+    "group": [
+      { "name": "Angular", "totalCount": 10 },
+      { "name": "React", "totalCount": 5 },
+      { "name": "Vue", "totalCount": 3 },
+      { "name": "Tailwind", "totalCount": 3 },
+      { "name": "Bootstrap", "totalCount": 3 }
+    ]
+  }
+}

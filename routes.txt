@@ -1,0 +1,13 @@
+/
+/about-me
+/projects
+/posts
+/tags
+/posts/building-reusable-components-in-angular
+/posts/exploring-rxjs-observables-in-angular
+/posts/how-to-create-a-static-file-blog-with-angular-v17
+/posts/understanding-typescript-generics
+/posts/css-grid-vs-flexbox
+/posts/introduction-to-nodejs-streams
+/posts/optimizing-javascript-performance
+/posts/mastering-angular-reactive-forms

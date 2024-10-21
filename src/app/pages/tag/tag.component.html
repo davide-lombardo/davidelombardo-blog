@@ -1,0 +1,9 @@
+<app-container>
+  <app-hero [highlight]="totalCount" [subTitle]="message" [title]="tag"></app-hero>
+
+  @if (posts.length > 0) {
+    <section>
+      <app-post-list [data]="posts" [showYears]="true"></app-post-list>
+    </section>
+  }
+</app-container>

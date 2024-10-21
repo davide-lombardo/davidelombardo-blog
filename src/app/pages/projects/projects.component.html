@@ -1,0 +1,44 @@
+<app-container>
+  <app-hero [title]="title" [description]="description"></app-hero>
+
+  <section class="segment">
+    <div class="project-preview">
+      @for (project of repos; track project.html_url) {
+        <div class="card anchored large">
+          <div>
+            <time>{{ project.created_at | date: 'yyyy' }}</time>
+            <a
+              class="card-header"
+              [href]="project.html_url"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {{ project.name }}
+            </a>
+            <p>{{ project.description }}</p>
+          </div>
+          <div class="links anchored">
+            @if (project.homepage) {
+              <a
+                class="button small flex"
+                [href]="project.homepage"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Demo
+              </a>
+            }
+            <a
+              class="button small flex"
+              [href]="project.html_url"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Source
+            </a>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+</app-container>

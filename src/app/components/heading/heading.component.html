@@ -1,0 +1,12 @@
+<h2 class="heading">
+  <div>
+    <div class="heading__title">{{ title() }}</div>
+    @if (description()) {
+      <div class="heading__description">{{ description() }}</div>
+    }
+  </div>
+
+  @if (slug()) {
+    <a class="button" [routerLink]="slug()">{{ buttonText() }}</a>
+  }
+</h2>

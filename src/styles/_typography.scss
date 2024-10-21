@@ -1,0 +1,32 @@
+@import './variables';
+
+/* Font colors */
+$font-color-base: $color-gray-7;
+$font-color-muted: $color-gray-6;
+$font-color-heading: $color-gray-9;
+$font-color-heading3: $color-gray-8;
+$font-color-bright: $color-gray-9;
+
+/* Blockquote */
+blockquote {
+  background: $color-indigo-muted;
+  border: 1px solid $color-indigo-light;
+  color: $font-color-base;
+}
+
+blockquote.quotation {
+  border-left: 12px solid $border-color;
+}
+
+blockquote strong {
+  text-decoration-color: $color-indigo-dark;
+}
+
+/* Font family */
+$font-family-base: 'Inter', -apple-system, BlinkMacSystemFont,
+  'Helvetica Neue', Arial, sans-serif;
+$font-family-monospace: 'IBM Plex Mono', monospace;
+$font-family-heading: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont,
+  'Helvetica Neue', Arial, sans-serif;
+$font-family-nav: 'Inter', -apple-system, BlinkMacSystemFont,
+  'Helvetica Neue', Arial, sans-serif;

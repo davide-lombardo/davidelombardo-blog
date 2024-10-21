@@ -1,0 +1,53 @@
+@import '../../../styles/variables';
+
+.footer {
+  padding: 3rem 0;
+
+  section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  img {
+    display: inline-block;
+    max-height: 28px;
+    width: auto;
+  }
+
+  nav {
+    display: flex;
+    gap: 1rem;
+    margin: 0 1rem;
+
+    img {
+      display: inline-block;
+      max-height: 18px;
+      width: auto;
+    }
+  }
+}
+
+.footer a,
+.footer span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $font-color-base;
+  font-size: 0.9rem;
+}
+
+.footer a:hover {
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+}
+
+.footer a.button {
+  color: $font-color-base;
+}
+
+.footer a.button:hover {
+  color: $font-color-bright;
+  text-decoration: none;
+}

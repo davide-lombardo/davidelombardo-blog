@@ -1,0 +1,14 @@
+@import '../../../styles/variables';
+
+.container {
+  max-width: $content-width;
+  padding: 0 1rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: $breakpoint-small) {
+  .container {
+    padding: 0 2rem;
+  }
+}

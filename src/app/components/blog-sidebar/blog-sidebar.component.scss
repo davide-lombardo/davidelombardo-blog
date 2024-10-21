@@ -1,0 +1,116 @@
+@import '../../../styles/variables';
+@import '../../../styles/typography';
+@import '../../../styles/mixins';
+
+.post-sidebar-card {
+  border: 1px solid $button-border-color;
+  background: $card-background-color;
+  padding: 1rem;
+  border-radius: $border-radius;
+  margin: 1.5rem 0;
+
+  .post-sidebar-link {
+    @include styled-link($color-indigo);
+  }
+}
+
+.post-sidebar h2 {
+  color: $font-color-heading;
+  font-size: 1.1rem;
+  border: none;
+  margin: 0 0 1rem;
+  font-weight: 700;
+}
+
+.post-sidebar p,
+.post-sidebar ul {
+  font-size: 1rem;
+}
+
+.post-sidebar p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 700px) {
+  .post-sidebar-card {
+    padding: 1.5rem;
+  }
+
+  .post-sidebar {
+    display: grid;
+    max-width: 800px;
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .post-sidebar h2 {
+    font-size: 1.4rem;
+  }
+}
+
+.tags,
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+a.tag {
+  font-size: 0.8rem;
+  font-weight: 400;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid $button-border-color;
+  border-radius: $border-radius;
+  color: $color-gray-8;
+  background: $button-background-color !important;
+  text-decoration: none !important;
+}
+
+a.tag:hover {
+  color: $font-color-bright;
+  border-color: $button-border-color-hover;
+  text-decoration: none;
+}
+
+a.tag.active {
+  color: $color-highlight;
+  border-color: $color-highlight;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 700px) {
+  .categories.anchored,
+  .links.anchored {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+}
+
+a.category {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+}
+
+a.category.active {
+  color: $color-highlight;
+}
+
+a.category:hover .count,
+a.category.active .count {
+  color: $color-highlight;
+}
+
+.category .name {
+  font-size: 0.9rem;
+}
+
+.category .count {
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: $font-color-muted;
+  font-family: $font-family-monospace;
+}

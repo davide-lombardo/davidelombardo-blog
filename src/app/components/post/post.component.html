@@ -1,0 +1,8 @@
+<a
+  [routerLink]="[prefix() ? '/' + prefix() + '/' + node().slug : node().slug]"
+  [class.last]="isLast()"
+  class="post"
+>
+  <h3>{{ node().title }}</h3>
+  <time>{{ formattedDate }}</time>
+</a>

@@ -1,0 +1,64 @@
+# Node modules
+node_modules/
+package-lock.json
+yarn.lock
+
+# Build output
+/dist
+/tmp
+/out-tsc
+
+# Build output
+/src/dist
+
+# Compiled source #
+dist/
+out-tsc/
+lib/
+tmp/
+
+# IDE and Editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Miscellaneous
+/.angular/cache
+.sass-cache/
+/connect.lock
+/coverage
+/libpeerconnection.log
+testem.log
+/typings
+*.tgz
+*.bak
+*.swp
+*.tmp
+*.temp
+
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Environment files
+src/environments/environment.ts
+src/environments/environment.prod.ts

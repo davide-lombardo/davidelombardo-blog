@@ -1,0 +1,20 @@
+<section class="header">
+  <div class="header__container">
+    <a routerLink="/" class="header__brand">
+      <img src="assets/images/lazy.svg" class="header__logo" alt="logo" />
+      <span class="header__brand-text">davide lombardo</span>
+    </a>
+    <nav class="header__nav">
+      @for (item of mainNavItems; track item.label) {
+        <a
+        [routerLink]="item.url"
+        routerLinkActive="header__nav-item--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="header__nav-item"
+        >
+          {{ item.label }}
+        </a>
+      }
+    </nav>
+  </div>
+</section>

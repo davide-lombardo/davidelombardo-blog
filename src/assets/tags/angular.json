@@ -1,0 +1,35 @@
+{
+  "allMarkdownRemark": {
+    "totalCount": 3,
+    "edges": [
+      {
+        "node": {
+          "id": "1",
+          "fields": {
+            "slug": "/angular-setup"
+          },
+          "frontmatter": {
+            "date": "October 18, 2022",
+            "title": "Getting Started with Angular",
+            "tags": ["Angular"],
+            "categories": ["Web Development"]
+          }
+        }
+      },
+      {
+        "node": {
+          "id": "2",
+          "fields": {
+            "slug": "/angular-components"
+          },
+          "frontmatter": {
+            "date": "October 19, 2022",
+            "title": "Understanding Angular Components",
+            "tags": ["Angular", "Components"],
+            "categories": ["Web Development"]
+          }
+        }
+      }
+    ]
+  }
+}

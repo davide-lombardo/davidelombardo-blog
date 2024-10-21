@@ -1,0 +1,34 @@
+<footer class="footer">
+  <section>
+    <span>
+      <img src="assets/images/lazy.svg" class="logo" alt="davide Lombardo" title="footer logo" />
+    </span>
+    <!-- <nav>
+      @for (link of links; track link.label) {
+        <a
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.key]="link.url"
+        >
+          {{ link.label }}
+        </a>
+      }
+    </nav> -->
+    <nav>
+      @for (link of madeWithLinks; track link.label) {
+        <a
+          [href]="link.url"
+          title="{{ link.label }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          [attr.key]="link.url"
+          class="button small"
+        >
+          <img [src]="link.icon" [alt]="link.label" />
+          <span>{{ link.label }}</span>
+        </a>
+      }
+    </nav>
+  </section>
+</footer>
