@@ -23,20 +23,16 @@ export class ProjectsComponent {
 
   constructor(private http: HttpClient, private repositoryService: RepositoryService) {}
 
-
   ngOnInit(): void {
     this.loadProjects(false);
-    this.http.get<Repository[]>('https://api.github.com/users/davide-lombardo/repos?per_page=100').pipe(
-      take(1),
-      map(data => data.filter(repo => !repo.fork))
-    ).subscribe((data) => {
-      // console.log(data);
-      this.repos = data;
-    });
   }
-
+  
   private loadProjects(includePinned: boolean): void {
-    this.repositoryService.getRepositories(includePinned).subscribe({
+    const excludedIds = [875256135, 447157387]; // Array of excluded IDs
+  
+    this.repositoryService.getRepositories(includePinned).pipe(
+      map(data => data.filter(repo => !repo.fork && !excludedIds.includes(repo.id))) // Apply filtering here
+    ).subscribe({
       next: data => this.repos = data,
       error: error => console.error('Error loading projects:', error),
     });

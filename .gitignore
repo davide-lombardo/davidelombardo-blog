@@ -62,3 +62,7 @@ Thumbs.db
 # Environment files
 src/environments/environment.ts
 src/environments/environment.prod.ts
+.firebase/hosting.ZGlzdFxkYXZpZGVsb21iYXJkby1ibG9nXGJyb3dzZXI.cache
+
+# Firebase directory
+.firebase/
