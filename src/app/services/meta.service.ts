@@ -20,11 +20,11 @@ export class MetaService {
     this.meta.addTag({ name: 'keywords', content: metadata.tags.join(', ') });
     this.meta.addTag({ property: 'og:title', content: metadata.title });
     this.meta.addTag({ property: 'og:description', content: metadata.subtitle });
+    this.meta.addTag({ property: 'og:type', content: 'website' });
 
     if (metadata.image) {
       const websiteUrl = 'https://davidelombardo-blog.web.app';
-      // const fullImageUrl = `${websiteUrl}${metadata.image}`;
-      const fullImageUrl = `https://davidelombardo-blog.web.app/assets/images/sloth-hero.svg`;
+      const fullImageUrl = `${websiteUrl}${metadata.image}`;
       this.meta.addTag({ property: 'og:image', content: fullImageUrl });
       this.meta.addTag({ property: 'og:image:width', content: '1200' });
       this.meta.addTag({ property: 'og:image:height', content: '630' });
