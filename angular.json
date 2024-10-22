@@ -37,9 +37,7 @@
             "prerender": {
               "routesFile": "routes.txt"
             },
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "ssr": false
           },
           "configurations": {
             "production": {
@@ -90,7 +88,7 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-               "src/favicon.ico",
+              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
