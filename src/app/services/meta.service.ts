@@ -23,7 +23,8 @@ export class MetaService {
 
     if (metadata.image) {
       const websiteUrl = 'https://davidelombardo-blog.web.app';
-      const fullImageUrl = `${websiteUrl}${metadata.image}`;
+      // const fullImageUrl = `${websiteUrl}${metadata.image}`;
+      const fullImageUrl = `https://davidelombardo-blog.web.app/assets/images/sloth-hero.svg`;
       this.meta.addTag({ property: 'og:image', content: fullImageUrl });
       this.meta.addTag({ property: 'og:image:width', content: '1200' });
       this.meta.addTag({ property: 'og:image:height', content: '630' });
