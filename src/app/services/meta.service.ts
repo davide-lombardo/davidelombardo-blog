@@ -13,6 +13,7 @@ export class MetaService {
     this.meta.removeTag('name="keywords"');
     this.meta.removeTag('property="og:title"');
     this.meta.removeTag('property="og:description"');
+    this.meta.removeTag('property="og:url"');
 
     // Set new meta tags
     this.meta.addTag({ name: 'description', content: metadata.subtitle });
@@ -21,7 +22,10 @@ export class MetaService {
     this.meta.addTag({ property: 'og:description', content: metadata.subtitle });
 
     if (metadata.image) {
-      this.meta.addTag({ property: 'og:image', content: metadata.image });
+      const websiteUrl = 'https://davidelombardo-blog.web.app';
+      const fullImageUrl = `${websiteUrl}${metadata.image}`;
+      this.meta.addTag({ property: 'og:image', content: fullImageUrl });
+      this.meta.addTag({ property: 'og:url', content: websiteUrl });
     }
   }
 }
