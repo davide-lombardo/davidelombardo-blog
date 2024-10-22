@@ -10,6 +10,7 @@ import { HeroComponent } from "../../components/hero/hero.component";
 import { PrismService } from '../../services/prism.service';
 import { PostService } from '../../services/post.service';
 import { PostMetadata } from '../../models/post.model';
+import { MetaService } from '../../services/meta.service';
 
 @Component({
   selector: 'app-post-detail',
@@ -39,6 +40,7 @@ export class PostDetailComponent implements OnInit, AfterViewChecked {
     private titleService: Title, 
     private prismService: PrismService,
     private postService: PostService,
+    private metaService: MetaService,
   ) {}
 
   ngOnInit(): void {
@@ -59,6 +61,13 @@ export class PostDetailComponent implements OnInit, AfterViewChecked {
         this.content = content;
         this.postMeta = metadata;
         this.titleService.setTitle(`${metadata.title} | Davide Lombardo Blog`);
+
+        // Update meta tags using MetaService
+        this.metaService.updateMetaTags({
+          title: metadata.title,
+          subtitle: metadata.subtitle,
+          tags: metadata.tags,
+        });
       },
       error: (error) => {
         console.error(error);
