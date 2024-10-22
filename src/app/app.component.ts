@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RouterOutlet } from '@angular/router';
-import { initializeApp } from 'firebase/app';
-import { environment } from '../environments/environment';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +10,4 @@ import { environment } from '../environments/environment';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  // Initialize Firebase
-  app = initializeApp(environment.firebaseConfig);
 }
