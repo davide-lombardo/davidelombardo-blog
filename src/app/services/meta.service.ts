@@ -25,6 +25,9 @@ export class MetaService {
       const websiteUrl = 'https://davidelombardo-blog.web.app';
       const fullImageUrl = `${websiteUrl}${metadata.image}`;
       this.meta.addTag({ property: 'og:image', content: fullImageUrl });
+      this.meta.addTag({ property: 'og:image:width', content: '1200' });
+      this.meta.addTag({ property: 'og:image:height', content: '630' });
+      this.meta.addTag({ property: 'og:image:alt', content: "blog cover image" });
       this.meta.addTag({ property: 'og:url', content: websiteUrl });
     }
   }
