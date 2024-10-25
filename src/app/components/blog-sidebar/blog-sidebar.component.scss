@@ -58,11 +58,10 @@ a.tag {
   font-size: 0.8rem;
   font-weight: 400;
   padding: 0.2rem 0.5rem;
-  border: 1px solid $button-border-color;
   border-radius: $border-radius;
-  color: $color-gray-8;
-  background: $button-background-color !important;
-  text-decoration: none !important;
+  color: $color-primary-dark;
+  background: $button-background-color;
+  text-decoration: none;
 }
 
 a.tag:hover {
