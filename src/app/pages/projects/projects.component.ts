@@ -1,9 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { DatePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
-import { map, take } from 'rxjs';
+import { map, Subject, takeUntil } from 'rxjs';
 import { Repository } from './project.model';
 import { ContainerComponent } from "../../components/container/container.component";
 import { RepositoryService } from '../../services/repository.service';
@@ -15,13 +14,15 @@ import { RepositoryService } from '../../services/repository.service';
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss'
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit, OnDestroy{
+  private destroy$: Subject<void> = new Subject();
+  
   title = 'projects';
   description = "projects I've made over the years, including this website, and various apps";
 
   repos: Repository[] = [];
 
-  constructor(private http: HttpClient, private repositoryService: RepositoryService) {}
+  constructor(private repositoryService: RepositoryService) {}
 
   ngOnInit(): void {
     this.loadProjects(false);
@@ -31,10 +32,16 @@ export class ProjectsComponent {
     const excludedIds = [875256135, 447157387]; // Array of excluded IDs
   
     this.repositoryService.getRepositories(includePinned).pipe(
-      map(data => data.filter(repo => !repo.fork && !excludedIds.includes(repo.id))) // Apply filtering here
+      map(data => data.filter(repo => !repo.fork && !excludedIds.includes(repo.id))),
+      takeUntil(this.destroy$)
     ).subscribe({
       next: data => this.repos = data,
       error: error => console.error('Error loading projects:', error),
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

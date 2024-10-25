@@ -20,7 +20,6 @@ export class BlogSidebarComponent {
 
   ngOnInit(): void {
     this.tags().filter(tag => tag.trim() !== '')
-    console.log(this.tags());
   }
 
   // Helper method to generate slug from category/tag

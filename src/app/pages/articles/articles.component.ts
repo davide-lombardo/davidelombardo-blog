@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { DatePipe } from '@angular/common';
 import { HeroComponent } from "../../components/hero/hero.component";
@@ -6,6 +6,7 @@ import { PostListComponent } from "../../components/post-list/post-list.componen
 import { ContainerComponent } from "../../components/container/container.component";
 import { PostService } from '../../services/post.service';
 import { Post } from '../../models/post.model';
+import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-articles',
@@ -15,7 +16,9 @@ import { Post } from '../../models/post.model';
   styleUrl: './articles.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ArticlesComponent implements OnInit {
+export class ArticlesComponent implements OnInit, OnDestroy {
+  private destroy$: Subject<void> = new Subject();
+  
   posts = signal<Post[]>([])
   title = 'articles';
   description = 'guides, references, and tutorials on programming, web development, and design.';
@@ -26,8 +29,15 @@ export class ArticlesComponent implements OnInit {
     this.loadPosts(false);
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
   private loadPosts(getLatest: boolean): void {
-    this.postService.getPostMetadata(getLatest).subscribe({
+    this.postService.getPostMetadata(getLatest).pipe(
+      takeUntil(this.destroy$)
+    ).subscribe({
       next: (posts) => {
         this.posts.set(posts);
       },

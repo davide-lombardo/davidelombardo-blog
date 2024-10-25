@@ -44,14 +44,14 @@ $color-category-link: #dd4eb2;
 $color-highlight: $color-yellow;
 
 /* Primary colors */
-$color-primary: $color-green;
+$color-primary: $color-green-light;
 $color-primary-light: $color-green-light;
 $color-primary-dark: $color-green-medium;
 $color-primary-muted: $color-indigo-muted;
 
 /* Borders */
-$border-color: $color-gray-3;
-$border-color-hover: $color-gray-4;
+$border-color: $color-blue-light;
+$border-color-hover: $color-primary-dark;
 $border-radius: 12px;
 
 /* Background colors */
@@ -61,8 +61,8 @@ $card-background-color: $color-blue-light;
 /* Links and Misc */
 $color-link: $color-green-light;
 $color-link-hover: $color-green-medium;
-$scrollbar-color: $color-gray-3;
-$scrollbar-track: $color-gray-4;
+$scrollbar-color: $color-blue-light;
+$scrollbar-track: $color-blue-medium;
 
 /* Shadow Colors */
 $shadow-color-light: #94A3B8;
@@ -76,7 +76,7 @@ $box-shadow-1: $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
 /* Font colors */
 $font-color-base: $color-gray-1;
 $font-color-muted: $color-blue-light-medium;
-$font-color-heading: $color-gray-1;
+$font-color-heading: $color-blue-very-light;
 $font-color-bright: $color-gray-1;
 $font-color-heading3: $color-gray-8;
 

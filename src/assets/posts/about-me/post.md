@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "about me"
 subtitle: "A Journey in Front-End Development and Life"
 date: 2024-10-20
 comments_off: true
@@ -12,12 +12,12 @@ Welcome to my slice of the web! This is where I share my ideas, projects, tutori
 My site is completely free of ads, affiliate links, tracking, or sponsored content. I built this space as a way to express myself and share what I’ve learned along the way. Hopefully, it inspires you to create your own online space too.
 
 
-## Contact
+## contact
 
 - [GitHub](https://github.com/davide-lombardo)
 - [Linkedin](https://www.linkedin.com/in/lombardo-davide/)
 
-## What I'm Doing Now
+## what i'm doing now
 *Updated October 22th, 2024*
 
 - Working full-time as a front-end developer
@@ -26,17 +26,17 @@ My site is completely free of ads, affiliate links, tracking, or sponsored conte
 - Planning my next trip and dreaming of new adventures
 
 
-## Tools
+## tools
 
-### Software
+### software
 This website is hosted on Firebase and built with Angular.
 
 - **Coding**: Visual Studio Code with Monokai pro
 - **Terminal**: Bash
 - **Notes**: Notion
 
-### Hardware
-**Coding PC**:
+### hardware
+**coding PC**:
 
 - **CPU**: AMD Ryzen 5 3600
 - **Motherboard**: ASRock B550 Phantom Gaming 4

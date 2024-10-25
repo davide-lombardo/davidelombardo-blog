@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { map, Observable, Subject, takeUntil } from 'rxjs';
 import { HeroComponent } from "../../components/hero/hero.component";
 import { KeyValuePipe } from '@angular/common';
 import { RouterLink } from '@angular/router';
@@ -13,12 +13,13 @@ import { ContainerComponent } from "../../components/container/container.compone
   templateUrl: './tags.component.html',
   styleUrl: './tags.component.scss'
 })
-export class TagsComponent implements OnInit {
+export class TagsComponent implements OnInit, OnDestroy {
+  private destroy$: Subject<void> = new Subject();
   groupTags: { [key: string]: any[] } = {};
 
   constructor(private http: HttpClient) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getTags().pipe(
       map(data => {
         const tags = data.tags.group;
@@ -27,10 +28,16 @@ export class TagsComponent implements OnInit {
           const newArr = letterMap[letter] ? [...letterMap[letter], tag] : [tag];
           return { ...letterMap, [letter]: newArr };
         }, {});
-      })
+      }),
+      takeUntil(this.destroy$)
     ).subscribe(groupedTags => {
       this.groupTags = groupedTags;
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   slugify(tagName: string): string {

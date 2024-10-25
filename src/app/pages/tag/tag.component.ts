@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { map, Observable } from 'rxjs';
+import { map, Observable, Subject, takeUntil } from 'rxjs';
 import { HeroComponent } from "../../components/hero/hero.component";
 import { PostListComponent } from "../../components/post-list/post-list.component";
 import { ContainerComponent } from "../../components/container/container.component";
@@ -14,7 +14,9 @@ import { Title } from '@angular/platform-browser';
   templateUrl: './tag.component.html',
   styleUrl: './tag.component.scss'
 })
-export class TagComponent {
+export class TagComponent implements OnInit, OnDestroy {
+  private destroy$: Subject<void> = new Subject();
+  
   tag: string = '';
   totalCount: number = 0;
   posts: any[] = [];
@@ -39,12 +41,19 @@ export class TagComponent {
           this.posts = data.allMarkdownRemark.edges;
           this.totalCount = data.allMarkdownRemark.totalCount;
           this.message = this.totalCount === 1 ? ' post tagged:' : ' posts tagged:';
-        })
+        }),
+        takeUntil(this.destroy$)
       ).subscribe();
     });
+  }
+
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 
   getTagData(tag: string): Observable<any> {
     return this.http.get(`assets/tags/${tag}.json`);
   }
+
 }

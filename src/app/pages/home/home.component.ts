@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Post } from '../../models/post.model';
 import { HeadingComponent } from '../../components/heading/heading.component';
 import { PostListComponent } from '../../components/post-list/post-list.component';
@@ -8,6 +8,7 @@ import { HeroComponent } from '../../components/hero/hero.component';
 import { Repository } from '../projects/project.model';
 import { PostService } from '../../services/post.service';
 import { RepositoryService } from '../../services/repository.service';
+import { Subject, takeUntil } from 'rxjs';
 
 export type HomeData = {
   posts: string[];
@@ -29,7 +30,9 @@ export type HomeData = {
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit, OnDestroy {
+  private destroy$: Subject<void> = new Subject();
+  
   projectsList: Repository[] = [];
 
   posts: Post[] = [];
@@ -51,8 +54,16 @@ export class HomeComponent {
     this.loadPinnedProjects(true);
   }
 
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
+
   private loadPosts(getLatest: boolean): void {
-    this.postService.getPostMetadata(getLatest).subscribe({
+    this.postService.getPostMetadata(getLatest).pipe(
+      takeUntil(this.destroy$)
+    )
+    .subscribe({
       next: (posts) => {
         this.posts = posts;
       },

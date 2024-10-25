@@ -75,6 +75,10 @@ p.hero-description {
   text-decoration-thickness: 2px;
 }
 
+.hero-component {
+  order: 2;
+}
+
 .decoration {
   display: flex;
   align-items: center;
@@ -94,8 +98,7 @@ p.hero-description {
     font-size: 1.2rem;
   }
 
-  .hero {
-    padding: 1.5rem 0 1rem;
+  .hero-component {
     order: 1;
   }
 
