@@ -13,14 +13,18 @@
   }
 }
 
-
-
-
 ::ng-deep {
   .article {
+
     &__content {
+      p, 
+      h3,
+      ul {
+        color: $color-blue-light-medium;
+      }
+
       a {
-        @include styled-link($color-indigo);
+        @include styled-link($color-primary-light);
       }
     }
   }

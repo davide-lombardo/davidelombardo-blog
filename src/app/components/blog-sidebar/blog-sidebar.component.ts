@@ -12,15 +12,15 @@ import { CommentsComponent } from "../comments/comments.component";
   styleUrl: './blog-sidebar.component.scss'
 })
 export class BlogSidebarComponent {
-  date = input<string>()
-  tags = input<string[]>()
-  categories = input<string[]>()
+  date = input.required<string>();
+  tags = input.required<string[]>();
 
 
   category!: string;
 
   ngOnInit(): void {
-    this.category = this.categories()?.filter((category) => category !== 'Highlight')[0] || '';
+    this.tags().filter(tag => tag.trim() !== '')
+    console.log(this.tags());
   }
 
   // Helper method to generate slug from category/tag

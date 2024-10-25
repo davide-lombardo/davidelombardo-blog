@@ -1,10 +1,9 @@
 ---
-author: Chat GPT
 title: "Understanding TypeScript Generics for Cleaner Code"
 subtitle: "Leverage the Power of Type Safety in TypeScript"
 date: 2022-11-20
-thumbnail: '/assets/posts/understanding-typescript-generics/typescript-logo.png'
 slug: "understanding-typescript-generics"
+tags: "typescript"
 ---
 
 TypeScript generics provide a way to create reusable components that work with various data types, ensuring both flexibility and type safety. This feature is especially powerful in large applications, where consistent data structures are essential.

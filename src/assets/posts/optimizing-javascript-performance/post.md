@@ -4,6 +4,7 @@ title: "Optimizing JavaScript for Performance"
 subtitle: "Write Faster and More Efficient Code"
 date: 2023-11-26
 slug: "optimizing-javascript-performance"
+tags: "javascript"
 ---
 
 Optimizing JavaScript code can significantly improve web application performance, making it faster and more responsive. Here are some effective techniques to optimize your JavaScript code.

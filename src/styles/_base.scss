@@ -33,13 +33,13 @@ main {
   margin-top: $navbar-height-small;
 }
 
-// /* Links */
+/* Links */
 a {
-  color: $link;
+  color: $color-link;
   text-decoration: none;
 
   &:hover {
-    color: $color-indigo-muted;
+    color: $color-link-hover;
   }
 }
 
@@ -129,6 +129,19 @@ time {
 }
 
 /* Blockquote */
+blockquote {
+  background: $color-indigo-muted;
+  border: 1px solid $color-indigo-light;
+  color: $font-color-base;
+}
+
+blockquote.quotation {
+  border-left: 12px solid $border-color;
+}
+
+blockquote strong {
+  text-decoration-color: $color-indigo-dark;
+}
 
 blockquote {
   margin: 2rem 0;

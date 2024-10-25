@@ -1,4 +1,4 @@
-/* Colors */
+/* Grey shades */
 $color-gray-0: #f9f9f9;
 $color-gray-05: #f6f6f6;
 $color-gray-1: #eee;
@@ -13,21 +13,21 @@ $color-gray-8: #252525;
 $color-gray-9: #1f1f1f;
 $color-gray-10: #181818;
 
-// Blue shades
+/* Blue shades */
 $color-blue-dark: #0F172A;
-$color-blue-dark-medium: #183656;
 $color-blue-medium: #1E293B;
+$color-blue-dark-medium: #183656;
 $color-blue-light: #475569;
 $color-blue-light-medium: #64748B;
 $color-blue-very-light: #94A3B8;
 
-
-// Green shades
+/* Green shades */
 $color-teal: #4DC0C5;
-$color-green-light: #5EEAD4;
 $color-green-medium: #2DD4BF;
-
+$color-green-light: #5EEAD4;
 $color-green: #5eddac;
+
+/* Misc colors */
 $color-orange: #ff7e22;
 $color-yellow: #fca62a;
 $color-light-yellow: #fcd37a;
@@ -40,15 +40,14 @@ $color-indigo: #4e5dff;
 $color-indigo-dark: #431dee;
 $color-indigo-light: #a6aaff;
 $color-indigo-muted: #f1f2fd;
-
 $color-category-link: #dd4eb2;
-
-$color-primary: $color-indigo;
-$color-primary-light: $color-indigo-light;
-$color-primary-dark: $color-indigo-dark;
-$color-primary-muted: $color-indigo-muted;
-
 $color-highlight: $color-yellow;
+
+/* Primary colors */
+$color-primary: $color-green;
+$color-primary-light: $color-green-light;
+$color-primary-dark: $color-green-medium;
+$color-primary-muted: $color-indigo-muted;
 
 /* Borders */
 $border-color: $color-gray-3;
@@ -56,26 +55,36 @@ $border-color-hover: $color-gray-4;
 $border-radius: 12px;
 
 /* Background colors */
-$background-color: $color-gray-2;
-$navbar-background-color: $color-gray-0;
-$card-background-color: $color-gray-0;
-$button-background-color: $color-gray-05;
+$background-color: $color-blue-medium;
+$card-background-color: $color-blue-light;
 
 /* Links and Misc */
-$link: $color-indigo;
+$color-link: $color-green-light;
+$color-link-hover: $color-green-medium;
 $scrollbar-color: $color-gray-3;
 $scrollbar-track: $color-gray-4;
 
+/* Shadow Colors */
+$shadow-color-light: #94A3B8;
+
+$tw-shadow: inset 0 .5px 0 0 $shadow-color-light;
+$tw-ring-offset-shadow: 0 0 $color-gray-10;
+$tw-ring-shadow: 0 0 $color-gray-10;
+
+$box-shadow-1: $tw-ring-offset-shadow, $tw-ring-shadow, $tw-shadow;
+
 /* Font colors */
-$font-color-base: $color-gray-7;
-$font-color-muted: $color-gray-6;
-$font-color-heading: $color-gray-9;
-$font-color-bright: $color-gray-9;
+$font-color-base: $color-gray-1;
+$font-color-muted: $color-blue-light-medium;
+$font-color-heading: $color-gray-1;
+$font-color-bright: $color-gray-1;
+$font-color-heading3: $color-gray-8;
 
-
-$button-border-color-hover: $color-gray-5;
+/* Button colors */
 $button-border-color: $color-gray-4;
-$button-background-color: $color-gray-05;
+$button-border-color-hover: $color-gray-5;
+$button-background-color: $color-blue-light;
+$button-font-color: $color-primary;
 
 /* Sizs */
 $content-width: 860px;
@@ -83,6 +92,7 @@ $content-width--small: 560px;
 $content-width--medium: 700px;
 $navbar-height-small: 60px;
 
+/* Breakpoints */
 $breakpoint-small: 700px;
 $breakpoint-medium: 900px;
 $breakpoint-medium-lg: 1024px;

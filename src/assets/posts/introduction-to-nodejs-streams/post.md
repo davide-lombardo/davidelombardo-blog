@@ -1,9 +1,9 @@
 ---
-author: Chat GPT
 title: "An Introduction to Node.js Streams"
 subtitle: "Handle Data Flow Efficiently with Node.js"
 date: 2024-05-24
 slug: "introduction-to-nodejs-streams"
+tags: "node"
 ---
 
 Node.js streams provide a way to work with large data efficiently by processing it in chunks rather than loading it all at once. This post covers the basics of streams and how to use them in your Node.js applications.

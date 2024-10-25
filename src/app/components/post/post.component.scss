@@ -1,7 +1,6 @@
 @import '../../../styles/variables';
 @import '../../../styles/typography';
 
-
 a.post {
   display: flex;
   gap: 1rem;
@@ -18,12 +17,12 @@ a.post {
 a.post:hover,
 a.post:hover h3,
 a.post:hover time {
-  color: $font-color-bright;
+  color: $color-gray-0;
 }
 
 a.post:hover,
 a.post:hover h3 {
-  color: $color-indigo-dark;
+  color: $color-link-hover;
 }
 
 a.post:hover h3 {
@@ -34,7 +33,7 @@ a.post:hover h3 {
 a.post h3 {
   margin: 0;
   font-size: 1rem;
-  color: $color-gray-7;
+  color: $color-gray-2;
   font-weight: 500;
   font-family: $font-family-base;
   line-height: 1.3;
@@ -42,17 +41,11 @@ a.post h3 {
 
 a.post time {
   display: none;
-  color: $color-gray-6;
+  color: $color-blue-light-medium;
   margin-left: auto;
 }
 
 @media screen and (min-width: 700px) {
-  .posts.newspaper {
-    display: grid;
-    /* grid-template-columns: 1fr 1fr; */
-    column-gap: 2rem;
-  }
-
   a.post time {
     display: block;
   }

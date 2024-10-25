@@ -3,6 +3,7 @@ title: "CSS Grid vs Flexbox: When to Use Each"
 subtitle: "Choose the Right Tool for Responsive Layouts"
 date: 2023-11-25
 slug: "css-grid-vs-flexbox"
+tags: "css"
 ---
 
 CSS Grid and Flexbox are two powerful layout tools in CSS, each designed to solve different layout challenges. Understanding when to use each one can improve your web designs and layouts.

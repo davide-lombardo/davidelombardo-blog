@@ -4,7 +4,7 @@
 /* Buttons */
 button,
 a.button {
-  background: $button-background-color;
+  background: rgba($card-background-color, 0.5);
   display: inline-flex;
   align-items: center;
   padding: 0.6rem 1rem;
@@ -14,8 +14,7 @@ a.button {
   font-size: 0.9rem;
   cursor: pointer;
   font-weight: 500;
-  color: $font-color-base;
-  border: 1px solid $button-border-color;
+  color: $button-font-color;
   gap: 0.25rem;
   white-space: nowrap;
   transition: transform 0.2s ease-in-out;
@@ -72,12 +71,11 @@ a.button:active {
   }
 }
 
-
 /* Card */
 .card {
-  border: 1px solid $button-border-color;
+  box-shadow: $box-shadow-1;
   border-radius: $border-radius;
-  background: $card-background-color;
+  background: rgba($card-background-color, 0.5);
   padding: 1rem;
   position: relative;
 }
@@ -117,7 +115,7 @@ a.button:active {
   margin: 0;
   font-size: 1rem;
   line-height: 1.5;
-  color: $font-color-muted;
+  color: $color-blue-very-light;
   font-family: $font-family-base;
 }
 
@@ -130,7 +128,7 @@ a.button:active {
 }
 
 .card time {
-  color: $color-gray-6;
+  color: $color-blue-very-light;
   margin-bottom: 0.3rem;
 }
 
@@ -141,7 +139,7 @@ a.button:active {
   align-items: center;
 }
 
-.card.muted .gatsby-image-wrapper {
+.card.muted {
   height: 30px;
   width: 30px;
   max-height: 30px !important;
@@ -166,7 +164,7 @@ a.button:active {
     display: block;
   }
 
-  .card.muted .gatsby-image-wrapper {
+  .card.muted {
     height: 45px;
     width: 45px;
     max-height: 45px !important;

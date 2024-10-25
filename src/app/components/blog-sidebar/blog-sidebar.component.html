@@ -4,12 +4,15 @@
     <h2>about me</h2>
     <p>
       hello and thanks for visiting! my name is
-      <a class="post-sidebar-link" [routerLink]="'/posts/about-me'">davide lombardo</a>, and this is my website.
+      <a class="post-sidebar-link" [routerLink]="'/posts/about-me'">
+        davide lombardo
+      </a>
+      , and this is my website.
     </p>
     <p>
-      I'm a software developer who writes about
-      code and life. This site is and has always been free of ads, trackers,
-      social media, affiliates, and sponsored posts.
+      I'm a software developer who writes about code and life. This site is and
+      has always been free of ads, trackers, social media, affiliates, and
+      sponsored posts.
     </p>
   </div>
 
@@ -18,28 +21,34 @@
     <h2>post details</h2>
     <ul>
       <li>
-        <strong>published: </strong> {{ date() | date: 'MMMM d, y'}}
+        <strong>published:</strong>
+        {{ date() | date : 'MMMM d, y' }}
       </li>
       @if (category) {
-        <li>
-          <strong>category: </strong>
-          <a class="post-sidebar-link" [routerLink]="['/categories', slugify(category)]">{{ category }}</a>
-        </li>
+      <li>
+        <strong>category:</strong>
+        <a
+          class="post-sidebar-link"
+          [routerLink]="['/categories', slugify(category)]"
+        >
+          {{ category }}
+        </a>
+      </li>
       }
     </ul>
 
     <!-- Tags section -->
     <h2>tags</h2>
-    <div class="tags">
-      @for (tag of tags(); track tag) {
-        <a
-          [routerLink]="['/tags', slugify(tag)]"
-          class="tag"
-        >
+    @if (tags().length > 0) {
+      <div class="tags">
+        @for (tag of tags(); track tag) {
+        <a [routerLink]="['/tags', slugify(tag)]" class="tag">
           {{ tag }}
         </a>
-      }
-    </div>
+        }
+      </div>
+    } @else {
+      <p>No tags for this post</p>
+    }
   </div>
 </aside>
-

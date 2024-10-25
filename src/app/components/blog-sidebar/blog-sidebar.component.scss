@@ -3,20 +3,17 @@
 @import '../../../styles/mixins';
 
 .post-sidebar-card {
-  border: 1px solid $button-border-color;
-  background: $card-background-color;
+  background: rgba($card-background-color, 0.5);
   padding: 1rem;
   border-radius: $border-radius;
   margin: 1.5rem 0;
 
   .post-sidebar-link {
-    @include styled-link($color-indigo);
+    @include styled-link($color-primary-light);
   }
 }
 
 .post-sidebar h2 {
-  color: $font-color-heading;
-  font-size: 1.1rem;
   border: none;
   margin: 0 0 1rem;
   font-weight: 700;
@@ -25,6 +22,7 @@
 .post-sidebar p,
 .post-sidebar ul {
   font-size: 1rem;
+  color: $font-color-muted
 }
 
 .post-sidebar p:last-child {
