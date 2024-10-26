@@ -54,6 +54,7 @@ export function appendComments(platformId: Object): void {
   commentScript.setAttribute('issue-term', 'pathname');
   commentScript.setAttribute('id', 'utterances');
   commentScript.setAttribute('crossorigin', 'anonymous');
+  commentScript.setAttribute('theme', 'dark-blue');
 
   if (!commentDiv) return;
 
