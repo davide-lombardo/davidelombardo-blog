@@ -10,4 +10,8 @@ export interface PostMetadata {
   date: string;
   tags: string[];  
   comments_off: boolean; 
+  infoPanel?: {
+    title: string;
+    description: string;
+  }
 }

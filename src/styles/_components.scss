@@ -73,7 +73,7 @@ a.button:active {
 
 /* Card */
 .card {
-  box-shadow: $box-shadow-1;
+  box-shadow: $shadow-elevation-medium;
   border-radius: $border-radius;
   background: rgba($card-background-color, 0.5);
   padding: 1rem;
