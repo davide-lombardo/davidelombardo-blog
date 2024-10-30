@@ -9,7 +9,7 @@ export interface PostMetadata {
   subtitle: string;
   date: string;
   tags: string[];  
-  comments_off: boolean; 
+  comments_off?: boolean; 
   infoPanel?: {
     title: string;
     description: string;

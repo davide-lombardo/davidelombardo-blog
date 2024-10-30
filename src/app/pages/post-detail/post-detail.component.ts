@@ -24,9 +24,9 @@ import { InfoPanelComponent } from "../../components/info-panel/info-panel.compo
 })
 export class PostDetailComponent implements OnInit, AfterViewChecked, OnDestroy {
   private destroy$: Subject<void> = new Subject();
-  postSlug = '';
 
-  public content = '';
+  postSlug = '';
+  content = '';
 
   highlighted = false;
 
@@ -37,8 +37,6 @@ export class PostDetailComponent implements OnInit, AfterViewChecked, OnDestroy 
     tags: [],
     comments_off: false,
   }
-
-  comments_off = false;
 
   constructor(
     private titleService: Title, 
