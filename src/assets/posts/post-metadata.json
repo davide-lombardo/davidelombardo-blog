@@ -40,5 +40,11 @@
     "title": "Optimizing JavaScript for Performance",
     "date": "2023-11-09",
     "tags": ["javascript"]
+  },
+  {
+    "slug": "change-detection-made-simple",
+    "title": "Change Detection in Angular",
+    "date": "2024-10-24",
+    "tags": ["angular"]
   }
 ]

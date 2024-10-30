@@ -10,4 +10,5 @@
 /posts/introduction-to-nodejs-streams
 /posts/optimizing-javascript-performance
 /posts/mastering-angular-reactive-forms
+/posts/change-detection-made-simple
 /posts/about-me
