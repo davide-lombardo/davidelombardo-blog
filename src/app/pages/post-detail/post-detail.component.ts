@@ -13,11 +13,12 @@ import { PostMetadata } from '../../models/post.model';
 import { MetaService } from '../../services/meta.service';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
+import { InfoPanelComponent } from "../../components/info-panel/info-panel.component";
 
 @Component({
   selector: 'app-post-detail',
   standalone: true,
-  imports: [BlogSidebarComponent, CommentsComponent, ContainerComponent, HeroComponent],
+  imports: [BlogSidebarComponent, CommentsComponent, ContainerComponent, HeroComponent, InfoPanelComponent],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss'
 })

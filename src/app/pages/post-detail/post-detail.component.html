@@ -1,6 +1,10 @@
 <app-container>
   <app-hero [title]="postMeta.title"></app-hero>
 
+  @if (postMeta.infoPanel) {
+    <app-info-panel [title]="postMeta.infoPanel.title" [description]="postMeta.infoPanel.description"></app-info-panel>
+  }
+
   <article class="article__content" [innerHTML]="content"></article>
   
   @if (!postMeta.comments_off) {

@@ -17,9 +17,13 @@
   .article {
 
     &__content {
+      margin-top: 1.5rem;
+
       p, 
       h3,
-      ul {
+      ul,
+      ol,
+      li {
         color: $color-blue-light-medium;
       }
 
