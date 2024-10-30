@@ -16,20 +16,19 @@ export class MetaService {
     this.meta.removeTag('property="og:url"');
 
     // Set new meta tags
+    const websiteUrl = 'https://davidelombardo-blog.web.app';
+    const fullImageUrl = `${websiteUrl}${metadata.image}`;
+    this.meta.addTag({ property: 'og:image', content: fullImageUrl });
+    this.meta.addTag({ property: 'og:image:width', content: '1200' });
+    this.meta.addTag({ property: 'og:image:height', content: '630' });
+    this.meta.addTag({ property: 'og:image:alt', content: "blog cover image" });
+    this.meta.addTag({ property: 'og:url', content: websiteUrl });
+
+
     this.meta.addTag({ name: 'description', content: metadata.subtitle });
     this.meta.addTag({ name: 'keywords', content: metadata.tags.join(', ') });
     this.meta.addTag({ property: 'og:title', content: metadata.title });
     this.meta.addTag({ property: 'og:description', content: metadata.subtitle });
     this.meta.addTag({ property: 'og:type', content: 'website' });
-
-    if (metadata.image) {
-      const websiteUrl = 'https://davidelombardo-blog.web.app';
-      const fullImageUrl = `${websiteUrl}${metadata.image}`;
-      this.meta.addTag({ property: 'og:image', content: fullImageUrl });
-      this.meta.addTag({ property: 'og:image:width', content: '1200' });
-      this.meta.addTag({ property: 'og:image:height', content: '630' });
-      this.meta.addTag({ property: 'og:image:alt', content: "blog cover image" });
-      this.meta.addTag({ property: 'og:url', content: websiteUrl });
-    }
   }
 }

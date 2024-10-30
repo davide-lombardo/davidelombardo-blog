@@ -1,7 +1,7 @@
 ---
 title: "CSS Grid vs Flexbox: When to Use Each"
 subtitle: "Choose the Right Tool for Responsive Layouts"
-date: 2023-11-25
+date: 2023-11-23
 slug: "css-grid-vs-flexbox"
 tags: "css"
 ---

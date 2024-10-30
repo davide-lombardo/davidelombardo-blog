@@ -18,7 +18,7 @@ export class PostService {
     return this.http.get(`assets/posts/${slug}/post.md`, { responseType: 'text' }).pipe(
       map((markdownFile: string) => {
         const matterObj = matter(markdownFile);
-        const { title = '', subtitle = '', date = '', tags = '', comments_off = false } = matterObj.data;
+        const { title = '', subtitle = '', date = '', tags = '', comments_off = false, infoPanel } = matterObj.data;
 
         const tagsArray = tags.split(',').map((tag: string) => tag.trim());
 
@@ -28,6 +28,7 @@ export class PostService {
           date,
           tags: tagsArray,
           comments_off,
+          infoPanel
         };
 
         const content = this.markdown.render(matterObj.content);
