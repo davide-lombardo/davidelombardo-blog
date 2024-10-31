@@ -6,7 +6,10 @@ slug: "change-detection-made-simple"
 tags: "angular"
 infoPanel: {
   title: 'Intended audience',
-  description: 'This article offers an overview into Change Detection in Angular, aiming to clarify its importance and practical use. Intended for developers who are just starting with Angular and want to deepen their understanding of how Change Detection works.'
+  description: [
+    'This article assumes that you’re comfortable with basic Angular syntax, but is otherwise written to be beginner-friendly.',
+    'Intended for developers who are just starting with Angular and want to deepen their understanding of how Change Detection works.',
+  ]
 }
 ---
 
@@ -106,8 +109,11 @@ However, we can already experiment with removing Zone.js from our project by usi
 2. Add provideExperimentalZonelessChangeDetection() to the providers array in main.ts
 
 ```typescript
-  bootstrapApplication(AppComponent, appConfig)
-  .catch((err) => console.error(err));
+  bootstrapApplication(AppComponent, {
+    providers: [
+      provideExperimentalZonelessChangeDetection(),
+    ],
+  }).catch((err) => console.error(err));
 ```
 
 Warning: This method, as the name suggests, is still experimental.

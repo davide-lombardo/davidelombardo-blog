@@ -46,7 +46,9 @@
       {{ title() }}
     </strong>
     <div class="info-panel__description">
-      <p>{{ description() }}</p>
+      @for (paragraph of description(); track $index) {
+        <p>{{ paragraph }}</p>
+      }
     </div>
   </div>
 </aside>

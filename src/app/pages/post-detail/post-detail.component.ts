@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { AfterViewChecked, Component, input, OnDestroy, OnInit } from '@angular/core';
-import MarkdownIt from 'markdown-it';
-import matter from 'gray-matter-browser';
+import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
 import { BlogSidebarComponent } from "../../components/blog-sidebar/blog-sidebar.component";
 import { CommentsComponent } from "../../components/comments/comments.component";
 import { ContainerComponent } from "../../components/container/container.component";

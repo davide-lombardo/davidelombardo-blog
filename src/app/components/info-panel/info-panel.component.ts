@@ -9,5 +9,5 @@ import { Component, input } from '@angular/core';
 })
 export class InfoPanelComponent {
   title = input.required<string>();
-  description = input.required<string>();
+  description = input.required<string[]>();
 }

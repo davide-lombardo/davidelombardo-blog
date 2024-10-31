@@ -12,6 +12,6 @@ export interface PostMetadata {
   comments_off?: boolean; 
   infoPanel?: {
     title: string;
-    description: string;
+    description: string[];
   }
 }
