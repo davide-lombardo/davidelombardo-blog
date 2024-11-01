@@ -1,50 +1,14 @@
 [
   {
-    "slug": "building-reusable-components-in-angular",
-    "title": "(ChatGPT) Building Reusable Components in Angular",
-    "date": "2023-11-22",
-    "tags": ["angular"]
-  },
-  {
-    "slug": "exploring-rxjs-observables-in-angular",
-    "title": "(ChatGPT) Exploring RxJS Observables in Angular",
-    "date": "2023-11-21",
-    "tags": ["angular", "rxjs"]
-  },
-  {
-    "slug": "understanding-typescript-generics",
-    "title": "(ChatGPT) Understanding TypeScript Generics for Cleaner Code",
-    "date": "2023-11-20",
-    "tags": ["typescript"]
-  },
-  {
-    "slug": "css-grid-vs-flexbox",
-    "title": "(ChatGPT) CSS Grid vs Flexbox: When to Use Each",
-    "date": "2023-11-23",
-    "tags": ["css"]
-  },
-  {
-    "slug": "introduction-to-nodejs-streams",
-    "title": "(ChatGPT) An Introduction to Node.js Streams",
-    "date": "2023-10-20",
-    "tags": ["node"]
-  },
-  {
-    "slug": "mastering-angular-reactive-forms",
-    "title": "(ChatGPT) Mastering Angular Reactive Forms",
-    "date": "2023-11-09",
-    "tags": ["angular"]
-  },
-  {
-    "slug": "optimizing-javascript-performance",
-    "title": "(ChatGPT) Optimizing JavaScript for Performance",
-    "date": "2023-11-09",
-    "tags": ["javascript"]
-  },
-  {
     "slug": "change-detection-made-simple",
     "title": "Change Detection in Angular",
     "date": "2024-10-24",
     "tags": ["angular"]
+  },
+  {
+    "slug": "my-front-end-web-development-setup",
+    "title": "My Front End Web Development Setup",
+    "date": "2024-10-31",
+    "tags": ["frontend"]
   }
 ]

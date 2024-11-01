@@ -1,11 +1,5 @@
 [
-  { "slug": "building-reusable-components-in-angular" },
-  { "slug": "exploring-rxjs-observables-in-angular" },
-  { "slug": "understanding-typescript-generics" },
-  { "slug": "css-grid-vs-flexbox" },
-  { "slug": "introduction-to-nodejs-streams" },
-  { "slug": "optimizing-javascript-performance" },
-  { "slug": "mastering-angular-reactive-forms" },
   { "slug": "change-detection-made-simple" },
+  { "slug": "my-front-end-web-development-setup" },
   { "slug": "about-me" }
 ]
