@@ -1,68 +1,65 @@
-<div>
-
-  <div class="container">
-    <div class="hero-wrapper">
-      <app-hero title="hey, i'm davide" class="hero-component">
-        <p class="hero-description">
-          i'm a fronted developer who loves building cool web stuff. 
-          on this site, you can dive into the
-          <a routerLink="/posts">technical articles</a>
-          i've written, or learn a bit more
-          <a routerLink="/posts/about-me">about me</a>.
-        </p>
-      </app-hero>
-      <div class="decoration">
-        <img src="assets/images/sloth-hero.svg" alt="Sloth image" class="image hero-image" title="Sloth image" />
-      </div>
+<div class="container">
+  <div class="hero-wrapper">
+    <app-hero title="hey, i'm davide" class="hero-component">
+      <p class="hero-description">
+        i'm a fronted developer who loves building cool web stuff. 
+        on this site, you can dive into the
+        <a routerLink="/posts">technical articles</a>
+        i've written, or learn a bit more
+        <a routerLink="/posts/about-me">about me</a>.
+      </p>
+    </app-hero>
+    <div class="decoration">
+      <img src="assets/images/sloth-hero.svg" alt="Sloth image" class="hero-image" title="Sloth image" />
     </div>
   </div>
+</div>
 
-  <div class="container">
-    <section class="segment">
-      <app-heading title="articles" slug="/posts" buttonText="all articles"></app-heading>
-      <app-post-list [data]="posts" prefix="posts"></app-post-list>
-    </section>
+<div class="container">
+  <section class="segment">
+    <app-heading title="articles" slug="/posts" buttonText="all articles"></app-heading>
+    <app-post-list [data]="posts" prefix="posts"></app-post-list>
+  </section>
 
-    <section class="segment large">
-      <app-heading title="projects" slug="/projects" buttonText="all projects"></app-heading>
-      <div class="post-preview">
-        @for (project of projectsList; track project.created_at) {
-          <div class="card anchored large">
-            <div>
-              <time>{{ project.created_at | date: 'yyyy' }}</time>
-              <a
-                class="card-header"
-                [href]="project.html_url"
-                target="_blank"
-                rel="noreferrer"
-              >
-                {{ project.name }}
-              </a>
-              <p>{{ project.description }}</p>
-            </div>
-            <div class="links anchored">
-              @if (project.homepage) {
-                <a
-                  class="button small flex"
-                  [href]="project.homepage"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  demo
-                </a>
-              }
+  <section class="segment large">
+    <app-heading title="projects" slug="/projects" buttonText="all projects"></app-heading>
+    <div class="post-preview">
+      @for (project of projectsList; track project.created_at) {
+        <div class="card anchored large">
+          <div>
+            <time>{{ project.created_at | date: 'yyyy' }}</time>
+            <a
+              class="card-header"
+              [href]="project.html_url"
+              target="_blank"
+              rel="noreferrer"
+            >
+              {{ project.name }}
+            </a>
+            <p>{{ project.description }}</p>
+          </div>
+          <div class="links anchored">
+            @if (project.homepage) {
               <a
                 class="button small flex"
-                [href]="project.html_url"
+                [href]="project.homepage"
                 target="_blank"
                 rel="noreferrer"
               >
-                source
+                demo
               </a>
-            </div>
+            }
+            <a
+              class="button small flex"
+              [href]="project.html_url"
+              target="_blank"
+              rel="noreferrer"
+            >
+              source
+            </a>
           </div>
-        }
-      </div>
-    </section>
-  </div>
+        </div>
+      }
+    </div>
+  </section>
 </div>

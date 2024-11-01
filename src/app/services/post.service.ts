@@ -13,29 +13,40 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
-   // Method to fetch and process post markdown data
-   getPostDetail(slug: string): Observable<{ content: string; metadata: PostMetadata }> {
-    return this.http.get(`assets/posts/${slug}/post.md`, { responseType: 'text' }).pipe(
-      map((markdownFile: string) => {
-        const matterObj = matter(markdownFile);
-        const { title = '', subtitle = '', date = '', tags = '', comments_off = false, infoPanel } = matterObj.data;
+  // Method to fetch and process post markdown data
+  getPostDetail(
+    slug: string
+  ): Observable<{ content: string; metadata: PostMetadata }> {
+    return this.http
+      .get(`assets/posts/${slug}/post.md`, { responseType: 'text' })
+      .pipe(
+        map((markdownFile: string) => {
+          const matterObj = matter(markdownFile);
+          const {
+            title = '',
+            subtitle = '',
+            date = '',
+            tags = '',
+            comments_off = false,
+            infoPanel,
+          } = matterObj.data;
 
-        const tagsArray = tags.split(',').map((tag: string) => tag.trim());
+          const tagsArray = tags.split(',').map((tag: string) => tag.trim());
 
-        const postMeta: PostMetadata = {
-          title,
-          subtitle,
-          date,
-          tags: tagsArray,
-          comments_off,
-          infoPanel
-        };
+          const postMeta: PostMetadata = {
+            title,
+            subtitle,
+            date,
+            tags: tagsArray,
+            comments_off,
+            infoPanel,
+          };
 
-        const content = this.markdown.render(matterObj.content);
+          const content = this.markdown.render(matterObj.content);
 
-        return { content, metadata: postMeta };
-      })
-    );
+          return { content, metadata: postMeta };
+        })
+      );
   }
 
   // Fetch post metadata (for list view)
@@ -44,14 +55,16 @@ export class PostService {
       map(posts => {
         const convertedPosts = posts.map(post => ({
           ...post,
-          date: new Date(post.date)
+          date: new Date(post.date),
         }));
 
-        if (getLatest) {
-          // Sort by date and slice the array to get the latest 3 posts
-          return convertedPosts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 3);
-        }
-        return convertedPosts;
+        // Sort by date in descending order
+        const sortedPosts = convertedPosts.sort(
+          (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+        );
+
+        // Return only the latest 3 if getLatest is true, otherwise return all sorted posts
+        return getLatest ? sortedPosts.slice(0, 3) : sortedPosts;
       })
     );
   }
