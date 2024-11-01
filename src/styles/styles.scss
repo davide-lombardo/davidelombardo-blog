@@ -1,5 +1,5 @@
 @import 'base';
-@import 'variables';
-@import 'typography';
-@import 'components';
-@import 'mixins';
+@import './components/button';
+@import './components/card';
+@import './components/segment';
+@import './components/link';

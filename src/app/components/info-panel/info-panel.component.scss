@@ -7,13 +7,12 @@
   font-size: 1rem;
   margin-bottom: 3rem;
   margin-top: 3rem;
-  // margin-inline: calc(3rem * -1);
   padding-block: 2rem;
   padding-inline: 3rem;
   padding-left: calc(3rem - 3px);
   border-left: 3px solid transparent;
   border-radius: 0 4px 4px 0;
-  background-color: $color-blue-light-medium;
+  background: $color-blue-light;
   box-shadow: $shadow-elevation-medium;
 
   &__icon {
@@ -56,14 +55,14 @@
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 8px;
-    color: $color-blue-dark;
+    color: $color-blue-very-light;
   }
   
   &__description {
     display: grid;
     
     p {
-      color: $color-blue-dark;
+      color: $color-blue-very-light;
       margin: 0;
       font-size: 1rem;
       

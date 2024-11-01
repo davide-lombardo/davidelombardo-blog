@@ -1,5 +1,5 @@
 @import '../../../styles/typography';
-@import '../../../styles/typography';
+@import '../../../styles/variables';
 
 .heading {
   margin-top: 2rem;
@@ -16,14 +16,9 @@
     font-family: $font-family-base;
     font-weight: 700;
   }
-
-  &__description {
-
-  }
 }
 
-
-@media screen and (min-width: 700px) {
+@media screen and (min-width: $breakpoint-small) {
   .heading {
     gap: 2rem;
 
