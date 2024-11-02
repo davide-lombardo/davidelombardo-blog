@@ -10,5 +10,11 @@
     "title": "My Front End Web Development Setup",
     "date": "2024-10-31",
     "tags": ["frontend"]
+  },
+  {
+    "slug": "the-front-end-developer-guide-to-the-terminal",
+    "title": "The Frontend Developer Guide To The Terminal",
+    "date": "2024-11-02",
+    "tags": ["git"]
   }
 ]

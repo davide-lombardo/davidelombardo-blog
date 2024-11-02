@@ -99,22 +99,42 @@ To install all extensions bring up the Extensions view by clicking on the Extens
 - **SVG Preview** - renders previews of SVG files directly in the editor.
 
 ### **Configuration**
+
+How to open VsCode settings.json? -> COMMAND + , Then scroll to Extensions -> Edit in settings.json & Replace with below code. 
+
 ```javascript
-  {
-    "styleActiveLine": true,
-    "themes.theme": "new-moon",
-    "brackets-indent-guides.enabled": true,
-    "useTabChar": true,
-    "spaceUnits": 2,
-    "tabSize": 2,
-    "closeTags": {
-        "whenOpening": false,
-        "whenClosing": true,
-        "indentTags": []
+{
+    "window.zoomLevel": 1,
+    "editor.tabSize": 2,
+    "css.lint.important": "warning",
+    "scss.lint.important": "warning",
+    "editor.cursorBlinking": "phase",
+    "markdown.preview.scrollEditorWithPreview": true,
+    "markdown.preview.scrollPreviewWithEditor": true,
+    "workbench.startupEditor": "none",
+    "workbench.sideBar.location": "right",
+    "workbench.colorTheme": "Monokai Pro",
+    "workbench.iconTheme": "Monokai Pro Icons",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "fonts.fontSize": "14.5px",
-    "fonts.fontFamily": "'Menlo', monospace"
-  }
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+}
 ```
 
 ## **CSS Preprocessor**
@@ -133,7 +153,7 @@ A preprocessor is a program that takes a bit of code and compiles it into a diff
 > A base stylesheet used as a starting point for designing a website.
 > 
 
-### **I use: Tailwind**
+### **I use: [Tailwind](https://tailwindcss.com/)**
 
 **Other Options:** [Bootstrap](http://getbootstrap.com/), [Foundation](http://foundation.zurb.com/)
 
