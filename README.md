@@ -4,11 +4,7 @@
 
 ![Logo](src/assets/images/lazy.svg)
 
-My personal blog running on Angular and Firebase.
-
-## Disclaimer
-
-Currently, all posts are written using ChatGPT to mock content. I plan to write tech articles soon!
+My personal blog running on Angular and Firebase
 
 ## Live Demo
 
