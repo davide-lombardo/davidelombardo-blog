@@ -8,7 +8,6 @@ tags: "git"
 
 **Table of Contents**
 
-- Introduction
 - Getting set up
 - Windows setup
 - Hello World
@@ -22,22 +21,16 @@ tags: "git"
 - Opening the project in your IDE
 - Reinstalling dependencies
 - Working with Git
-- Lil’ tricks
-- Cycling and toggling commands
-- Clearing the termi
+- Tricks
+- Cycling commands
+- Clearing the terminal
 - Switching to a GUI file explorer
 - Chaining commands
-- The journey continues
-
-
+- Conclusion
 
 Modern front-end frameworks like React, Angular, and Vue rely heavily on the terminal. If you're not comfortable with command line interfaces, you'll struggle to run a local development server or build your application!
 
-Unless you have a Computer Science background, or grew up using a computer in the 80s, you probably won't have very much terminal experience. And yet, most online resources assume that you're already proficient!
-
-It takes years of practice to become a terminal guru, **but here's the good news:** we can take a shortcut. We don't really need to know 98% of the stuff you can do with a terminal. If we focus on the most-important critical fundamentals, we should be able to become comfortable with the command line in a remarkably short amount of time. ✨
-
-**That's what this blog post is all about.** It's the missing manual of terminal fundamentals needed to work with modern JS frameworks, so you can move onto the fun stuff: building user interfaces!
+It takes years of practice to become a terminal expert, but we can take a shortcut. We don't really need to know 98% of the stuff you can do with a terminal. If we focus on the most-important critical fundamentals, we should be able to become comfortable with the command line in a short amount of time. ✨
 
 I'll also share all of my favourite *tips and tricks* for getting the most out of the terminal, the stuff I wish someone had shown me when I was first getting started.
 
@@ -49,11 +42,10 @@ First, we need some terminal software. This is the application that runs the com
 
 Just about every operating system will come with a built-in terminal, like MacOS' Terminal.app, or Windows' Command Prompt. These applications work, but they're pretty underwhelming. Most developers opt to use something else.
 
-The choice of terminal application isn't *super* important, as long as you're using something modern. That said, I have two main recommendations:
+The choice of terminal application isn't *super* important, as long as you're using something modern. That said, I have three main recommendations:
 
-TODO // insert personal choice
-1. [Hyper](https://hyper.is/). Hyper is a modern, multi-platform terminal application. It's beautiful, and comes with some handy modern features, like the ability to split into multiple panes.
-2. [Windows Terminal ](https://apps.microsoft.com/detail/9n0dx20hk701?hl=it-it&gl=IT)
+1. [Hyper](https://hyper.is/) is a modern, multi-platform terminal application. It's beautiful, and comes with some handy modern features, like the ability to split into multiple panes.
+2. [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?hl=it-it&gl=IT) is a feature-rich terminal application for Windows, designed to enhance the command-line experience for users working with various shells, such as PowerShell, Command Prompt, and Windows Subsystem for Linux (WSL).
 3. If you use VS Code as your code editor, VS Code comes with a powerful, modern terminal built in. This is nice, since it means your code and terminal can run side-by-side in the same application. You can pop open the terminal in VS Code by selecting View → Terminal.
 
 I'll be using Hyper for all the examples in this blog post.
@@ -104,15 +96,6 @@ When we press “enter”, the command is immediately executed, and our value is
 
 And just like that, you've run your first terminal command!
 
-**Skip the “$”!**
-When reading installation instructions for an NPM package, you'll often see things like this:
-
-`$ npm install some-package`
-If you try and run this entire bit of text, you'll get an error. This is because the dollar sign (`$`) isn't meant to be included. You're meant to type everything *after* the dollar sign.
-Why would the installation instructions include a random symbol that isn't actually part of the command!? Well, in the Bash shell language, `$` is the "prompt character", shown at the end of the prompt.
-It's essentially a symbol that says "Hey, this stuff over here is meant to be run in the terminal!"
-Even though `$` isn't actually used as the prompt character in many modern shell languages like Zsh, the symbolism lives on, like how the “save” icon is a floppy disk () even though we haven't used floppy disks in decades.
-
 ## Navigation
 
 The main purpose of a terminal is to enable you to move around the file system and open/run things. It's essentially a text-based version of the GUI file explorers we use every day (eg. Finder, Windows Explorer).
@@ -135,11 +118,7 @@ We can move around the file system with the `cd` (“Change Directory”) comm
 
 ![Screenshot](./assets/posts/the-front-end-developer-guide-to-the-terminal/cd.png)
 
-This is equivalent to double-clicking the “stuff” directory in a GUI file explorer.
-
-Notice that the prompt changes from the tilde character (~) to “stuff”. In the Zsh shell language, the default prompt consists of an arrow and the name of the current directory, like “→ Documents”.
-But wait, why was it a tilde character before, instead of the name of the parent directory? On MacOS and Linux, the tilde character is shorthand for the user's home directory. On my machine, “~” is equivalent to “/Users/YOUR_USERNAME”.
-It's very easy to mistakenly assume that “~” is a prompt character, like “$” is in Bash.
+This is equivalent to double-clicking the test directory in a GUI file explorer.
 
 What if I want to go up one level, back to the home directory? I can use the `cd` command for this as well, with two dots (`..`).
 
@@ -218,21 +197,11 @@ Let's look at one more example. the `ls` command we saw earlier is commonly ca
 - The `a` flag, "all", which'll include hidden files and directories.
     
     
-
 This changes the output considerably:
 
-IMG
+![Screenshot](./assets/posts/the-front-end-developer-guide-to-the-terminal/lsla.png)
 
 There's a lot of noise here, including the ridiculously-obfuscated permission glyphs. But some of the metadata, like the dates that show when a file was last updated, can be useful!
-
-**The manual**
-In order to learn more about commands, you can use the `man` command (short for “manual”) to pull up the built-in documentation for it:
-I'll warn you now, the `man` documentation is dense and often hard to parse. But it can still be useful to learn what flags are available for certain commands.
-In some cases, the file will open in your default text editor, but often it'll open “in-terminal”, as shown in this image. This uses a program known as `less`.
-To scroll the document in `less`, use the up/down arrow keys. On modern versions of MacOS, you can also use the mousewheel to scroll, though this may lead to buggy behaviour on other platforms.
-When you're finished, press `q` to quit. It should restore the typical terminal view.
-
-IMG
 
 ## Interrupting commands
 
@@ -242,7 +211,7 @@ For example, open your terminal application and try running the following comman
 
 The `ping` command will check the latency against a given IP address. It's useful for checking whether a given server is online or not. `8.8.8.8` is the IP address for Google's DNS server.
 
-IMG
+![Screenshot](./assets/posts/the-front-end-developer-guide-to-the-terminal/ping.png)
 
 Unlike the commands we've seen so far, `ping` is a long-running process. It never stops; by default, it'll keep pinging Google's DNS server until the end of time.
 
@@ -348,7 +317,7 @@ A full command-line Git tutorial is well beyond the scope of this blog post, but
 #​ Start an interactive rebase$ git rebase -i [branch name or commit hash]
 ```
 
-## Lil’ tricks
+## Tricks
 
 Over the years, I've picked up some nifty little terminal tips. They aren't *critical*, but they help improve the developer experience of using the terminal.
 
@@ -405,7 +374,7 @@ The `npm install` command typically takes a few minutes. I don't have the atte
 
 We can solve this problem using *chaining*. Here's how it works:
 
-IMG
+![Screenshot](./assets/posts/the-front-end-developer-guide-to-the-terminal/chaining.png)
 
 The `&&` operator allows us to chain multiple commands together. The first command will be executed, `npm install`. The moment it finishes, the second command will be run automatically.
 

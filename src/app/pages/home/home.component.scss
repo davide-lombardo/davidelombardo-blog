@@ -34,7 +34,7 @@ p.hero-description {
   color: $color-blue-light-medium;
   font-weight: 500;
 
-  a {
+  .hero-link {
     text-decoration: none;
 
     &:hover {

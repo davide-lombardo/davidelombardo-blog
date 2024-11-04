@@ -16,7 +16,15 @@
       }
 
       a {
-        @include styled-link($color-primary-light);
+        color: $color-blue-light-medium;
+        box-shadow: 0 1.5px 0 $color-primary-light;
+        transition: all 0.3s ease-in-out;
+      
+        &:hover,
+        &:active {
+          box-shadow: 0 0 0 transparent;
+          text-decoration: none;
+        }
       }
     }
   }

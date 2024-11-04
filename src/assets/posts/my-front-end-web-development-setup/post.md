@@ -13,7 +13,7 @@ infoPanel: {
 }
 ---
 
-## **Contents**
+**Table of Contents**
 
 - Operating System
 - Browser
