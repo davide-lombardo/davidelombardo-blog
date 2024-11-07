@@ -22,7 +22,7 @@ export class AppComponent {
       title: 'Davide Lombardo\'s Blog',
       subtitle: 'A Journey in Front-End Development and Life',
       tags: ['Angular', 'Web Development', 'Personal Blog'],
-      image: '/assets/images/sloth-hero.png',
+      image: '/assets/images/sloth-logo.png',
     });
   }
 }

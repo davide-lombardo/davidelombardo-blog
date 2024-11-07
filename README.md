@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT) 
 
-![Logo](src/assets/images/lazy.svg)
+<img src="src/assets/images/sloth-logo.svg" alt="Logo" width="100" height="auto">
 
 My personal blog running on Angular and Firebase.
 
@@ -32,13 +32,10 @@ Check out the live version of the blog [here](https://davidelombardo-blog.web.ap
 - **Fast Post Writing**: Insert new posts using Marked-it and Gray-matter for quick content creation.
 - **SEO Optimization**: Using SSG to prerender routes for improved SEO and performance.
 
-## Screenshot
-
-![Screenshot](src/assets/images/screenshot.png)
-
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.8.
 
