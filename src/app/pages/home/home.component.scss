@@ -92,10 +92,20 @@ p.hero-description {
 }
 
 .hero-image {
+  animation: rotateOnce 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1;
   max-width: 100px;
 
   @media screen and (min-width: $breakpoint-small) {
     width: 200px;
     max-width: 100%;
+  }
+}
+
+@keyframes rotateOnce {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
