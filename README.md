@@ -8,7 +8,7 @@ My personal blog running on Angular and Firebase
 
 ## Live Demo
 
-Check out the live version of the blog [here](https://davidelombardo-blog.web.app/).
+Check out the live version of the blog [here](https://davelombardo.me).
 
 ## Technologies Used
 
