@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, shareReplay, tap } from 'rxjs';
 import { Repository } from '../pages/projects/project.model';
 
 @Injectable({
@@ -13,17 +13,25 @@ export class RepositoryService {
 
   getRepositories(includePinned: boolean = false, pinnedRepoConfig: string[] = []): Observable<Repository[]> {
     return this.http.get<Repository[]>(this.baseUrl).pipe(
-      map(repos => this.filterPinnedRepos(repos, includePinned, pinnedRepoConfig))
+      map(repos => this.filterRepos(repos, includePinned, pinnedRepoConfig)),
+      shareReplay(1)
     );
   }
 
-  private filterPinnedRepos(repos: Repository[], includePinned: boolean, pinnedRepoConfig: string[]) {
-    return repos
-      .filter(repo => !repo.fork)
-      .map(repo => ({
-        ...repo,
-        pinned: includePinned ? pinnedRepoConfig.includes(repo.id.toString()) : false,
-      }))
-      .filter(repo => !includePinned || repo.pinned); // Only include pinned repos if configured to do so
+  private filterRepos(repos: Repository[], includePinned: boolean, pinnedRepoConfig: string[]): Repository[] {
+    // Filter out forked repositories
+    const nonForkedRepos = repos.filter(repo => !repo.fork);
+    
+    // Find repos that should be pinned
+    const pinnedRepos = nonForkedRepos.filter(repo => {
+      const isIncluded = pinnedRepoConfig.includes(repo.id.toString());
+      return isIncluded;
+    });
+    
+    if (includePinned) {
+      return pinnedRepos;
+    }
+    
+    return nonForkedRepos;
   }
 }

@@ -39,15 +39,16 @@ export class HomeComponent implements OnInit, OnDestroy {
   notes: Post[] = [];
 
   pinnedRepoConfig = [
-    '401067811',
-    '440639684',
-    '463276952',
+    '886964977',
+    '876375090',
+    '930545595',
   ];
 
   constructor(
     private postService: PostService,
-    private repositoryService: RepositoryService
+    private repositoryService: RepositoryService,
   ) {}
+
 
   ngOnInit() {
     this.loadPosts(true);
@@ -72,9 +73,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadPinnedProjects(includePinned: boolean): void {
-    this.repositoryService.getRepositories(includePinned, this.pinnedRepoConfig).subscribe({
-      next: data => this.projectsList = data,
-      error: error => console.error('Error loading projects:', error),
-    });
+    this.repositoryService.getRepositories(includePinned, this.pinnedRepoConfig)
+      .pipe(
+        takeUntil(this.destroy$)
+      )
+      .subscribe({
+        next: data => this.projectsList = data,
+        error: error => console.error('Error loading projects:', error),
+      });
   }
 }
