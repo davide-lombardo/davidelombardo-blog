@@ -7,3 +7,5 @@
 /posts/change-detection-made-simple
 /posts/my-front-end-web-development-setup
 /posts/the-front-end-developer-guide-to-the-terminal
+/posts/design-for-developers
+/posts/basic-accessibility-fixes-for-frontend-developers

@@ -16,5 +16,17 @@
     "title": "The Frontend Developer Guide To The Terminal",
     "date": "2024-11-02",
     "tags": ["git"]
+  },
+  {
+    "slug": "basic-accessibility-fixes-for-frontend-developers",
+    "title": "Accessibility for Developers",
+    "date": "2025-03-02",
+    "tags": ["accessibility"]
+  },
+  {
+    "slug": "design-for-developers",
+    "title": "Design for Developers",
+    "date": "2025-01-27",
+    "tags": ["design"]
   }
 ]
