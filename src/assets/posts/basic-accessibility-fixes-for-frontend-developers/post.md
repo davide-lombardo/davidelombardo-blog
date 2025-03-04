@@ -1,16 +1,18 @@
 ---
-title: "Basic Accessibility Fixes for Frontend Developers"
-subtitle: "Simple solutions for common problems"
+title: 'Basic Accessibility Fixes for Frontend Developers'
+subtitle: 'Simple solutions for common problems'
 date: 2025-03-02
-slug: "basic-accessibility-fixes-for-frontend-developers"
-tags: "accessibility"
-infoPanel: {
-  title: 'Intended audience',
-  description: [
-    'This article is written for frontend developers who are new to accessibility concepts.',
-    'No prior accessibility knowledge is needed – just basic HTML, CSS, and JavaScript skills.'
-  ]
-}
+slug: 'basic-accessibility-fixes-for-frontend-developers'
+tags: 'accessibility'
+infoPanel:
+  {
+    title: 'Intended audience',
+    description:
+      [
+        'This article is written for frontend developers who are new to accessibility concepts.',
+        'No prior accessibility knowledge is needed – just basic HTML, CSS, and JavaScript skills.',
+      ],
+  }
 ---
 
 Ever clicked on a button that didn't respond? Or tried navigating a website with your keyboard only to get stuck? These frustrating experiences are even worse for people with disabilities.
@@ -31,6 +33,7 @@ You might be thinking, "My app works fine, why bother?" Here's why it matters:
 Web accessibility means building websites that people with disabilities can use. This includes those with visual, motor, hearing, or cognitive impairments.
 
 Think of accessibility like a ramp into a building. While it's essential for wheelchair users, it also helps people with strollers, delivery workers, and others. Similarly, web accessibility helps everyone, including:
+
 - People using mobile devices
 - Older users
 - People with temporary limitations (like a broken arm)
@@ -40,7 +43,7 @@ Think of accessibility like a ramp into a building. While it's essential for whe
 
 Accessibility is built on four main principles, known as POUR:
 
-1. **Perceivable**: Can all users perceive your content through available senses?
+1. **Perceivable**: Can all users perceive your content through available senses (e.g. sight, sound, or touch)?
 2. **Operable**: Can all users operate and navigate your interface?
 3. **Understandable**: Can all users understand your content and interface?
 4. **Robust**: Will your content work with various assistive technologies?
@@ -53,13 +56,13 @@ Let's look at some simple fixes for each area.
 
 ```html
 <!-- Bad -->
-<img src="logo.png">
+<img src="logo.png" />
 
 <!-- Good -->
-<img src="logo.png" alt="Company Logo">
+<img src="logo.png" alt="Company Logo" />
 
 <!-- Best for decorative images -->
-<img src="decorative-line.png" alt="">
+<img src="decorative-line.png" alt="" />
 ```
 
 Alt text is like a caption for images. Screen readers read this text aloud to describe what's in the image. If the image is purely decorative, use empty alt text (`alt=""`) so screen readers will skip it.
@@ -67,6 +70,7 @@ Alt text is like a caption for images. Screen readers read this text aloud to de
 ### Color contrast: Make text readable
 
 Low contrast text is hard to read for everyone, especially those with visual impairments. The minimum contrast ratio should be:
+
 - 4.5:1 for normal text
 - 3:1 for large text (18pt or 14pt bold)
 
@@ -77,6 +81,7 @@ Use a contrast checker tool to verify your colors. Don't rely on color alone to 
 ### Keyboard navigation: Make everything accessible without a mouse
 
 Many users navigate with keyboards only. Test your site by unplugging your mouse and trying to:
+
 - Access all interactive elements using Tab
 - Activate buttons and links with Enter
 - Operate dropdowns with arrow keys
@@ -114,16 +119,16 @@ Small click targets are hard for people with motor control issues. Buttons and l
 
 ```html
 <!-- Bad -->
-<input type="text" placeholder="Enter your name">
+<input type="text" placeholder="Enter your name" />
 
 <!-- Good -->
 <label for="name">Name</label>
-<input id="name" type="text">
+<input id="name" type="text" />
 
 <!-- Also good (for compact designs) -->
 <label>
   Name
-  <input type="text">
+  <input type="text" />
 </label>
 ```
 
@@ -135,15 +140,16 @@ Labels are crucial for screen reader users. Placeholders aren't enough because t
 // Bad
 function validateForm() {
   if (!isValid) {
-    errorElement.textContent = "Invalid input!";
+    errorElement.textContent = 'Invalid input!';
   }
 }
 
 // Good
 function validateForm() {
   if (!isValid) {
-    errorElement.textContent = "Please enter a valid email address (example@domain.com)";
-    errorElement.setAttribute("role", "alert");
+    errorElement.textContent =
+      'Please enter a valid email address (example@domain.com)';
+    errorElement.setAttribute('role', 'alert');
   }
 }
 ```
@@ -166,22 +172,92 @@ Semantic HTML gives browsers and assistive technologies important information ab
 
 Think of it like this: a `<div>` is like a blank canvas – it has no meaning. A `<button>` comes with keyboard support, focus management, and screen reader announcements built-in.
 
-### ARIA: Use it as a last resort
+## ARIA: Use it as a last resort
 
-ARIA (Accessible Rich Internet Applications) attributes can enhance accessibility when HTML alone isn't enough:
+ARIA (Accessible Rich Internet Applications) attributes can enhance accessibility when HTML alone isn't enough, it's like the user manual for custom components that native HTML can’t fully explain.
+
+But remember the first rule of ARIA: "No ARIA is better than bad ARIA." Use native HTML elements whenever possible, and add ARIA only when necessary.
+
+## Common ARIA Attributes:
+
+- `aria-label`: Provides a text label for elements without visible text.
+- `aria-live`: Announces dynamic content changes to the user.
+- `aria-hidden`: Hides elements from screen readers.
+- `aria-labelledby/aria-describedby`: Adds extra context by linking elements together.
+
+Modals are a common example where native HTML might fall short. Here’s how ARIA helps:
+
 
 ```html
-<!-- Example: Custom dropdown -->
-<div role="combobox" aria-expanded="false" aria-controls="dropdown-list">
-  Select an option
+<!-- Accessible modal dialog using ARIA -->
+<div role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <h2 id="modal-title">Modal Title</h2>
+  <p>This is a modal dialog.</p>
+  <button onclick="closeModal()">Close</button>
 </div>
-<ul id="dropdown-list" role="listbox" hidden>
-  <li role="option">Option 1</li>
-  <li role="option">Option 2</li>
+```
+
+1. **ARIA Roles**  
+   The `role` attribute informs assistive technologies about the type of element being used. Think of it as a way to tell assistive technologies what kind of element they’re dealing with, so they can handle it appropriately.
+
+   - **Widget Roles**: These describe interactive elements.
+     - `role="button"` (for a custom button)
+     - `role="checkbox"` (for custom checkboxes)
+     - `role="slider"` (for a custom slider)
+
+   - **Live Region Roles**: These describe content that updates dynamically.
+     - `role="alert"` (for important notifications)
+     - `role="status"` (for less urgent updates)
+     - `role="log"` (for a stream of messages)
+
+```html
+<div
+  role="dialog"
+  aria-labelledby="dialog-title"
+  aria-describedby="dialog-description"
+>
+  <h2 id="dialog-title">Sign up for our newsletter</h2>
+  <p id="dialog-description">Enter your details below:</p>
+  <!-- form contents -->
+</div>
+```
+
+2. **ARIA Landmark Roles**  
+   Landmark roles provide a quick way to identify significant sections of a page, enabling users to navigate more easily. These are vital for people using screen readers.
+
+   - `role="navigation"`: For primary navigation areas.
+   - `role="main"`: For the main content.
+   - `role="complementary"`: For secondary content like sidebars.
+   - `role="banner"`: For the header area of the site.
+   - `role="contentinfo"`: For footer content.
+
+3. **ARIA States and Properties**  
+   ARIA states and properties give additional context to ARIA roles. They describe the current state or behavior of an element and are particularly useful for elements like form controls, sliders, and modals.
+
+   - `aria-expanded`: Tells if an element is expanded or collapsed (e.g., accordion or dropdown).
+   - `aria-selected`: Indicates if an item in a list is selected.
+   - `aria-checked`: Indicates if a checkbox or radio button is checked.
+   - `aria-disabled`: Indicates that the element is not interactive.
+   - `aria-live`: Used to make dynamic content announcements, such as live updates or notifications.
+
+Example of aria-expanded:
+
+```html
+<!-- Accessible modal dialog using ARIA -->
+<button aria-expanded="false" aria-controls="menu">Menu</button>
+<ul id="menu" role="menu">
+  <li role="menuitem">Home</li>
+  <li role="menuitem">About</li>
+  <li role="menuitem">Contact</li>
 </ul>
 ```
 
-But remember the first rule of ARIA: "No ARIA is better than bad ARIA." Use native HTML elements whenever possible, and add ARIA only when necessary.
+### Common Accessibility Pitfalls:
+
+- Removing focus outlines without providing a replacement can leave keyboard users stranded.
+- Don’t use aria-hidden="true" on focusable elements.
+- Avoid overcomplicating your code with unnecessary ARIA roles.
+- Avoid using multiple ARIA attributes that send mixed signals. For example, don’t use both aria-label and a visible label that say the same thing.
 
 ## Testing Your Fixes
 
@@ -207,7 +283,7 @@ If you're short on time, focus on these high-impact fixes:
 
 Think of accessibility like performance optimization – it's easier to build it in from the start than retrofit it later.
 
-## Conclusion
+## Wrapping Up
 
 Making your websites accessible doesn't have to be complicated. These small changes make a huge difference for many users and improve the experience for everyone. Start with these basics, and you'll be well on your way to creating more inclusive websites.
 
