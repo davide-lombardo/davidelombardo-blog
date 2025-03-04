@@ -3,8 +3,12 @@
 @import '../styles/typography';
 @import '../styles/variables';
 
-@import "prismjs/themes/prism-okaidia.css";
 @import "prismjs/plugins/toolbar/prism-toolbar.css";
+@import 'prism-themes/themes/prism-dracula.css';
+
+
+
+
 
 /* Reset */
 *,
@@ -273,4 +277,11 @@ h5 {
 ::-webkit-scrollbar-thumb {
   background: $scrollbar-color;
   border-radius: 2px;
+}
+
+pre[class*="language-"] {
+  position: relative;
+  margin: 15px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
