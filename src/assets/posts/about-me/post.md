@@ -9,7 +9,7 @@ I've been a frontend developer since 2021, but my journey with technology began 
 
 Welcome to my slice of the web! This is where I share my ideas, projects, tutorials, and everything I’m passionate about. Feel free to explore the technical articles I've put together and check out my projects page to see what I’ve been working on.
 
-My site is completely free of ads, affiliate links, tracking, or sponsored content. I built this space as a way to express myself and share what I’ve learned along the way. Hopefully, it inspires you to create your own online space too.
+I built this space as a way to express myself and share what I’ve learned along the way. Hopefully, it inspires you to create your own online space too.
 
 
 ## Contact
