@@ -9,6 +9,7 @@ import { Repository } from '../projects/project.model';
 import { PostService } from '../../services/post.service';
 import { RepositoryService } from '../../services/repository.service';
 import { Subject, takeUntil } from 'rxjs';
+import { ProjectSkeletonComponent } from '../../components/skeleton/project-skeleton.component';
 
 export type HomeData = {
   posts: string[];
@@ -24,6 +25,7 @@ export type HomeData = {
     PostListComponent,
     RouterLink,
     DatePipe,
+    ProjectSkeletonComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -32,6 +34,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject();
   
   projectsList: Repository[] = [];
+
+  isLoading = false;
+  skeletonArray = new Array(3);
 
   posts: Post[] = [];
   notes: Post[] = [];
@@ -71,13 +76,20 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadPinnedProjects(includePinned: boolean): void {
+    this.isLoading = true;
     this.repositoryService.getRepositories(includePinned, this.pinnedRepoConfig)
       .pipe(
         takeUntil(this.destroy$)
       )
       .subscribe({
-        next: data => this.projectsList = data,
-        error: error => console.error('Error loading projects:', error),
+        next: data => {
+          this.projectsList = data;
+          this.isLoading = false;
+        },
+        error: error => {
+          console.error('Error loading projects:', error);
+          this.isLoading = false;
+        },
       });
   }
 }
