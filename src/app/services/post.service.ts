@@ -3,13 +3,11 @@ import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Post, PostMetadata } from '../models/post.model';
 import matter from 'gray-matter-browser';
-import MarkdownIt from 'markdown-it';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  private markdown = new MarkdownIt();
 
   constructor(private http: HttpClient) {}
 
@@ -21,7 +19,8 @@ export class PostService {
       .get(`assets/posts/${slug}/post.md`, { responseType: 'text' })
       .pipe(
         map((markdownFile: string) => {
-          const matterObj = matter(markdownFile);
+          const matterResult = matter(markdownFile);
+          
           const {
             title = '',
             subtitle = '',
@@ -29,10 +28,12 @@ export class PostService {
             tags = '',
             comments_off = false,
             infoPanel,
-          } = matterObj.data;
-
-          const tagsArray = tags.split(',').map((tag: string) => tag.trim());
-
+          } = matterResult.data;
+          
+          const tagsArray = typeof tags === 'string' 
+            ? tags.split(',').map((tag: string) => tag.trim())
+            : [];
+            
           const postMeta: PostMetadata = {
             title,
             subtitle,
@@ -42,9 +43,7 @@ export class PostService {
             infoPanel,
           };
 
-          const content = this.markdown.render(matterObj.content);
-
-          return { content, metadata: postMeta };
+          return { content: matterResult.content, metadata: postMeta };
         })
       );
   }

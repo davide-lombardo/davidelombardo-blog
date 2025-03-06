@@ -2,20 +2,25 @@
   <app-hero [title]="postMeta.title"></app-hero>
 
   @if (postMeta.infoPanel) {
-    <app-info-panel [title]="postMeta.infoPanel.title" [description]="postMeta.infoPanel.description"></app-info-panel>
+  <app-info-panel
+    [title]="postMeta.infoPanel.title"
+    [description]="postMeta.infoPanel.description"
+  ></app-info-panel>
   }
 
-  <article class="article__content" [innerHTML]="content"></article>
-  
+  <article class="article__content">
+    <markdown clipboard [data]="content"></markdown>
+  </article>
+
   @if (!postMeta.comments_off) {
-    <app-blog-sidebar
-      [date]="postMeta.date"
-      [tags]="postMeta.tags"
-    ></app-blog-sidebar>
-    
-    <section id="comments" class="segment">
-      <h3>Comments</h3>
-      <app-comments />
-    </section>
+  <app-blog-sidebar
+    [date]="postMeta.date"
+    [tags]="postMeta.tags"
+  ></app-blog-sidebar>
+
+  <section id="comments" class="segment">
+    <h3>Comments</h3>
+    <app-comments />
+  </section>
   }
 </app-container>

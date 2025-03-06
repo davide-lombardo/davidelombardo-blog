@@ -1,25 +1,25 @@
 import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
+import { ActivatedRoute } from '@angular/router';
+import { Subject, takeUntil } from 'rxjs';
 import { BlogSidebarComponent } from "../../components/blog-sidebar/blog-sidebar.component";
 import { CommentsComponent } from "../../components/comments/comments.component";
 import { ContainerComponent } from "../../components/container/container.component";
-import { Title } from '@angular/platform-browser';
 import { HeroComponent } from "../../components/hero/hero.component";
-import { PrismService } from '../../services/prism.service';
-import { PostService } from '../../services/post.service';
+import { InfoPanelComponent } from "../../components/info-panel/info-panel.component";
 import { PostMetadata } from '../../models/post.model';
 import { MetaService } from '../../services/meta.service';
-import { ActivatedRoute } from '@angular/router';
-import { Subject, takeUntil } from 'rxjs';
-import { InfoPanelComponent } from "../../components/info-panel/info-panel.component";
+import { PostService } from '../../services/post.service';
+import { MarkdownModule } from 'ngx-markdown';
 
 @Component({
   selector: 'app-post-detail',
   standalone: true,
-  imports: [BlogSidebarComponent, CommentsComponent, ContainerComponent, HeroComponent, InfoPanelComponent],
+  imports: [BlogSidebarComponent, CommentsComponent, ContainerComponent, HeroComponent, InfoPanelComponent, MarkdownModule],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss'
 })
-export class PostDetailComponent implements OnInit, AfterViewChecked, OnDestroy {
+export class PostDetailComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject();
 
   postSlug = '';
@@ -38,7 +38,6 @@ export class PostDetailComponent implements OnInit, AfterViewChecked, OnDestroy 
   constructor(
     private titleService: Title, 
     private route: ActivatedRoute,
-    private prismService: PrismService,
     private postService: PostService,
     private metaService: MetaService,
   ) {}
@@ -50,14 +49,6 @@ export class PostDetailComponent implements OnInit, AfterViewChecked, OnDestroy 
       this.postSlug = params.get('postSlug') || '';
       this.getDetail()
     });
-  }
-
-
-  ngAfterViewChecked() {
-    if (!this.highlighted && this.content) {
-      this.prismService.highlightAll()
-      this.highlighted = true
-    }
   }
 
   ngOnDestroy(): void {
