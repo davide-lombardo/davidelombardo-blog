@@ -17,6 +17,6 @@ export class NavigationComponent {
   mainNavItems: NavItem[] = [
     { url: '/posts', label: 'articles' },
     { url: '/projects', label: 'projects' },
-    { url: '/posts/about-me', label: 'about me' },
+    { url: '/about-me', label: 'about me' },
   ];
 }

@@ -6,11 +6,17 @@ import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TagsComponent } from './pages/tags/tags.component';
 import { TagComponent } from './pages/tag/tag.component';
+import { AboutMeComponent } from './pages/about-me/about-me.component';
 
 export const routes: Routes = [
   { 
     path: '', 
     component: HomeComponent,
+  },
+  { 
+    path: 'about-me', 
+    component: AboutMeComponent,
+    title: 'About Me - Davide Lombardo Blog'
   },
   { 
     path: 'projects', 

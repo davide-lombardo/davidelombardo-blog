@@ -1,0 +1,154 @@
+<app-container>
+  <app-hero
+    [title]="'About me'"
+    [description]="'Discover my journey, skills, and experiences in the world of web development.'"
+  ></app-hero>
+
+  <!-- About me -->
+  <section class="segment">
+    <div class="project-preview">
+      <div class="profile">
+        <p>
+          I've been a <span class="accent-word">frontend developer</span> since 2021, but my journey with
+          technology began long before that. I really enjoy creating user
+          interfaces and continuously expanding my knowledge. When I'm not coding,
+          you’ll likely find me playing guitar, reading a great book, or
+          watching movies.
+        </p>
+
+        <p>
+          Welcome to my slice of the web! This is where I share my ideas,
+          projects, tutorials, and everything I’m passionate about. Feel free to
+          explore the technical articles I've put together and check out my
+          projects page to see what I’ve been working on.
+        </p>
+
+        <p>
+          I built this space as a way to <span class="accent-word">express myself</span> and share what I’ve
+          learned along the way. Hopefully, it inspires you to create your own
+          online space too.
+        </p>
+
+        <p>
+          Connect with me on <a href="https://www.linkedin.com/in/lombardo-davide/" target="_blank">LinkedIn</a> and check out my projects on <a href="https://github.com/davide-lombardo" target="_blank">GitHub</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience Skills -->
+  <section class="segment">
+    <div class="project-preview">
+      <div>
+        <h3>Professional Skills</h3>
+        <div class="skills-grid">
+          @for (skill of workExperienceSkills; track skill) {
+          <div class="skill-card">
+            <img
+              class="skill-icon"
+              [src]="skill.icon"
+              alt="{{ skill.name }} icon"
+            />
+            <span class="skill-name">{{ skill.name }}</span>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- General Knowledge Skills -->
+  <section class="segment">
+    <div class="project-preview">
+      <div>
+        <h3>General Knowledge</h3>
+        <div class="skills-grid">
+          @for (skill of generalKnowledge; track skill) {
+          <div class="skill-card">
+            <img
+              class="skill-icon"
+              [src]="skill.icon"
+              alt="{{ skill.name }} icon"
+            />
+            <span class="skill-name">{{ skill.name }}</span>
+          </div>
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work Experience -->
+  <section class="segment">
+    <div class="project-preview">
+      <div class="card single">
+        <h2 class="card-custom-title">Work Experience</h2>
+        @for (job of workExperience; track job) {
+        <div class="accordion-item">
+          <button
+            class="accordion-header"
+            (click)="toggleAccordion(job)"
+            [ngClass]="{ 'no-bottom-radius': job.expanded }"
+          >
+            <span class="header-text">
+              {{ job.title }} - {{ job.company }} ({{ job.startDate }} -
+              {{ job.endDate }})
+            </span>
+            <span
+              class="icon"
+              [@rotateIcon]="job.expanded ? 'expanded' : 'collapsed'"
+            >
+              +
+            </span>
+          </button>
+          <div
+            class="accordion-content"
+            [@accordionContent]="job.expanded ? 'expanded' : 'collapsed'"
+          >
+            <ul class="accordion-content-text">
+              @for (desc of job.description; track desc) {
+              <li>{{ desc }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section class="segment">
+    <div class="project-preview">
+      <div class="card single">
+        <h2 class="card-custom-title">Education</h2>
+        @for (edu of education; track edu) {
+          <div class="accordion-item">
+            <button
+              class="accordion-header"
+              (click)="toggleAccordion(edu)"
+              [ngClass]="{ 'no-bottom-radius': edu.expanded }"
+            >
+              <span class="header-text">
+                {{ edu.degree }} ({{ edu.startYear }} - {{ edu.endYear }})
+              </span>
+              <span
+                class="icon"
+                [@rotateIcon]="edu.expanded ? 'expanded' : 'collapsed'"
+              >
+                +
+              </span>
+            </button>
+  
+            <div
+              class="accordion-content"
+              [@accordionContent]="edu.expanded ? 'expanded' : 'collapsed'"
+            >
+              <p class="accordion-content-text">{{ edu.details }}</p>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+</app-container>
