@@ -5,7 +5,7 @@
   ></app-hero>
 
   <!-- About me -->
-  <section class="segment">
+  <section class="segment large">
     <div class="project-preview">
       <div class="profile">
         <p>
@@ -37,7 +37,7 @@
   </section>
 
   <!-- Work Experience Skills -->
-  <section class="segment">
+  <section class="segment large">
     <div class="project-preview">
       <div>
         <h3>Professional Skills</h3>
@@ -58,7 +58,7 @@
   </section>
 
   <!-- General Knowledge Skills -->
-  <section class="segment">
+  <section class="segment large">
     <div class="project-preview">
       <div>
         <h3>General Knowledge</h3>
@@ -79,7 +79,7 @@
   </section>
 
   <!-- Work Experience -->
-  <section class="segment">
+  <section class="segment large">
     <div class="project-preview">
       <div class="card single">
         <h2 class="card-custom-title">Work Experience</h2>
@@ -90,8 +90,8 @@
             (click)="toggleAccordion(job)"
             [ngClass]="{ 'no-bottom-radius': job.expanded }"
           >
-            <span class="header-text">
-              {{ job.title }} - {{ job.company }} ({{ job.startDate }} -
+            <span class="header-text" title="{{ job.company }} - {{ job.title }} ({{ job.startDate }} - {{ job.endDate }})">
+              {{ job.company }} - {{ job.title }} ({{ job.startDate }} -
               {{ job.endDate }})
             </span>
             <span
@@ -118,7 +118,7 @@
   </section>
 
   <!-- Education -->
-  <section class="segment">
+  <section class="segment large">
     <div class="project-preview">
       <div class="card single">
         <h2 class="card-custom-title">Education</h2>
@@ -129,7 +129,7 @@
               (click)="toggleAccordion(edu)"
               [ngClass]="{ 'no-bottom-radius': edu.expanded }"
             >
-              <span class="header-text">
+              <span class="header-text" title="{{ edu.degree }} ({{ edu.startYear }} - {{ edu.endYear }})">
                 {{ edu.degree }} ({{ edu.startYear }} - {{ edu.endYear }})
               </span>
               <span
