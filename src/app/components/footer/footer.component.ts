@@ -15,7 +15,7 @@ export class FooterComponent {
 
   madeWithLinks = [
     { url: 'https://sass-lang.com/', label: 'Sass', icon: 'assets/images/sass.svg' },
-    { url: 'https://angular.dev/', label: 'Angular', icon: 'assets/images/angular.svg' },
+    { url: 'https://angular.dev/', label: 'Angular', icon: 'assets/images/angular-icon.svg' },
     { url: 'https://firebase.google.com/', label: 'Firebase', icon: 'assets/images/firebase.svg' },
   ];
 }
