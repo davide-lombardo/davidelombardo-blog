@@ -92,7 +92,7 @@ export class AboutMeComponent {
     { name: 'TypeScript', icon: 'assets/images/typescript-icon.svg' },
     { name: 'JavaScript', icon: 'assets/images/javascript.svg' },
     { name: 'Bash', icon: 'assets/images/bash-icon.svg' },
-    { name: 'Angular', icon: 'assets/images/angular.svg' },
+    { name: 'Angular', icon: 'assets/images/angular-icon.svg' },
     { name: 'Redux', icon: 'assets/images/redux.svg' },
     { name: 'Ngrx', icon: 'assets/images/ngrx.svg' },
     { name: 'RxJs', icon: 'assets/images/reactivex.svg' },
