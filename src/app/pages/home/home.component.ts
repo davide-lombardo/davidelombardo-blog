@@ -43,7 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   pinnedRepoConfig = [
     '886964977',
-    '876375090',
+    '949538935',
     '930545595',
   ];
 
