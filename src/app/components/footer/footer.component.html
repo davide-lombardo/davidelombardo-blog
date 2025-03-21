@@ -1,6 +1,15 @@
 <footer class="footer">
   <section>
-    <img src="assets/images/sloth-logo.svg" class="logo" alt="footer logo" title="footer logo" />
+    <img
+      [src]="
+        (isDarkTheme$ | async)
+          ? 'assets/images/sloth-logo.svg'
+          : 'assets/images/sloth-logo-light-theme.svg'
+      "
+      class="logo"
+      alt="footer logo"
+      title="footer logo"
+    />
     <!-- <nav>
       @for (link of links; track link.label) {
         <a
@@ -15,17 +24,17 @@
     </nav> -->
     <nav>
       @for (link of madeWithLinks; track link.label) {
-        <a
-          [href]="link.url"
-          title="{{ link.label }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          [attr.key]="link.url"
-          class="button small"
-        >
-          <img [src]="link.icon" alt="" />
-          <span>{{ link.label }}</span>
-        </a>
+      <a
+        [href]="link.url"
+        title="{{ link.label }}"
+        target="_blank"
+        rel="noopener noreferrer"
+        [attr.key]="link.url"
+        class="button small"
+      >
+        <img [src]="link.icon" alt="" />
+        <span>{{ link.label }}</span>
+      </a>
       }
     </nav>
   </section>

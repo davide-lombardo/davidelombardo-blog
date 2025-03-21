@@ -3,7 +3,7 @@ $color-gray-0: #f9f9f9;
 $color-gray-05: #f6f6f6;
 $color-gray-1: #eee;
 $color-gray-2: #e6e6e6;
-$color-gray-3: #ccc;
+$color-gray-3: #cccccc;
 $color-gray-4: #bbb;
 $color-gray-5: #999;
 $color-gray-6: #575757;
@@ -49,9 +49,12 @@ $color-primary-light: $color-green-light;
 $color-primary-dark: $color-green-medium;
 $color-primary-muted: $color-indigo-muted;
 
+$color-primary-light-theme: $color-indigo;
+$color-primary-light-theme-dark: $color-indigo-dark;
+
 /* Borders */
 $border-color: $color-blue-light;
-$border-color-hover: $color-primary-dark;
+$border-color-hover: var(--color-primary-dark);
 $border-radius: 12px;
 
 /* Background colors */
@@ -65,40 +68,10 @@ $scrollbar-color: $color-blue-light;
 $scrollbar-track: $color-blue-medium;
 
 
-/* Box Shadow */
-$shadow-color-hex: $color-blue-dark;
-
-$shadow-elevation-low: 
-  0.4px 0.5px 0.7px rgba($shadow-color-hex, 0.33),
-  0.7px 0.8px 1.2px -1.2px rgba($shadow-color-hex, 0.33),
-  1.6px 1.8px 2.7px -2.5px rgba($shadow-color-hex, 0.33);
-
-$shadow-elevation-medium: 
-  0.4px 0.5px 0.7px rgba($shadow-color-hex, 0.34),
-  1.3px 1.5px 2.2px -0.8px rgba($shadow-color-hex, 0.34),
-  3.4px 3.8px 5.7px -1.7px rgba($shadow-color-hex, 0.34),
-  8.1px 9.2px 13.8px -2.5px rgba($shadow-color-hex, 0.34);
-
-$shadow-elevation-high: 
-  0.4px 0.5px 0.7px rgba($shadow-color-hex, 0.36),
-  2.6px 3px 4.5px -0.4px rgba($shadow-color-hex, 0.36),
-  5.1px 5.8px 8.7px -0.8px rgba($shadow-color-hex, 0.36),
-  9px 10.2px 15.3px -1.2px rgba($shadow-color-hex, 0.36),
-  15.3px 17.3px 26px -1.7px rgba($shadow-color-hex, 0.36),
-  25.2px 28.4px 42.7px -2.1px rgba($shadow-color-hex, 0.36),
-  39.7px 44.8px 67.3px -2.5px rgba($shadow-color-hex, 0.36);
-
-/* Font colors */
-$font-color-base: $color-gray-1;
-$font-color-muted: $color-blue-light-medium;
-$font-color-heading: $color-blue-very-light;
-$font-color-bright: $color-gray-1;
-
 /* Button colors */
 $button-border-color: $color-gray-4;
-$button-border-color-hover: $color-gray-5;
+// var(--border-color): $color-gray-5;
 $button-background-color: $color-blue-light;
-$button-font-color: $color-primary;
 
 /* Sizs */
 $content-width: 860px;
@@ -112,3 +85,66 @@ $breakpoint-medium: 900px;
 $breakpoint-medium-lg: 1024px;
 $breakpoint-large: 1200px;
 $breakpoint-xlarge: 1600px;
+
+
+:root {
+  // Dark theme (default)
+  --color-primary: #{$color-primary-light};
+  --color-primary-dark: #{$color-primary-dark};
+  --background-color: #{$color-blue-medium};
+  --shadow-color: #{$color-blue-dark};
+  --shadow-color-rgb: 15, 23, 42; // RGB values for $color-blue-dark
+  --font-color-base: #{$color-blue-very-light};
+  --font-color-muted: #{$color-blue-light-medium};
+  --font-color-heading: #{$color-blue-very-light};
+  --card-background-color-rgb: 71, 85, 105; // RGB values for $color-blue-light
+  --card-background-color: rgba(var(--card-background-color-rgb), 0.5);
+  --border-color: #{$color-blue-light};
+  --button-background-color: #{$color-blue-light};
+  --icon-color: #{$color-orange};
+  --icon-hover-color: #{darken($color-orange, 10%)};
+  --color-link: #{$color-primary};
+  --color-link-hover: #{$color-primary-dark};
+
+  
+  // Shadow definitions using CSS variables
+  --shadow-low:
+    0.4px 0.5px 0.7px rgba(var(--shadow-color-rgb), 0.33),
+    0.7px 0.8px 1.2px -1.2px rgba(var(--shadow-color-rgb), 0.33),
+    1.6px 1.8px 2.7px -2.5px rgba(var(--shadow-color-rgb), 0.33);
+
+  --shadow-medium:
+    0.4px 0.5px 0.7px rgba(var(--shadow-color-rgb), 0.34),
+    1.3px 1.5px 2.2px -0.8px rgba(var(--shadow-color-rgb), 0.34),
+    3.4px 3.8px 5.7px -1.7px rgba(var(--shadow-color-rgb), 0.34),
+    8.1px 9.2px 13.8px -2.5px rgba(var(--shadow-color-rgb), 0.34);
+
+  --shadow-high:
+    0.4px 0.5px 0.7px rgba(var(--shadow-color-rgb), 0.36),
+    2.6px 3px 4.5px -0.4px rgba(var(--shadow-color-rgb), 0.36),
+    5.1px 5.8px 8.7px -0.8px rgba(var(--shadow-color-rgb), 0.36),
+    9px 10.2px 15.3px -1.2px rgba(var(--shadow-color-rgb), 0.36),
+    15.3px 17.3px 26px -1.7px rgba(var(--shadow-color-rgb), 0.36),
+    25.2px 28.4px 42.7px -2.1px rgba(var(--shadow-color-rgb), 0.36),
+    39.7px 44.8px 67.3px -2.5px rgba(var(--shadow-color-rgb), 0.36);
+
+  // Light theme
+  &[data-theme='light'] {
+    --color-primary: #{$color-primary-light-theme};
+    --color-primary-dark: #{$color-primary-light-theme-dark};
+    --background-color: #{$color-gray-0};
+    --shadow-color: #{$color-gray-4};
+    --shadow-color-rgb: 187, 187, 187; // RGB values for $color-gray-4
+    --font-color-base: #{$color-gray-8};
+    --font-color-muted: #{$color-gray-6};
+    --font-color-heading: #{$color-gray-9};
+    --card-background-color-rgb: 238, 238, 238; // RGB values for $color-gray-1
+    --card-background-color: rgba(var(--card-background-color-rgb), 0.5);
+    --border-color: #{$color-gray-3};
+    --button-background-color: #{$color-gray-2};
+    --icon-color: #{$color-primary-light-theme};
+    --icon-hover-color: #{$color-primary-light-theme-dark};
+    --color-link: #{$color-primary-light-theme};
+    --color-link-hover: #{$color-primary-light-theme-dark};
+  }
+}

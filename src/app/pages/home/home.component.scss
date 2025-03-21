@@ -31,14 +31,14 @@ p.hero-description {
   margin: 1rem 0;
   font-size: 1.1rem;
   line-height: 1.6;
-  color: $color-blue-light-medium;
+  color: var(--font-color-muted);
   font-weight: 500;
 
   .hero-link {
     text-decoration: none;
 
     &:hover {
-      color: $color-primary-dark;
+      color: var(--color-primary-dark);
       text-decoration: underline 2px;
     }
   }

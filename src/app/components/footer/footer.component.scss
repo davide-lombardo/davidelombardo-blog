@@ -43,10 +43,10 @@
 }
 
 .footer a.button {
-  color: $color-blue-very-light;
+  color: var(--font-color-base);
 }
 
 .footer a.button:hover {
-  color: $font-color-bright;
+  color: var(--font-color-base);
   text-decoration: none;
 }

@@ -1,4 +1,5 @@
 @import '../../../styles/variables';
+@import '../../../styles/mixins';
 
 .info-panel {
   position: relative;
@@ -12,8 +13,8 @@
   padding-left: calc(3rem - 3px);
   border-left: 3px solid transparent;
   border-radius: 0 4px 4px 0;
-  background: $color-blue-light;
-  box-shadow: $shadow-elevation-medium;
+  background: var(--button-background-color);
+  @include shadow-medium();
 
   &__icon {
     position: absolute;
@@ -26,11 +27,11 @@
     transform: translateX(-3px);
 
     .icon-fill {
-      fill: $background-color;
+      fill: var(--background-color);
     }
 
     .icon-fill-secondary {
-      fill: $color-primary;
+      fill: var(--color-primary);
     }
   }
 
@@ -40,7 +41,7 @@
     left: 0;
     transform: translate(calc(-50% - 1.5px), -50%);
     padding: 8px;
-    color: $color-primary;
+    color: var(--color-primary);
   }
   
   &__left-border {
@@ -48,21 +49,21 @@
     border-radius: 0 0 100px 100px;
     margin-top: -1px;
     width: 3px;
-    background-color: $color-primary;
+    background-color: var(--color-primary);
   }
   
   &__title {
     font-size: 1.5em;
     font-weight: bold;
     margin-bottom: 8px;
-    color: $color-blue-very-light;
+    color: var(--font-color-base);
   }
   
   &__description {
     display: grid;
     
     p {
-      color: $color-blue-very-light;
+      color: var(--font-color-base);
       margin: 0;
       font-size: 1rem;
       

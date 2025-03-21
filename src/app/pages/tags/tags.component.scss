@@ -7,7 +7,7 @@
   gap: 1rem;
   margin-bottom: 1.5rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid $border-color !important;
+  border-bottom: 1px solid var(--border-color) !important;
 }
 
 .alphabetical-tags:last-child {
@@ -17,7 +17,7 @@
 .alphabetical-tags h3 {
   width: 30px;
   margin: 0;
-  color: $color-primary;
+  color: var(--color-primary);
 }
 
 .tags,
@@ -34,13 +34,13 @@ a.tag {
   border: 1px solid $button-border-color;
   border-radius: $border-radius;
   color: $color-gray-8;
-  background: $button-background-color !important;
+  background: var(--button-background-color) !important;
   text-decoration: none !important;
 }
 
 a.tag:hover {
-  color: $font-color-bright;
-  border-color: $button-border-color-hover;
+  color: var(--font-color-base);
+  border-color: var(--border-color);
   text-decoration: none;
 }
 

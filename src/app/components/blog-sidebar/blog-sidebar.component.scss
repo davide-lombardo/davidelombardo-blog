@@ -3,8 +3,8 @@
 @import '../../../styles/mixins';
 
 .post-sidebar-card {
-  background: rgba($card-background-color, 0.5);
-  box-shadow: $shadow-elevation-medium;
+  background: var(--card-background-color);
+  @include shadow-medium();
   padding: 1rem;
   border-radius: $border-radius;
   margin: 1.5rem 0;
@@ -23,7 +23,7 @@
 .post-sidebar p,
 .post-sidebar ul {
   font-size: 1rem;
-  color: $font-color-muted
+  color: var(--font-color-muted)
 }
 
 .post-sidebar p:last-child {
@@ -53,14 +53,14 @@ a.tag {
   font-weight: 400;
   padding: 0.2rem 0.5rem;
   border-radius: $border-radius;
-  color: $color-primary-dark;
-  background: $button-background-color;
+  color: var(--color-primary-dark);
+  background: var(--button-background-color);
   text-decoration: none;
 }
 
 a.tag:hover {
-  color: $font-color-bright;
-  border-color: $button-border-color-hover;
+  color: var(--font-color-base);
+  border-color: var(--border-color);
   text-decoration: none;
 }
 

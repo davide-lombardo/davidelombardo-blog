@@ -8,8 +8,9 @@ import { HeroComponent } from '../../components/hero/hero.component';
 import { Repository } from '../projects/project.model';
 import { PostService } from '../../services/post.service';
 import { RepositoryService } from '../../services/repository.service';
-import { Subject, takeUntil } from 'rxjs';
+import { Observable, Subject, takeUntil } from 'rxjs';
 import { ProjectSkeletonComponent } from '../../components/skeleton/project-skeleton.component';
+import { ThemeService } from '../../services/theme.service';
 
 export type HomeData = {
   posts: string[];
@@ -25,6 +26,7 @@ export type HomeData = {
     PostListComponent,
     RouterLink,
     DatePipe,
+    AsyncPipe,
     ProjectSkeletonComponent
   ],
   templateUrl: './home.component.html',
@@ -32,7 +34,8 @@ export type HomeData = {
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject();
-  
+  isDarkTheme$: Observable<boolean>;
+
   projectsList: Repository[] = [];
 
   isLoading = false;
@@ -50,7 +53,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private postService: PostService,
     private repositoryService: RepositoryService,
-  ) {}
+    private themeService: ThemeService
+  ) {
+    this.isDarkTheme$ = this.themeService.isDarkTheme$
+  }
+
+
 
 
   ngOnInit() {

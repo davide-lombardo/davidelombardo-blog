@@ -3,7 +3,7 @@
 
 button,
 a.button {
-  background: rgba($card-background-color, 0.5);
+  background: var(--card-background-color);
   display: inline-flex;
   align-items: center;
   padding: 0.6rem 1rem;
@@ -13,7 +13,7 @@ a.button {
   font-size: 0.9rem;
   cursor: pointer;
   font-weight: 500;
-  color: $button-font-color;
+  color: var(--color-primary);
   gap: 0.25rem;
   white-space: nowrap;
   transition: transform 0.2s ease-in-out;
@@ -42,7 +42,7 @@ a.button img {
 
 button.primary,
 a.button.primary {
-  border-color: $color-primary;
+  border-color: var(--color-primary);
   font-weight: 700;
 }
 
@@ -53,8 +53,8 @@ a.button.primary:hover {
 
 button:hover,
 a.button:hover {
-  color: $font-color-bright;
-  border-color: $button-border-color-hover;
+  color: var(--font-color-base);
+  border-color: var(--border-color);
 }
 
 button:active,

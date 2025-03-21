@@ -12,18 +12,18 @@
       ul,
       ol,
       li {
-        color: $color-blue-light-medium;
+        color: var(--font-color-muted);
       }
 
       a {
-        color: $color-blue-light-medium;
+        color: var(--font-color-muted);
         font-weight: bold;
         text-decoration: underline;
         transition: all 0.3s ease-in-out;
       
         &:hover,
         &:active {
-          color: $color-primary-dark;
+          color: var(--color-primary-dark);
         }
       }
     }

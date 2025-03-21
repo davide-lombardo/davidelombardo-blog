@@ -2,6 +2,7 @@
 
 @import '../styles/typography';
 @import '../styles/variables';
+@import '../styles/mixins';
 
 /* Reset */
 *,
@@ -24,7 +25,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  background: $background-color;
+  background: var(--background-color);
 }
 
 main {
@@ -41,17 +42,17 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* Links */
 a {
-  color: $color-link;
+  color: var(--color-link);
   text-decoration: none;
 
   &:hover {
-    color: $color-link-hover;
+    color: var(--color-link-hover);
   }
 }
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid $color-primary;
+  outline: 2px solid var(--color-primary);
 }
 
 p,
@@ -60,7 +61,7 @@ ol,
 ul,
 table {
   font-size: 1rem;
-  color: $font-color-base;
+  color: var(--font-color-base);
 }
 
 @media screen and (min-width: $breakpoint-small) {
@@ -103,7 +104,7 @@ li {
 li::marker {
   font-size: 1.1rem;
   line-height: 1;
-  color: $color-primary;
+  color: var(--color-primary);
 }
 
 main {
@@ -135,19 +136,19 @@ time {
 
 /* Blockquote */
 blockquote strong {
-  text-decoration-color: $color-primary-dark;
+  text-decoration-color: var(--color-primary-dark);
 }
 
 blockquote {
   background: $color-blue-light;
   border-radius: $border-radius;
-  box-shadow: $shadow-elevation-low;
+  @include shadow-low();
   margin: 2rem 0;
   padding: 1.5rem;
 }
 
 blockquote  p {
-  color: $color-blue-very-light !important;
+  color: var(--font-color-base) !important;
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 400;
@@ -173,7 +174,7 @@ h2,
 h3,
 h4,
 h5 {
-  color: $font-color-heading;
+  color: var(--font-color-heading);
   line-height: 1.1;
   margin-top: 0;
   margin-bottom: 1.5rem;
@@ -198,9 +199,8 @@ h2 {
   margin: 0 0 1rem;
   font-weight: 700;
   padding-bottom: 0.4rem;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--border-color);
   font-family: $font-family-nav;
-  color: $font-color-heading;
 }
 
 h2 code {
@@ -246,11 +246,11 @@ h4 code {
   text-transform: uppercase;
   font-weight: 700;
   padding-bottom: 0.5rem;
-  border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid var(--border-color);
 }
 
 h5 {
-  color: $font-color-base;
+  color: var(--font-color-base);
   margin-bottom: 1rem;
   font-size: 1.1rem;
   font-weight: 700;
@@ -258,7 +258,7 @@ h5 {
 
 ::selection {
   background-color: $color-blue-dark-medium;
-  color: $color-blue-very-light;
+  color: var(--font-color-base);
 }
 
 ::-webkit-scrollbar {
