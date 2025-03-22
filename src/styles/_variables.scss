@@ -21,25 +21,16 @@ $color-blue-light: #475569;
 $color-blue-light-medium: #94A3B8;
 $color-blue-very-light: #E2E8F0;
 
-/* Green shades */
-$color-teal: #4DC0C5;
-$color-green-medium: #2DD4BF;
-$color-green-light: #5EEAD4;
-$color-green: #5eddac;
-
 /* Misc colors */
 $color-orange: #ff7e22;
 $color-yellow: #fca62a;
 $color-light-yellow: #F6EB61;;
-$color-pink: #f57ad0;
-$color-lavender: #a180f9;
-$color-violet: #ff75f8;
-$color-blue: #59abf7;
-$color-purple: #673ece;
 $color-indigo: #4e5dff;
 $color-indigo-dark: #431dee;
 $color-indigo-light: #a6aaff;
 $color-indigo-muted: #f1f2fd;
+$color-green-medium: #2DD4BF;
+$color-green-light: #5EEAD4;
 $color-category-link: #dd4eb2;
 $color-highlight: $color-yellow;
 
@@ -67,16 +58,12 @@ $color-link-hover: $color-green-medium;
 $scrollbar-color: $color-blue-light;
 $scrollbar-track: $color-blue-medium;
 
-
 /* Button colors */
 $button-border-color: $color-gray-4;
-// var(--border-color): $color-gray-5;
 $button-background-color: $color-blue-light;
 
 /* Sizs */
 $content-width: 860px;
-$content-width--small: 560px;
-$content-width--medium: 700px;
 $navbar-height-small: 60px;
 
 /* Breakpoints */
@@ -85,7 +72,6 @@ $breakpoint-medium: 900px;
 $breakpoint-medium-lg: 1024px;
 $breakpoint-large: 1200px;
 $breakpoint-xlarge: 1600px;
-
 
 :root {
   // Dark theme (default)
@@ -105,7 +91,6 @@ $breakpoint-xlarge: 1600px;
   --icon-hover-color: #{darken($color-orange, 10%)};
   --color-link: #{$color-primary};
   --color-link-hover: #{$color-primary-dark};
-
   
   // Shadow definitions using CSS variables
   --shadow-low:

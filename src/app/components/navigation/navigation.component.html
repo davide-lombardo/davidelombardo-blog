@@ -3,7 +3,7 @@
     <a routerLink="/" class="header__brand">
       <img
         [src]="
-          (isDarkTheme$ | async)
+          isDarkTheme()
             ? 'assets/images/sloth-logo.svg'
             : 'assets/images/sloth-logo-light-theme.svg'
         "
@@ -27,14 +27,14 @@
         (click)="toggleTheme()"
         class="theme-toggle"
         [attr.aria-label]="
-          (isDarkTheme$ | async)
+          isDarkTheme()
             ? 'Switch to light theme'
             : 'Switch to dark theme'
         "
       >
         <span
           class="theme-toggle__icon"
-          [innerHTML]="(isDarkTheme$ | async) ? sunIcon : moonIcon"
+          [innerHTML]="isDarkTheme() ? sunIcon : moonIcon"
         ></span>
       </button>
     </nav>

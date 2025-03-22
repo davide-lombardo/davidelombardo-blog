@@ -13,7 +13,7 @@
     <div class="decoration">
       <img
         [src]="
-          (isDarkTheme$ | async)
+          isDarkTheme()
             ? 'assets/images/sloth-logo.svg'
             : 'assets/images/sloth-logo-light-theme.svg'
         "

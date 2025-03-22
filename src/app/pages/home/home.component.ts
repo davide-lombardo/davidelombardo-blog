@@ -1,14 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Signal } from '@angular/core';
 import { Post } from '../../models/post.model';
 import { HeadingComponent } from '../../components/heading/heading.component';
 import { PostListComponent } from '../../components/post-list/post-list.component';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { AsyncPipe, DatePipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { DatePipe } from '@angular/common';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { Repository } from '../projects/project.model';
 import { PostService } from '../../services/post.service';
 import { RepositoryService } from '../../services/repository.service';
-import { Observable, Subject, takeUntil } from 'rxjs';
+import { Subject, takeUntil } from 'rxjs';
 import { ProjectSkeletonComponent } from '../../components/skeleton/project-skeleton.component';
 import { ThemeService } from '../../services/theme.service';
 
@@ -26,7 +26,6 @@ export type HomeData = {
     PostListComponent,
     RouterLink,
     DatePipe,
-    AsyncPipe,
     ProjectSkeletonComponent
   ],
   templateUrl: './home.component.html',
@@ -34,7 +33,7 @@ export type HomeData = {
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject();
-  isDarkTheme$: Observable<boolean>;
+  isDarkTheme: Signal<boolean>;
 
   projectsList: Repository[] = [];
 
@@ -55,11 +54,8 @@ export class HomeComponent implements OnInit, OnDestroy {
     private repositoryService: RepositoryService,
     private themeService: ThemeService
   ) {
-    this.isDarkTheme$ = this.themeService.isDarkTheme$
+    this.isDarkTheme = this.themeService.isDarkTheme$
   }
-
-
-
 
   ngOnInit() {
     this.loadPosts(true);

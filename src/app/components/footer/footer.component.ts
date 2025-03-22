@@ -1,20 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
-import { Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [AsyncPipe],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-  isDarkTheme$: Observable<boolean>;
+  isDarkTheme: Signal<boolean>;
 
   constructor(private themeService: ThemeService) {
-    this.isDarkTheme$ = this.themeService.isDarkTheme$;
+    this.isDarkTheme = this.themeService.isDarkTheme$;
   }
 
   links = [

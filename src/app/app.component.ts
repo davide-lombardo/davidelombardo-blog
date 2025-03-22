@@ -1,11 +1,9 @@
-import { Component, Inject, OnDestroy, OnInit, PLATFORM_ID } from '@angular/core';
+import { Component, effect, Inject, PLATFORM_ID, Signal } from '@angular/core';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RouterOutlet } from '@angular/router';
-import { Meta, Title } from '@angular/platform-browser';
 import { MetaService } from './services/meta.service';
 import { ThemeService } from './services/theme.service';
 import { isPlatformBrowser } from '@angular/common';
-import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -14,28 +12,21 @@ import { Subject, takeUntil } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit, OnDestroy {
-  isDarkTheme = true;
-  private destroy$ = new Subject<void>();
+export class AppComponent {
+  isDarkTheme: Signal<boolean>;
 
   constructor(
     private metaService: MetaService, 
     private themeService: ThemeService,
     @Inject(PLATFORM_ID) private platformId: Object
   ) {
-    this.setDefaultMetaTags();
-  }
+    this.isDarkTheme = this.themeService.isDarkTheme$;
 
-  ngOnInit() {
+    this.setDefaultMetaTags();
     this.setTheme();
   }
 
-  ngOnDestroy() {
-    this.destroy$.next();
-    this.destroy$.complete();
-  }
-
-  setDefaultMetaTags() {
+  private setDefaultMetaTags() {
     this.metaService.updateMetaTags({
       title: 'Davide Lombardo\'s Blog',
       subtitle: 'A Journey in Front-End Development and Life',
@@ -44,14 +35,14 @@ export class AppComponent implements OnInit, OnDestroy {
     });
   }
 
-  setTheme() {
-    this.themeService.isDarkTheme$
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(isDark => {
-        this.isDarkTheme = isDark;
-        if (isPlatformBrowser(this.platformId)) {
-          document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
-        }
-      });
+  private setTheme() {
+    effect(() => {
+      if (isPlatformBrowser(this.platformId)) {
+        document.documentElement.setAttribute(
+          'data-theme', 
+          this.isDarkTheme() ? 'dark' : 'light'
+        );
+      }
+    });
   }
 }

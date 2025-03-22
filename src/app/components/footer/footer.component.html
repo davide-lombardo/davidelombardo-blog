@@ -2,7 +2,7 @@
   <section>
     <img
       [src]="
-        (isDarkTheme$ | async)
+        isDarkTheme()
           ? 'assets/images/sloth-logo.svg'
           : 'assets/images/sloth-logo-light-theme.svg'
       "
@@ -10,18 +10,6 @@
       alt="footer logo"
       title="footer logo"
     />
-    <!-- <nav>
-      @for (link of links; track link.label) {
-        <a
-          [href]="link.url"
-          target="_blank"
-          rel="noopener noreferrer"
-          [attr.key]="link.url"
-        >
-          {{ link.label }}
-        </a>
-      }
-    </nav> -->
     <nav>
       @for (link of madeWithLinks; track link.label) {
       <a
