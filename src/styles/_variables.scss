@@ -91,6 +91,7 @@ $breakpoint-xlarge: 1600px;
   --icon-hover-color: #{darken($color-orange, 10%)};
   --color-link: #{$color-primary};
   --color-link-hover: #{$color-primary-dark};
+  --selection-color: #{$color-blue-dark-medium};
   
   // Shadow definitions using CSS variables
   --shadow-low:
@@ -131,5 +132,6 @@ $breakpoint-xlarge: 1600px;
     --icon-hover-color: #{$color-primary-light-theme-dark};
     --color-link: #{$color-primary-light-theme};
     --color-link-hover: #{$color-primary-light-theme-dark};
+    --selection-color: #{$color-gray-4};
   }
 }

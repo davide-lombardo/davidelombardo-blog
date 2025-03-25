@@ -257,7 +257,7 @@ h5 {
 }
 
 ::selection {
-  background-color: $color-blue-dark-medium;
+  background-color: var(--selection-color);
   color: var(--font-color-base);
 }
 
