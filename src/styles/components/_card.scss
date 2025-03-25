@@ -46,7 +46,7 @@
   margin: 0;
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--font-color-base);
+  color: var(--font-color-muted);
   font-family: $font-family-base;
 }
 
@@ -59,7 +59,7 @@
 }
 
 .card time {
-  color: var(--font-color-base);
+  color: var(--font-color-muted);
   margin-bottom: 0.3rem;
 }
 

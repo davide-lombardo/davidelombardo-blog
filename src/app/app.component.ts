@@ -1,9 +1,8 @@
-import { Component, effect, Inject, PLATFORM_ID, Signal } from '@angular/core';
+import { Component, Inject, PLATFORM_ID, Signal } from '@angular/core';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RouterOutlet } from '@angular/router';
 import { MetaService } from './services/meta.service';
 import { ThemeService } from './services/theme.service';
-import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +22,6 @@ export class AppComponent {
     this.isDarkTheme = this.themeService.isDarkTheme$;
 
     this.setDefaultMetaTags();
-    this.setTheme();
   }
 
   private setDefaultMetaTags() {
@@ -32,17 +30,6 @@ export class AppComponent {
       subtitle: 'A Journey in Front-End Development and Life',
       tags: ['Angular', 'Web Development', 'Personal Blog'],
       image: '/assets/images/sloth-logo.png',
-    });
-  }
-
-  private setTheme() {
-    effect(() => {
-      if (isPlatformBrowser(this.platformId)) {
-        document.documentElement.setAttribute(
-          'data-theme', 
-          this.isDarkTheme() ? 'dark' : 'light'
-        );
-      }
     });
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable, PLATFORM_ID, Inject, signal } from '@angular/core';
+import { Injectable, PLATFORM_ID, Inject, signal, effect } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -14,28 +14,36 @@ export class ThemeService {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
-   
+      // Initialize from localStorage or system preference
       const savedTheme = localStorage.getItem(this.THEME_KEY);
       if (savedTheme) {
         this.isDarkTheme.set(savedTheme === 'dark');
       } else {
-        // Fall back to system preference
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
         this.isDarkTheme.set(mediaQuery.matches);
         
+        // Listen for system theme changes
         mediaQuery.addEventListener('change', (e) => {
           if (!localStorage.getItem(this.THEME_KEY)) {
             this.isDarkTheme.set(e.matches);
           }
         });
       }
+
+      // Keep theme in sync
+      effect(() => {
+        document.documentElement.setAttribute(
+          'data-theme',
+          this.isDarkTheme() ? 'dark' : 'light'
+        );
+      });
     }
   }
 
   toggleTheme() {
-    const newTheme = !this.isDarkTheme();
-    this.isDarkTheme.set(newTheme);
     if (isPlatformBrowser(this.platformId)) {
+      const newTheme = !this.isDarkTheme();
+      this.isDarkTheme.set(newTheme);
       localStorage.setItem(this.THEME_KEY, newTheme ? 'dark' : 'light');
     }
   }

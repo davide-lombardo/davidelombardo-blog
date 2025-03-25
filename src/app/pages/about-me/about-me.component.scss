@@ -8,6 +8,7 @@
   @include shadow-medium();
 }
 
+
 .profile {
   p {
     color: var(--font-color-muted);
@@ -37,7 +38,7 @@
     border-bottom-right-radius: 0;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: $breakpoint-small) {
     font-size: 0.9rem;
     padding: 0.75rem; 
   }
@@ -48,6 +49,16 @@
     white-space: nowrap;
     text-overflow: ellipsis; 
     margin-right: 1rem; 
+
+    @media (max-width: $breakpoint-small) {
+      white-space: normal;
+      overflow: visible;
+      text-overflow: clip;
+      line-height: 1.4;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
   }
 
   .icon {
@@ -55,7 +66,7 @@
     font-size: 1.2rem;
     font-weight: bold;
 
-    @media (max-width: 600px) {
+    @media (max-width: $breakpoint-small) {
       font-size: 1rem;
     }
   }
@@ -65,18 +76,18 @@
   padding: 0 1rem;
   font-size: 1rem;
   background-color: var(--background-color);
-  // color: var(--shadow-color);
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
 
-  @media (max-width: 600px) {
+  @media (max-width: $breakpoint-small) {
     font-size: 0.9rem;
   }
 }
 
 .accordion-content-text {
-  color: var(--font-color-base);
+  color: var(--font-color-muted);
   padding-top: 1rem;
+  padding-left: 2rem;
 }
 
 .skills-grid {
@@ -104,7 +115,7 @@
   width: 40px;
   height: 40px;
 
-  @media (max-width: 600px) {
+  @media (max-width: $breakpoint-small) {
     width: 30px;
     height: 30px;
   }
@@ -114,7 +125,7 @@
   font-weight: bold;
   font-size: 1rem;
 
-  @media (max-width: 600px) {
+  @media (max-width: $breakpoint-small) {
     font-size: 0.9rem;
   }
 }
@@ -125,6 +136,7 @@
 
 .card-custom-title {
   margin-bottom: 1.5rem;
+  
   &:hover {
     color: var(--font-color-base);
     text-decoration: none;
