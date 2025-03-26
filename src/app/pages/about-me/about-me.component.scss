@@ -1,11 +1,7 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
-.profile {
-  p {
-    color: var(--font-color-muted);
-  }
-}
+.profile p { color: var(--font-color-muted); }
 
 .accordion-item {
   border-radius: $border-radius;
@@ -14,26 +10,16 @@
 }
 
 .accordion-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem;
   width: 100%;
   cursor: pointer;
   color: var(--font-color-base);
   font-size: 1.1rem;
   border: none;
-  border-bottom-left-radius: $border-radius;
-  border-bottom-right-radius: $border-radius;
-  transition: border-radius 0.3s ease;
 
   @media (max-width: $breakpoint-small) {
     font-size: 0.9rem;
     padding: 0.75rem; 
-  }
-
-  &:active {
-    transform: none;
   }
 
   &.no-bottom-radius {
@@ -43,10 +29,9 @@
 
   .header-text {
     flex-grow: 1;
-    overflow: hidden; 
+    overflow: hidden;
     white-space: nowrap;
-    text-overflow: ellipsis; 
-    margin-right: 1rem; 
+    text-overflow: ellipsis;
 
     @media (max-width: $breakpoint-small) {
       white-space: normal;
@@ -78,7 +63,6 @@
 
 .accordion-content {
   padding: 0 1rem;
-  font-size: 1rem;
   background-color: var(--background-color);
   border-bottom-left-radius: $border-radius;
   border-bottom-right-radius: $border-radius;
@@ -97,17 +81,14 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1.5rem;
-  padding: 1.5rem 0;
 }
 
 .skill-card {
   border-radius: $border-radius;
-  margin-bottom: 1rem;
   @include shadow-medium();
   background: var(--card-background-color);
   color: var(--font-color-base);
   padding: 0.75rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -121,15 +102,6 @@
   @media (max-width: $breakpoint-small) {
     width: 30px;
     height: 30px;
-  }
-}
-
-.skill-name {
-  font-weight: bold;
-  font-size: 1rem;
-
-  @media (max-width: $breakpoint-small) {
-    font-size: 0.9rem;
   }
 }
 
@@ -155,11 +127,9 @@
 
   .tag {
     font-size: 0.8rem;
-    font-weight: 400;
     padding: 0.2rem 0.5rem;
     border-radius: 12px;
     color: var(--color-primary-dark);
     background: var(--button-background-color);
-    text-decoration: none;
   }
 }
