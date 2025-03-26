@@ -12,7 +12,10 @@ export class RepositoryService {
   constructor(private http: HttpClient) {}
 
   getRepositories(includePinned: boolean = false, pinnedRepoConfig: string[] = []): Observable<Repository[]> {
-    return this.http.get<Repository[]>(this.baseUrl).pipe(
+    // sort by created date in descending order
+    const url = `${this.baseUrl}?per_page=100&sort=created&direction=desc`;
+
+    return this.http.get<Repository[]>(url).pipe(
       map(repos => this.filterRepos(repos, includePinned, pinnedRepoConfig)),
       shareReplay(1)
     );
