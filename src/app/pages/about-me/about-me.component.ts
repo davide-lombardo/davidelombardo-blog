@@ -61,6 +61,18 @@ export class AboutMeComponent {
       expanded: false,
       startDate: '2024',
       endDate: 'present',
+      tags: [
+        'TypeScript',
+        'JavaScript',
+        'Angular',
+        'RxJS',
+        'HTML5',
+        'CSS3',
+        'SCSS',
+        'React',
+        'Jenkins',
+        'Git',
+      ],
     },
     {
       title: 'Frontend Developer',
@@ -74,12 +86,25 @@ export class AboutMeComponent {
       expanded: false,
       startDate: '2022',
       endDate: '2024',
+      tags: [
+        'TypeScript',
+        'JavaScript',
+        'Angular',
+        'RxJS',
+        'NgRx',
+        'Redux',
+        'HTML5',
+        'CSS3',
+        'SCSS',
+        'React',
+        'Git',
+      ],
     },
   ];
 
   education = [
     {
-      degree: 'Start2impact - frontend student ',
+      degree: 'Start2impact - Frontend student ',
       details:
         'Completed 500+ hours frontend training program, applying my learning through real-world projects and receiving in-depth feedback from experienced mentors',
       expanded: false,
@@ -95,7 +120,7 @@ export class AboutMeComponent {
     { name: 'Angular', icon: 'assets/images/angular-icon.svg' },
     { name: 'Redux', icon: 'assets/images/redux.svg' },
     { name: 'Ngrx', icon: 'assets/images/ngrx.svg' },
-    { name: 'RxJs', icon: 'assets/images/reactivex.svg' },
+    { name: 'RxJS', icon: 'assets/images/reactivex.svg' },
     { name: 'React', icon: 'assets/images/react.svg' },
     { name: 'Git', icon: 'assets/images/git-icon.svg' },
     { name: 'HTML', icon: 'assets/images/html.svg' },
