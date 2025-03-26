@@ -56,7 +56,8 @@ export class AboutMeComponent {
       title: 'Frontend Developer',
       company: 'NTT Data',
       description: [
-        'Delivered 10+ reusable widgets for the design system of a major banking company, enhancing development efficiency for internal and external teams.'
+        'Delivered 10+ reusable widgets for the design system of a major banking company, enhancing development efficiency for internal and external teams.',
+        'Managed and triggered Jenkins pipelines to deploy web applications and modules across all environments, ensuring smooth and reliable releases.',
       ],
       expanded: false,
       startDate: '2024',
