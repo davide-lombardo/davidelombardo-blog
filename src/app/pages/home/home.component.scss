@@ -58,11 +58,12 @@ p.hero-description {
 }
 
 .decoration {
-  display: flex;
+  display: none;
   align-items: center;
   order: 1;
 
   @media screen and (min-width: $breakpoint-small) {
+    display: flex;
     order: 2;
     justify-content: flex-end;
   }
