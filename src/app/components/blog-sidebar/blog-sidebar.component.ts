@@ -2,12 +2,11 @@ import { DatePipe } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { slugify } from '../../utils/helper';
-import { CommentsComponent } from "../comments/comments.component";
 
 @Component({
   selector: 'app-blog-sidebar',
   standalone: true,
-  imports: [RouterLink, DatePipe, CommentsComponent],
+  imports: [RouterLink, DatePipe],
   templateUrl: './blog-sidebar.component.html',
   styleUrl: './blog-sidebar.component.scss'
 })

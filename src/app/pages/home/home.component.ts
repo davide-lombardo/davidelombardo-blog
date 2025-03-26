@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit, Signal } from '@angular/core';
-import { Post } from '../../models/post.model';
+import { PostMetadata } from '../../models/post.model';
 import { HeadingComponent } from '../../components/heading/heading.component';
 import { PostListComponent } from '../../components/post-list/post-list.component';
 import { RouterLink } from '@angular/router';
@@ -14,7 +14,6 @@ import { ThemeService } from '../../services/theme.service';
 
 export type HomeData = {
   posts: string[];
-  notes: string[];
 };
 
 @Component({
@@ -40,8 +39,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   isLoading = false;
   skeletonArray = new Array(3);
 
-  posts: Post[] = [];
-  notes: Post[] = [];
+  posts: PostMetadata[] = [];
 
   pinnedRepoConfig = [
     '886964977',

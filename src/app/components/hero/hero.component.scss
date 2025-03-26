@@ -14,7 +14,7 @@
     font-size: 1.1rem;
 
     &--highlight {
-      color: $color-category-link;
+      color: var(--color-primary);
     }
   }
 
@@ -46,7 +46,7 @@
   }
 
   &__link {
-    @include styled-link($color-indigo);
+    margin-top: 1rem;
   }
 }
 

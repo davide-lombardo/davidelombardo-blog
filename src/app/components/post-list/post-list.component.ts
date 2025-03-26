@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { PostComponent } from "../post/post.component";
-import { Post } from '../../models/post.model';
+import { PostMetadata } from '../../models/post.model';
 
 @Component({
   selector: 'app-post-list',
@@ -10,7 +10,7 @@ import { Post } from '../../models/post.model';
   styleUrl: './post-list.component.scss'
 })
 export class PostListComponent {
-  data = input.required<Post[] | null>(); 
+  data = input.required<PostMetadata[] | null>(); 
   showYears = input<boolean>(false); 
   prefix = input<string>(''); 
   query = input<string>();

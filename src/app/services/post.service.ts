@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
-import { Post, PostMetadata } from '../models/post.model';
+import { PostMetadata, PostDetail } from '../models/post.model';
 import matter from 'gray-matter-browser';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class PostService {
   // Method to fetch and process post markdown data
   getPostDetail(
     slug: string
-  ): Observable<{ content: string; metadata: PostMetadata }> {
+  ): Observable<{ content: string; metadata: PostDetail }> {
     return this.http
       .get(`assets/posts/${slug}/post.md`, { responseType: 'text' })
       .pipe(
@@ -34,7 +34,7 @@ export class PostService {
             ? tags.split(',').map((tag: string) => tag.trim())
             : [];
             
-          const postMeta: PostMetadata = {
+          const postMeta: PostDetail = {
             title,
             subtitle,
             date,
@@ -49,8 +49,8 @@ export class PostService {
   }
 
   // Fetch post metadata (for list view)
-  getPostMetadata(getLatest: boolean = false): Observable<Post[]> {
-    return this.http.get<Post[]>('assets/posts/post-metadata.json').pipe(
+  getPostMetadata(getLatest: boolean = false): Observable<PostMetadata[]> {
+    return this.http.get<PostMetadata[]>('assets/posts/post-metadata.json').pipe(
       map(posts => {
         const convertedPosts = posts.map(post => ({
           ...post,

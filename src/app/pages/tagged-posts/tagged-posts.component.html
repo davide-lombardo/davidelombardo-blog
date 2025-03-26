@@ -1,0 +1,17 @@
+<app-container>
+  <app-hero
+    [highlight]="postCount()"
+    [title]="'Posts tagged: ' + originalTagName()"
+    [subTitle]="' posts found'"
+  ></app-hero>
+
+  @if (taggedPosts().length > 0) {
+    <section>
+      <app-post-list
+        [data]="taggedPosts()"
+        [showYears]="true"
+        prefix="posts"
+      ></app-post-list>
+    </section>
+  }
+</app-container>

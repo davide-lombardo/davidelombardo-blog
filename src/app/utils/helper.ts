@@ -11,7 +11,10 @@ export function slugify(text: string): string {
     .replace(/-+$/, ''); // Trim - from end of text
 }
 
-export function appendComments(platformId: Object, isDarkTheme: boolean = true): void {
+export function appendComments(
+  platformId: Object,
+  isDarkTheme: boolean = true
+): void {
   if (!isPlatformBrowser(platformId)) return;
   if (!document) return;
 
@@ -43,7 +46,10 @@ export function appendComments(platformId: Object, isDarkTheme: boolean = true):
   commentScript.setAttribute('issue-term', 'pathname');
   commentScript.setAttribute('id', 'utterances');
   commentScript.setAttribute('crossorigin', 'anonymous');
-  commentScript.setAttribute('theme', isDarkTheme ? 'dark-blue' : 'github-light');
+  commentScript.setAttribute(
+    'theme',
+    isDarkTheme ? 'dark-blue' : 'github-light'
+  );
 
   commentDiv.appendChild(commentScript);
 }

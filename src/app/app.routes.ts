@@ -5,7 +5,7 @@ import { ArticlesComponent } from './pages/articles/articles.component';
 import { PostDetailComponent } from './pages/post-detail/post-detail.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { TagsComponent } from './pages/tags/tags.component';
-import { TagComponent } from './pages/tag/tag.component';
+import { TaggedPostsComponent } from './pages/tagged-posts/tagged-posts.component';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
 
 export const routes: Routes = [
@@ -39,7 +39,7 @@ export const routes: Routes = [
   },
   { 
     path: 'tags/:tagSlug', 
-    component: TagComponent 
+    component: TaggedPostsComponent 
   },
   { 
     path: '**', 

@@ -32,6 +32,7 @@
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
+    text-align: left;
 
     @media (max-width: $breakpoint-small) {
       white-space: normal;

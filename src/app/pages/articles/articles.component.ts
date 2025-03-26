@@ -1,17 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { DatePipe } from '@angular/common';
 import { HeroComponent } from "../../components/hero/hero.component";
 import { PostListComponent } from "../../components/post-list/post-list.component";
 import { ContainerComponent } from "../../components/container/container.component";
 import { PostService } from '../../services/post.service';
-import { Post } from '../../models/post.model';
+import { PostMetadata } from '../../models/post.model';
 import { Subject, takeUntil } from 'rxjs';
 
 @Component({
   selector: 'app-articles',
   standalone: true,
-  imports: [RouterLink, DatePipe, HeroComponent, PostListComponent, ContainerComponent],
+  imports: [HeroComponent, PostListComponent, ContainerComponent],
   templateUrl: './articles.component.html',
   styleUrl: './articles.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,7 +17,7 @@ import { Subject, takeUntil } from 'rxjs';
 export class ArticlesComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject();
   
-  posts = signal<Post[]>([])
+  posts = signal<PostMetadata[]>([])
   title = 'articles';
   description = 'guides, references, and tutorials on programming, web development, and design.';
 

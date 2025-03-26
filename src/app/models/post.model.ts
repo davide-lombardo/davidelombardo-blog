@@ -1,10 +1,11 @@
-export interface Post {
+export interface PostMetadata {
   slug: string;
   date: Date;
   title: string;
+  tags: string[];
 }
 
-export interface PostMetadata {
+export interface PostDetail {
   title: string;
   subtitle: string;
   date: string;

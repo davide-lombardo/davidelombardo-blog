@@ -1,6 +1,6 @@
 import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Post } from '../../models/post.model';
+import { PostMetadata } from '../../models/post.model';
 
 @Component({
   selector: 'app-post',
@@ -10,7 +10,7 @@ import { Post } from '../../models/post.model';
   styleUrl: './post.component.scss'
 })
 export class PostComponent {
-  node = input.required<Post>(); 
+  node = input.required<PostMetadata>(); 
   query = input<string>(); 
   prefix = input<string>(); 
   isLast = input<boolean>(); 
