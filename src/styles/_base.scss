@@ -140,7 +140,7 @@ blockquote strong {
 }
 
 blockquote {
-  background: $color-blue-light;
+  background: var(--button-background-color);
   border-radius: $border-radius;
   @include shadow-low();
   margin: 2rem 0;

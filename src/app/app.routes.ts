@@ -12,6 +12,7 @@ export const routes: Routes = [
   { 
     path: '', 
     component: HomeComponent,
+    title: 'Davide Lombardo Blog'
   },
   { 
     path: 'about-me', 
@@ -39,7 +40,8 @@ export const routes: Routes = [
   },
   { 
     path: 'tags/:tagSlug', 
-    component: TaggedPostsComponent 
+    component: TaggedPostsComponent, 
+    title: 'Tagged Posts - Davide Lombardo Blog'
   },
   { 
     path: '**', 
