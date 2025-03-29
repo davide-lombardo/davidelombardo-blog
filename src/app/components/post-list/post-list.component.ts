@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { PostComponent } from "../post/post.component";
 import { PostMetadata } from '../../models/post.model';
 
@@ -9,13 +9,13 @@ import { PostMetadata } from '../../models/post.model';
   templateUrl: './post-list.component.html',
   styleUrl: './post-list.component.scss'
 })
-export class PostListComponent {
+export class PostListComponent implements OnInit {
   data = input.required<PostMetadata[] | null>(); 
   showYears = input<boolean>(false); 
   prefix = input<string>(''); 
   query = input<string>();
 
-  postsByYear: { [key: string]: any[] } = {};
+  postsByYear: { [key: string]: PostMetadata[] } = {};
   years: string[] = [];
 
   ngOnInit(): void {

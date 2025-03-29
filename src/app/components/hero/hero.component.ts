@@ -15,6 +15,5 @@ export class HeroComponent {
   title = input<string>(); 
   description = input<string>(); 
   index = input<boolean>(); 
-  children = input<any>();
   hasLink = input<boolean>(false);
 }

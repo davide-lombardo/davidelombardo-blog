@@ -63,54 +63,14 @@
   margin-bottom: 0.3rem;
 }
 
-.card.muted {
-  border: 1px solid transparent;
-  padding: 0;
-  background: transparent;
-  align-items: center;
-}
-
-.card.muted {
-  height: 30px;
-  width: 30px;
-  max-height: 30px !important;
-  max-width: 30px !important;
-}
-
-.card.muted time {
-  display: none;
-  color: $color-gray-6;
-}
-
-.card.muted h2 {
-  margin: 0.25rem 0 1rem;
-}
-
 @media screen and (min-width: $breakpoint-small) {
   .card {
     padding: 1.5rem;
-  }
-
-  .card.muted time {
-    display: block;
-  }
-
-  .card.muted {
-    height: 45px;
-    width: 45px;
-    max-height: 45px !important;
-    max-width: 45px !important;
   }
 
   .card a.card-header,
   .card h2 {
     font-weight: 500;
     font-size: 1.1rem;
-  }
-
-  .card.muted {
-    background: transparent;
-    padding: 0.5rem 0;
-    align-items: center;
   }
 }

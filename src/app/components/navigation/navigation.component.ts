@@ -37,7 +37,7 @@ export class NavigationComponent {
     this.moonIcon = this.sanitizer.bypassSecurityTrustHtml(this.ICONS.MOON);
   }
   
-  toggleTheme() {
+  toggleTheme(): void {
     this.themeService.toggleTheme();
   }
 }

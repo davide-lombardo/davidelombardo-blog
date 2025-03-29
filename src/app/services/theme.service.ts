@@ -1,4 +1,4 @@
-import { Injectable, PLATFORM_ID, Inject, signal, effect } from '@angular/core';
+import { Injectable, PLATFORM_ID, Inject, signal, effect, Signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
@@ -8,11 +8,11 @@ export class ThemeService {
   private readonly THEME_KEY = 'theme-preference';
   private isDarkTheme = signal<boolean>(true);
 
-  get isDarkTheme$() {
+  get isDarkTheme$(): Signal<boolean> {
     return this.isDarkTheme.asReadonly();
   }
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(@Inject(PLATFORM_ID) private platformId: object) {
     if (isPlatformBrowser(this.platformId)) {
       // Initialize from localStorage or system preference
       const savedTheme = localStorage.getItem(this.THEME_KEY);
@@ -40,7 +40,7 @@ export class ThemeService {
     }
   }
 
-  toggleTheme() {
+  toggleTheme(): void {
     if (isPlatformBrowser(this.platformId)) {
       const newTheme = !this.isDarkTheme();
       this.isDarkTheme.set(newTheme);

@@ -96,6 +96,7 @@
           <button
             class="accordion-header"
             (click)="toggleAccordion(job)"
+            [ariaExpanded]="job.expanded"
             [ngClass]="{ 'no-bottom-radius': job.expanded }"
           >
             <span class="header-text">{{ job.company }} - {{ job.title }}</span>

@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { slugify } from '../../utils/helper';
 
@@ -10,7 +10,7 @@ import { slugify } from '../../utils/helper';
   templateUrl: './blog-sidebar.component.html',
   styleUrl: './blog-sidebar.component.scss'
 })
-export class BlogSidebarComponent {
+export class BlogSidebarComponent implements OnInit {
   date = input.required<string>();
   tags = input.required<string[]>();
 

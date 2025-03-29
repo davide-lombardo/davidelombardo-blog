@@ -17,14 +17,14 @@ export class AppComponent {
   constructor(
     private metaService: MetaService, 
     private themeService: ThemeService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: object
   ) {
     this.isDarkTheme = this.themeService.isDarkTheme$;
 
     this.setDefaultMetaTags();
   }
 
-  private setDefaultMetaTags() {
+  private setDefaultMetaTags(): void {
     this.metaService.updateMetaTags({
       title: 'Davide Lombardo\'s Blog',
       subtitle: 'A Journey in Front-End Development and Life',

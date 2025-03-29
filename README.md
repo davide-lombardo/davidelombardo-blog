@@ -14,7 +14,7 @@ Check out the live version of the blog [here](https://davelombardo.me).
 
 - **Angular**: A powerful framework for building client-side applications (v18.2.8). [Link](https://angular.io)
 - **Firebase**: A platform that provides backend services like authentication and hosting. [Link](https://firebase.google.com)
-- **HTML5 & CSS3**: For structuring and styling the blog.
+- **HTML & CSS**: For structuring and styling the blog.
 - **TypeScript**: A superset of JavaScript that adds static types. [Link](https://www.typescriptlang.org)
 - **RxJS**: A library for reactive programming with observables. [Link](https://rxjs.dev)
 - **NGX-Markdown**: A markdown parser that allows for fast post writing. [Link](https://github.com/jfcere/ngx-markdown)

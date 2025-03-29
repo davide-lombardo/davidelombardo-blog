@@ -55,7 +55,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.isDarkTheme = this.themeService.isDarkTheme$
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loadPosts(true);
     this.loadPinnedProjects(true);
   }

@@ -5,7 +5,7 @@ import { HeroComponent } from "../../components/hero/hero.component";
 import { ContainerComponent } from "../../components/container/container.component";
 import { PostService } from '../../services/post.service';
 import { TagService } from '../../services/tags.service';
-import { PostMetadata, PostDetail } from '../../models/post.model';
+import { PostMetadata } from '../../models/post.model';
 import { slugify } from '../../utils/helper';
 
 interface TagGroup {
@@ -43,7 +43,7 @@ export class TagsComponent implements OnInit {
     this.loadTagsGroups();
   }
 
-  private loadTagsGroups() {
+  private loadTagsGroups(): void {
     this.postService.getPostMetadata().subscribe(posts => {
       // Safely filter out posts without tags
       const postsWithTags = posts.filter(post => post.tags && post.tags.length > 0);

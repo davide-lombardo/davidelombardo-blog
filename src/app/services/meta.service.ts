@@ -1,5 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Meta, Title } from '@angular/platform-browser';
+import { Meta } from '@angular/platform-browser';
+
+export interface MetaData {
+  title: string;
+  subtitle: string;
+  tags: string[];
+  image?: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +14,7 @@ import { Meta, Title } from '@angular/platform-browser';
 export class MetaService {
   constructor(private meta: Meta) {}
 
-  updateMetaTags(metadata: { title: string; subtitle: string; tags: string[]; image?: string }) {
+  updateMetaTags(metadata: MetaData): void {
     // Remove existing meta tags
     this.meta.removeTag('name="description"');
     this.meta.removeTag('name="keywords"');

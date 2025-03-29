@@ -13,6 +13,10 @@
   margin: 0;
   font-size: 2rem;
   color: var(--font-color-base);
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 1.5rem;
+  }
 }
 
 .tags,
@@ -31,6 +35,10 @@
   display: inline-flex;
   gap: 0.5rem;
   background: var(--button-background-color);
+
+  @media (max-width: $breakpoint-small) {
+    font-size: 0.7rem;
+  }
 }
 
 .tag-count {

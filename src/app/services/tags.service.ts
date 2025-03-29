@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PostMetadata, PostDetail } from '../models/post.model';
-import { slugify } from '../utils/helper';
+import { PostMetadata } from '../models/post.model';
 
 @Injectable({
   providedIn: 'root'

@@ -148,7 +148,6 @@ blockquote {
 }
 
 blockquote  p {
-  color: var(--font-color-base) !important;
   font-size: 1rem;
   line-height: 1.6;
   font-weight: 400;
@@ -191,7 +190,7 @@ h4:not(:first-child) {
 }
 
 h2 + h3 {
-  margin-top: 1.5rem !important;
+  margin-top: 1.5rem;
 }
 
 h2 {
@@ -203,18 +202,10 @@ h2 {
   font-family: $font-family-nav;
 }
 
-h2 code {
-  font-size: 1.7rem !important;
-}
-
 h3 {
   font-size: 1.5rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
-}
-
-h3 code {
-  font-size: 1.4rem !important;
 }
 
 @media screen and (min-width: $breakpoint-small) {
@@ -226,16 +217,8 @@ h3 code {
     font-size: 2rem;
   }
 
-  h2 code {
-    font-size: 1.9rem !important;
-  }
-
   h3 {
     font-size: 1.6rem;
-  }
-
-  h3 code {
-    font-size: 1.7rem !important;
   }
 }
 
@@ -272,9 +255,9 @@ h5 {
   border-radius: 2px;
 }
 
-pre[class*="language-"] {
+.code-toolbar pre[class*="language-"] {
   position: relative;
-  margin-bottom: 2rem !important;
-  border-radius: 8px;
+  margin-bottom: 2rem;
+  border-radius: $border-radius;
   @include shadow-low();
 }

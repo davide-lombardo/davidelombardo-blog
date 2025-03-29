@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
@@ -61,7 +61,7 @@ export class PostDetailComponent implements OnInit, OnDestroy {
     this.destroy$.complete();
   }
 
-  getDetail() {
+  getDetail(): void {
     this.postService
       .getPostDetail(this.postSlug)
       .pipe(takeUntil(this.destroy$))

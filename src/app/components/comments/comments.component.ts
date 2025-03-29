@@ -18,7 +18,7 @@ export class CommentsComponent {
   isDarkTheme: Signal<boolean>;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(PLATFORM_ID) private platformId: object,
     private themeService: ThemeService
   ) {
     this.isDarkTheme = this.themeService.isDarkTheme$;

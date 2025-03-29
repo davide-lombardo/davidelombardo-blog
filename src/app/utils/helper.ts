@@ -5,14 +5,14 @@ export function slugify(text: string): string {
     .toString()
     .toLowerCase()
     .replace(/\s+/g, '-') // Replace spaces with -
-    .replace(/[^\w\-]+/g, '') // Remove all non-word chars
-    .replace(/\-\-+/g, '-') // Replace multiple - with single -
+    .replace(/[^a-z0-9-]+/g, '') // Remove all non-alphanumeric chars except -
+    .replace(/--+/g, '-') // Replace multiple - with single -
     .replace(/^-+/, '') // Trim - from start of text
     .replace(/-+$/, ''); // Trim - from end of text
 }
 
 export function appendComments(
-  platformId: Object,
+  platformId: object,
   isDarkTheme: boolean = true
 ): void {
   if (!isPlatformBrowser(platformId)) return;

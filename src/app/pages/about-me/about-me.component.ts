@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ContainerComponent } from '../../components/container/container.component';
 import { HeroComponent } from '../../components/hero/hero.component';
 import { animate, keyframes, state, style, transition, trigger } from '@angular/animations';
+import { Education, Experience, Skill } from '../../models/about-me.model';
 
 @Component({
   selector: 'app-about-me',
@@ -51,7 +52,7 @@ import { animate, keyframes, state, style, transition, trigger } from '@angular/
 })
 
 export class AboutMeComponent {
-  workExperience = [
+  workExperience: Experience[] = [
     {
       title: 'Frontend Developer',
       company: 'NTT Data',
@@ -67,8 +68,8 @@ export class AboutMeComponent {
         'JavaScript',
         'Angular',
         'RxJS',
-        'HTML5',
-        'CSS3',
+        'HTML',
+        'CSS',
         'SCSS',
         'React',
         'Jenkins',
@@ -94,8 +95,8 @@ export class AboutMeComponent {
         'RxJS',
         'NgRx',
         'Redux',
-        'HTML5',
-        'CSS3',
+        'HTML',
+        'CSS',
         'SCSS',
         'React',
         'Git',
@@ -103,7 +104,7 @@ export class AboutMeComponent {
     },
   ];
 
-  education = [
+  education: Education[] = [
     {
       degree: 'Start2impact - Frontend student ',
       details:
@@ -114,7 +115,7 @@ export class AboutMeComponent {
     },
   ];
 
-  workExperienceSkills = [
+  workExperienceSkills: Skill[] = [
     { name: 'TypeScript', icon: 'assets/images/typescript-icon.svg' },
     { name: 'JavaScript', icon: 'assets/images/javascript.svg' },
     { name: 'Bash', icon: 'assets/images/bash-icon.svg' },
@@ -131,7 +132,7 @@ export class AboutMeComponent {
     { name: 'Bootstrap', icon: 'assets/images/bootstrap.svg' },
   ];
 
-  generalKnowledge = [
+  generalKnowledge: Skill[] = [
     { name: 'Node.js', icon: 'assets/images/nodejs-icon.svg' },
     { name: 'Express', icon: 'assets/images/nodejs-icon-alt.svg' },
     { name: 'MongoDB', icon: 'assets/images/mongodb-icon.svg' },
@@ -141,7 +142,7 @@ export class AboutMeComponent {
     { name: 'Figma', icon: 'assets/images/figma.svg' },
   ];
 
-  toggleAccordion(item: any) {
+  toggleAccordion(item: Experience | Education): void {
     item.expanded = !item.expanded;
   }
 }
