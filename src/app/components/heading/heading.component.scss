@@ -9,21 +9,20 @@
   justify-content: space-between;
   border: 0;
   padding: 0;
+  gap: 2rem;
 
   &__title {
-    font-size: 1.7rem;
+    font-size: 2rem;
     margin-bottom: 0;
     font-family: $font-family-base;
     font-weight: 700;
   }
-}
 
-@media screen and (min-width: $breakpoint-small) {
-  .heading {
-    gap: 2rem;
+  @media screen and (max-width: $breakpoint-small) {
+    gap: 0;
 
     &__title {
-      font-size: 2rem;
+      font-size: 1.7rem;
     }
   }
 }

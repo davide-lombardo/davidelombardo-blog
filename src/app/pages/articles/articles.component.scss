@@ -3,11 +3,11 @@
 .project-preview {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(1, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 
-@media screen and (min-width: $breakpoint-small) {
+@media screen and (max-width: $breakpoint-small) {
   .project-preview {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 }

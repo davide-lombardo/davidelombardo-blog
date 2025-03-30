@@ -7,24 +7,22 @@
   @include shadow-medium();
   border-radius: $border-radius;
   background: var(--card-background-color);
-  padding: 1rem;
+  padding: 1.5rem;
   position: relative;
 }
 
-@media screen and (min-width: $breakpoint-small) {
-  .card.anchored {
-    padding-bottom: 3.5rem;
-  }
+.card.anchored {
+  padding-bottom: 3.5rem;
+}
 
-  .card.anchored.large {
-    padding-bottom: 5rem;
-  }
+.card.anchored.large {
+  padding-bottom: 5rem;
 }
 
 .card a.card-header,
 .card h2 {
   display: block;
-  font-size: 1rem;
+  font-size: 1.1rem;
   line-height: 1.3;
   font-family: $font-family-base;
   font-weight: 500;
@@ -63,14 +61,21 @@
   margin-bottom: 0.3rem;
 }
 
-@media screen and (min-width: $breakpoint-small) {
+@media screen and (max-width: $breakpoint-small) {
   .card {
-    padding: 1.5rem;
+    padding: 1rem;
   }
 
   .card a.card-header,
   .card h2 {
-    font-weight: 500;
-    font-size: 1.1rem;
+    font-size: 1rem;
+  }
+
+  .card.anchored {
+    padding-bottom: 1rem;
+  }
+
+  .card.anchored.large {
+    padding-bottom: 1rem;
   }
 }

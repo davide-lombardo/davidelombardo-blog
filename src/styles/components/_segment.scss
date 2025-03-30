@@ -2,37 +2,37 @@
 
 /* Segments */
 .segment {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.segment.small {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
-.segment.small {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 .segment.large {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .segment.first {
   margin-top: 3rem;
 }
 
-@media screen and (min-width: $breakpoint-small) {
+@media screen and (max-width: $breakpoint-small) {
   .segment {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .segment.large {
     margin-top: 3rem;
     margin-bottom: 3rem;
   }
 
-  .segment.large {
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-  }
-
   .segment.small {
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }

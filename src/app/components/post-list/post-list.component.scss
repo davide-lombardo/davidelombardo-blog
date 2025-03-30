@@ -1,13 +1,12 @@
 @import '../../../styles/variables';
 
 .year {
+  font-size: 2.3rem;
   border-bottom: none;
-  font-size: 1.9rem;
 }
 
-@media screen and (min-width: $breakpoint-small) {
+@media screen and (max-width: $breakpoint-small) {
   .year {
-    border-bottom: none;
-    font-size: 2.3rem;
+    font-size: 1.9rem;
   }
 }

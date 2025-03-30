@@ -11,6 +11,7 @@ import { RepositoryService } from '../../services/repository.service';
 import { Subject, takeUntil } from 'rxjs';
 import { ProjectSkeletonComponent } from '../../components/skeleton/project-skeleton.component';
 import { ThemeService } from '../../services/theme.service';
+import { ContainerComponent } from "../../components/container/container.component";
 
 export type HomeData = {
   posts: string[];
@@ -25,8 +26,9 @@ export type HomeData = {
     PostListComponent,
     RouterLink,
     DatePipe,
-    ProjectSkeletonComponent
-  ],
+    ProjectSkeletonComponent,
+    ContainerComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })

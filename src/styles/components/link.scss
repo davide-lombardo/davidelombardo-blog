@@ -5,11 +5,16 @@
   margin-top: 1rem;
 }
 
-@media screen and (min-width: $breakpoint-small) {
+.categories.anchored,
+.links.anchored {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+}
+
+@media screen and (max-width: $breakpoint-small) {
   .categories.anchored,
   .links.anchored {
-    position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
+    position: static;
   }
 }

@@ -1,71 +1,58 @@
 @import '../../../styles/variables';
 
-/* Containers */
-.container {
-  max-width: $content-width;
-  padding: 0 1rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media screen and (min-width: $breakpoint-small) {
-  .container {
-    padding: 0 2rem;
-  }
-}
-
 .hero-wrapper {
-  padding-top: 2rem;
+  padding-top: 0;
   display: grid;
-
-  @media screen and (min-width: $breakpoint-small) {
-    padding-top: 0;
-    grid-template-columns: 4fr 2fr;
-    align-items: center;
-    gap: 1.5rem;
+  grid-template-columns: 4fr 2fr;
+  align-items: center;
+  gap: 1.5rem;
+  
+  @media screen and (max-width: $breakpoint-small) {
+    padding-top: 2rem;
+    grid-template-columns: 1fr;
   }
 }
 
 p.hero-description {
   -webkit-font-smoothing: antialiased;
-  margin: 1rem 0;
-  font-size: 1.1rem;
+  margin: 1.5rem 0 0;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--font-color-muted);
   font-weight: 500;
-
+  
   .hero-link {
     text-decoration: none;
-
+    
     &:hover {
       color: var(--color-primary-dark);
       text-decoration: underline 2px;
     }
   }
-
-  @media screen and (min-width: $breakpoint-small) {
-    margin: 1.5rem 0 0;
-    font-size: 1.2rem;
+  
+  @media screen and (max-width: $breakpoint-small) {
+    margin: 1rem 0;
+    font-size: 1.1rem;
   }
 }
 
 .hero-component {
-  order: 2;
-
-  @media screen and (min-width: $breakpoint-small) {
-    order: 1;
+  order: 1;
+  
+  @media screen and (max-width: $breakpoint-small) {
+    order: 2;
   }
 }
 
 .decoration {
-  display: none;
+  display: flex;
   align-items: center;
-  order: 1;
-
-  @media screen and (min-width: $breakpoint-small) {
-    display: flex;
-    order: 2;
-    justify-content: flex-end;
+  order: 2;
+  justify-content: flex-end;
+  
+  @media screen and (max-width: $breakpoint-small) {
+    display: none;
+    order: 1;
   }
 }
 
@@ -73,32 +60,33 @@ p.hero-description {
 .post-preview {
   display: grid;
   gap: 1rem;
-
+  grid-template-columns: repeat(3, 1fr);
+  
   > div {
     flex: 1;
   }
-
+  
   a.button {
     font-size: 0.9rem;
-    padding: 0.5rem 0.6rem;
-
-    @media screen and (min-width: $breakpoint-small) {
-      padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.75rem;
+    
+    @media screen and (max-width: $breakpoint-small) {
+      padding: 0.5rem 0.6rem;
     }
   }
-
-  @media screen and (min-width: $breakpoint-small) {
-    grid-template-columns: repeat(3, 1fr);
+  
+  @media screen and (max-width: $breakpoint-small) {
+    grid-template-columns: 1fr;
   }
 }
 
 .hero-image {
   animation: rotateOnce 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1;
-  max-width: 100px;
-
-  @media screen and (min-width: $breakpoint-small) {
-    width: 200px;
-    max-width: 200px;
+  width: 200px;
+  max-width: 200px;
+  
+  @media screen and (max-width: $breakpoint-small) {
+    max-width: 100px;
   }
 }
 
