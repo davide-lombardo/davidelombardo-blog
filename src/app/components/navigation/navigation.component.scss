@@ -83,10 +83,10 @@
   border: none;
   cursor: pointer;
   transition: color 0.2s ease-in-out;
-  color: var(--icon-color);
+  color: var(--color-primary);
 
   &:hover {
-    color: var(--icon-hover-color);
+    color: var(--color-primary-dark);
   }
   
   &__icon {

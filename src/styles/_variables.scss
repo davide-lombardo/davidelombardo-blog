@@ -15,7 +15,7 @@ $color-gray-10: #181818;
 
 /* Blue shades */
 $color-blue-dark: #0F172A;
-$color-blue-medium: #1E293B;
+$color-blue-medium: #18212f;
 $color-blue-dark-medium: #183656;
 $color-blue-light: #475569;
 $color-blue-light-medium: #94A3B8;
@@ -79,17 +79,17 @@ $breakpoint-xlarge: 1600px;
   --color-primary: #{$color-primary-light};
   --color-primary-dark: #{$color-primary-dark};
   --background-color: #{$color-blue-medium};
-  --shadow-color: #{$color-blue-dark};
-  --shadow-color-rgb: 15, 23, 42; // RGB values for $color-blue-dark
+  --background-color-dark: #{$color-blue-dark};
+  --shadow-color: #{$color-blue-medium};
+  --shadow-color-rgb: 24, 33, 47; // RGB values for $color-blue-dark
   --font-color-base: #{$color-blue-very-light};
   --font-color-muted: #{$color-blue-light-medium};
   --font-color-heading: #{$color-blue-very-light};
-  --card-background-color-rgb: 71, 85, 105; // RGB values for $color-blue-light
+  --card-background-color-rgb: 24, 54, 86; // RGB values for $color-blue-light 24, 54, 86
   --card-background-color: rgba(var(--card-background-color-rgb), 0.5);
   --border-color: #{$color-blue-light};
-  --button-background-color: #{$color-blue-light};
-  --icon-color: #{$color-orange};
-  --icon-hover-color: #{darken($color-orange, 10%)};
+  --button-background-color: #{$color-blue-dark-medium};
+  --button-text-color: #{$color-primary};
   --color-link: #{$color-primary};
   --color-link-hover: #{$color-primary-dark};
   --selection-color: #{$color-blue-dark-medium};
@@ -120,6 +120,7 @@ $breakpoint-xlarge: 1600px;
     --color-primary: #{$color-primary-light-theme};
     --color-primary-dark: #{$color-primary-light-theme-dark};
     --background-color: #{$color-gray-0};
+    --background-color-dark: #{$color-gray-2};
     --shadow-color: #{$color-gray-4};
     --shadow-color-rgb: 187, 187, 187; // RGB values for $color-gray-4
     --font-color-base: #{$color-gray-8};
@@ -128,9 +129,8 @@ $breakpoint-xlarge: 1600px;
     --card-background-color-rgb: 238, 238, 238; // RGB values for $color-gray-1
     --card-background-color: rgba(var(--card-background-color-rgb), 0.5);
     --border-color: #{$color-gray-3};
-    --button-background-color: #{$color-gray-2};
-    --icon-color: #{$color-primary-light-theme};
-    --icon-hover-color: #{$color-primary-light-theme-dark};
+    --button-background-color: #{$color-gray-3};
+    --button-text-color: #{$color-gray-8};
     --color-link: #{$color-primary-light-theme};
     --color-link-hover: #{$color-primary-light-theme-dark};
     --selection-color: #{$color-gray-4};

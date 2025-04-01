@@ -3,9 +3,7 @@
 
 .terminal-window {
   font-size: 0.9rem;
-  background-color: var(--shadow-color);
   border-radius: 10px;
-  box-shadow: var(--shadow-low);
   overflow: hidden;
   width: 100%;
   margin: 0 auto;
@@ -68,7 +66,7 @@
 
 /* Terminal container */
 .terminal-container {
-  background-color: var(--shadow-color);
+  background-color: var(--background-color-dark);
   color: var(--font-color-base);
   padding: 15px;
   border-bottom-left-radius: 10px;
@@ -140,6 +138,9 @@
   width: 100%;
   font-size: 0.9rem;
 
+  &::placeholder {
+    color: var(--font-color-muted);
+  }
 }
 
 .welcome-message {

@@ -13,7 +13,7 @@ a.button {
   font-size: 1rem;
   cursor: pointer;
   font-weight: 500;
-  color: var(--color-primary);
+  color: var(--button-text-color);
   gap: 0.25rem;
   white-space: nowrap;
   transition: transform 0.2s ease-in-out;
@@ -46,14 +46,10 @@ a.button.primary {
   font-weight: 700;
 }
 
-button.primary:hover,
-a.button.primary:hover {
-  border-color: $color-yellow;
-}
 
 button:hover,
 a.button:hover {
-  color: var(--font-color-base);
+  color: var(--color-primary-dark);
   border-color: var(--border-color);
 }
 
