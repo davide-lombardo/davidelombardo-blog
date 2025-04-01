@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 
@@ -8,7 +8,7 @@ import { ThemeService } from '../../services/theme.service';
   templateUrl: './terminal.component.html',
   styleUrls: ['./terminal.component.scss'],
 })
-export class TerminalComponent implements AfterViewInit {
+export class TerminalComponent implements AfterViewInit, AfterViewChecked {
   @ViewChild('terminalInput') terminalInput!: ElementRef;
   @ViewChild('terminalOutput') terminalOutput!: ElementRef;
   @ViewChild('welcomeMessage') welcomeMessage!: ElementRef;
@@ -39,7 +39,7 @@ export class TerminalComponent implements AfterViewInit {
     this.animateWelcomeMessage();
   }
 
-  ngAfterViewChecked() {
+  ngAfterViewChecked(): void {
     this.scrollToBottom();
   }
 
@@ -47,7 +47,9 @@ export class TerminalComponent implements AfterViewInit {
     try {
       this.terminalOutput.nativeElement.scrollTop =
         this.terminalOutput.nativeElement.scrollHeight;
-    } catch (err) {}
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   executeCommand(input: string): void {

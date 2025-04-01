@@ -10,7 +10,7 @@ export class TerminalService {
     return this.isTerminalVisible.asReadonly(); 
   }
 
-  toggleTerminal() {
+  toggleTerminal(): void {
     this.isTerminalVisible.set(!this.isTerminalVisible());
   }
 }

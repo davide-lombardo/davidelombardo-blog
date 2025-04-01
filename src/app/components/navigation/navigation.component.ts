@@ -62,7 +62,7 @@ export class NavigationComponent {
     }
   }
 
-  toggleTerminal() {
+  toggleTerminal(): void {
     this.terminalService.toggleTerminal();
 
     if (this.isMobileMenuOpen) {
@@ -70,7 +70,7 @@ export class NavigationComponent {
     }
   }
 
-  toggleMobileMenu() {
+  toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
 
     // Prevent scrolling when menu is open
@@ -81,7 +81,7 @@ export class NavigationComponent {
     }
   }
 
-  closeMenuOnNavigation() {
+  closeMenuOnNavigation(): void {
     this.isMobileMenuOpen = false;
     document.body.style.overflow = '';
   }
