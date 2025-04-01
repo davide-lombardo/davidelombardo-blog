@@ -1,3 +1,9 @@
 <app-layout>
+  @if(isTerminalVisible()) {
+    <app-container>
+      <app-terminal></app-terminal>
+    </app-container>
+  }
+
   <router-outlet></router-outlet>
 </app-layout>

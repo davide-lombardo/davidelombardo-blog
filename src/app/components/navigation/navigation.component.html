@@ -12,7 +12,9 @@
       />
       <span class="header__brand-text">davelombardo.me</span>
     </a>
-    <nav class="header__nav">
+    
+    <!-- Desktop Navigation -->
+    <nav class="header__nav desktop-nav">
       @for (item of mainNavItems; track item.label) {
       <a
         [routerLink]="item.url"
@@ -23,20 +25,88 @@
         {{ item.label }}
       </a>
       }
-      <button
-        (click)="toggleTheme()"
-        class="theme-toggle"
-        [attr.aria-label]="
-          isDarkTheme()
-            ? 'Switch to light theme'
-            : 'Switch to dark theme'
-        "
-      >
-        <span
-          class="theme-toggle__icon"
-          [innerHTML]="isDarkTheme() ? sunIcon : moonIcon"
-        ></span>
-      </button>
+      <div class="header__toggles">
+        <button
+          (click)="toggleTheme()"
+          class="theme-toggle"
+          [attr.aria-label]="
+            isDarkTheme() ? 'Switch to light theme' : 'Switch to dark theme'
+          "
+        >
+          <span
+            class="theme-toggle__icon"
+            [innerHTML]="isDarkTheme() ? sunIcon : moonIcon"
+          ></span>
+        </button>
+  
+        <button
+          (click)="toggleTerminal()"
+          class="theme-toggle"
+          aria-label="Toggle Terminal"
+        >
+          <span class="theme-toggle__icon" [innerHTML]="terminalIcon"></span>
+        </button>
+      </div>
     </nav>
+    
+    <!-- Mobile Navigation Toggle -->
+    <div class="mobile-nav-toggle">
+      <button
+        (click)="toggleMobileMenu()"
+        class="theme-toggle mobile-menu-button"
+        aria-label="Toggle Navigation Menu"
+      >
+        <span class="theme-toggle__icon" [innerHTML]="menuIcon"></span>
+      </button>
+    </div>
   </div>
 </section>
+
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" [class.mobile-menu--open]="isMobileMenuOpen">
+  <div class="mobile-menu__header">
+    <button
+      (click)="toggleMobileMenu()"
+      class="theme-toggle"
+      aria-label="Close Navigation Menu"
+    >
+      <span class="theme-toggle__icon" [innerHTML]="closeIcon"></span>
+    </button>
+  </div>
+  
+  <nav class="mobile-menu__nav">
+    @for (item of mainNavItems; track item.label) {
+    <a
+      [routerLink]="item.url"
+      routerLinkActive="mobile-menu__nav-item--active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      class="mobile-menu__nav-item"
+      (click)="closeMenuOnNavigation()"
+    >
+      {{ item.label }}
+    </a>
+    }
+    
+    <div class="mobile-menu__toggles">
+      <button
+        (click)="toggleTheme()"
+        class="theme-toggle mobile-menu__toggle"
+        [attr.aria-label]="
+          isDarkTheme() ? 'Switch to light theme' : 'Switch to dark theme'
+        "
+      >
+        <span class="theme-toggle__icon" [innerHTML]="isDarkTheme() ? sunIcon : moonIcon"></span>
+        <span class="mobile-menu__toggle-text">{{ isDarkTheme() ? 'Light Mode' : 'Dark Mode' }}</span>
+      </button>
+    
+      <button
+        (click)="toggleTerminal()"
+        class="theme-toggle mobile-menu__toggle"
+        aria-label="Toggle Terminal"
+      >
+        <span class="theme-toggle__icon" [innerHTML]="terminalIcon"></span>
+        <span class="mobile-menu__toggle-text">Terminal</span>
+      </button>
+    </div>
+  </nav>
+</div>

@@ -1,0 +1,35 @@
+<div class="terminal-window">
+  <div class="terminal-header">
+    <div class="terminal-buttons">
+      <div class="close-button"></div>
+      <div class="minimize-button"></div>
+      <div class="zoom-button"></div>
+    </div>
+    <div class="terminal-title">Terminal</div>
+  </div>
+  <div class="terminal-container">
+    <div class="terminal-output" #terminalOutput>
+      <div class="welcome-message" #welcomeMessage>
+        <p class="typing-animation"></p>
+      </div>
+      @for (line of commandHistory; track $index) {
+        <div class="terminal-line">
+          <span class="prompt">sloth:~$</span> <span class="command">{{ line.command }}</span>
+          <div class="response" [innerHTML]="line.response"></div>
+        </div>
+      }
+    </div>
+    <div class="terminal-input-line">
+      <span class="prompt">sloth:~$</span>
+      <input
+        type="text"
+        class="terminal-input"
+        #terminalInput
+        (keyup.enter)="executeCommand(terminalInput.value); terminalInput.value = ''"
+        autofocus
+        placeholder="Type a command..."
+        (keydown)="handleKeydown($event)"
+      />
+    </div>
+  </div>
+</div>

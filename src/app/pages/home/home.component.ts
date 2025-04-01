@@ -12,6 +12,7 @@ import { Subject, takeUntil } from 'rxjs';
 import { ProjectSkeletonComponent } from '../../components/skeleton/project-skeleton.component';
 import { ThemeService } from '../../services/theme.service';
 import { ContainerComponent } from "../../components/container/container.component";
+import { TerminalService } from '../../services/terminal.service';
 
 export type HomeData = {
   posts: string[];
@@ -27,7 +28,7 @@ export type HomeData = {
     RouterLink,
     DatePipe,
     ProjectSkeletonComponent,
-    ContainerComponent
+    ContainerComponent,
 ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
@@ -52,7 +53,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(
     private postService: PostService,
     private repositoryService: RepositoryService,
-    private themeService: ThemeService
+    private themeService: ThemeService,
+    private terminalService: TerminalService
   ) {
     this.isDarkTheme = this.themeService.isDarkTheme$
   }
