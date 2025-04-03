@@ -7,21 +7,11 @@ tags: "frontend"
 infoPanel: {
   title: 'Intended audience',
   description: [
-    'This article is for aspiring web developers and those looking to optimize their workflow.',
+    'This article is for web developers looking to optimize their workflow.',
     'Whether you’re a beginner or looking to refine your current setup, this guide offers insights into the tools I use and why I prefer them.',
   ]
 }
 ---
-
-**Table of Contents**
-
-- Operating System
-- Browser
-- Text Editor / IDE
-- Frontend framework
-- CSS Preprocessor
-- CSS Framework
-- Miscellaneous
 
 ## **Operating System**
 
@@ -32,7 +22,7 @@ infoPanel: {
 
 **Other Options:** [Linux](https://en.wikipedia.org/wiki/Linux), [macOS (Apple)](https://www.apple.com/macos/macos-sequoia/)
 
-I prefer Windows for its versatility and broad compatibility with a wide range of development tools. It supports a powerful suite of applications for development, from native Windows software to Windows Subsystem for Linux (WSL), which enables access to Linux-based tools and commands directly within the OS. Windows also integrates seamlessly with popular IDEs like Visual Studio Code, and it’s well-suited for working with Docker, virtual machines, and other essential tools for web development. Additionally, Windows provides robust system management features, making it a flexible choice for both personal projects and team-based workflows.
+I use Windows for its versatility and broad compatibility with a wide range of development tools. It supports a powerful suite of applications for development, from native Windows software to Windows Subsystem for Linux (WSL), which enables access to Linux-based tools and commands directly within the OS. Windows also integrates seamlessly with popular IDEs like Visual Studio Code, and it’s well-suited for working with Docker, virtual machines, and other essential tools for web development. Additionally, Windows provides robust system management features, making it a flexible choice for both personal projects and team-based workflows.
 
 ## **Browser**
 
@@ -43,7 +33,7 @@ I prefer Windows for its versatility and broad compatibility with a wide range o
 
 **Other Options:** [Firefox](https://www.mozilla.org/en-US/firefox/products/), [Opera](http://www.opera.com/), [Safari](http://www.apple.com/safari/) (Mac only), [Edge](https://www.microsoft.com/en-us/windows/microsoft-edge/microsoft-edge) (Windows only)
 
-As a front end web developer, you should have all the browsers downloaded for testing. If you're in an Apple, you can download virtual machines or generate screenshots of Edge at the [Microsoft Developer Tools](https://developer.microsoft.com/en-us/microsoft-edge/tools/) website.
+As a front end web developer, you should have all the browsers downloaded for testing. If you're using macOS, you can download virtual machines or generate screenshots of Edge at the [Microsoft Developer Tools](https://developer.microsoft.com/en-us/microsoft-edge/tools/) website.
 
 ### **Extensions**
 
@@ -77,7 +67,7 @@ I prefer Angular because of its strong opinions about application architecture, 
 
 **Other Options:** [Sublime Text](https://www.sublimetext.com/), [Atom](https://atom.io/), [IntelliJ](https://www.jetbrains.com/idea/)
 
-Visual Studio Code is my go-to because it combines powerful features, like Git integration and extensions for almost any programming language or framework, with a lightweight feel. It has extensive customization options, allowing me to set up a personalized workflow. Plus, the large user community means finding help or new extensions is easy, and Microsoft’s active development keeps it up to date.
+Visual Studio Code is my go-to because it has extensive customization options, allowing me to set up a personalized workflow. Plus, the large user community means finding help or new extensions is easy, and Microsoft’s active development keeps it up to date.
 
 ### **Extensions**
 
@@ -102,7 +92,7 @@ To install all extensions bring up the Extensions view by clicking on the Extens
 
 How to open VsCode settings.json? -> COMMAND + , Then scroll to Extensions -> Edit in settings.json & Replace with below code. 
 
-```javascript
+```json
 {
     "window.zoomLevel": 1,
     "editor.tabSize": 2,
@@ -146,7 +136,7 @@ How to open VsCode settings.json? -> COMMAND + , Then scroll to Extensions -> Ed
 
 **Other Options:** [LESS](http://lesscss.org/), [Stylus](http://stylus-lang.com/)
 
-A preprocessor is a program that takes a bit of code and compiles it into a different bit of code. In the case of CSS preprocessors, we’re compiling the Sass language into regular old CSS that the browser can interpret. I like having the ability to define variables, nest, create loops, and organize my project into multiple files, all of which and more I can do with Sass, specifically the **`.scss`** extension.
+A preprocessor is a program that takes a bit of code and compiles it into a different bit of code. In the case of CSS preprocessors, we’re compiling the Sass language into regular CSS that the browser can interpret. I like having the ability to define variables, nest, create loops, and organize my project into multiple files, all of which and more I can do with Sass, specifically the **`.scss`** extension.
 
 ## **CSS Framework**
 

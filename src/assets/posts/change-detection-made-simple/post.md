@@ -13,6 +13,7 @@ infoPanel: {
 }
 ---
 
+
 Have you ever wondered how Angular knows when to re-render a component? Or how it knows when data has been updated?
 
 The short answer is: through a process called Change Detection. But if you want to dive deeper, there’s much more to discover. In this article, I’ll try to simplify this concept so that you can better understand how it works.

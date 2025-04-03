@@ -6,27 +6,6 @@ slug: "the-front-end-developer-guide-to-the-terminal"
 tags: "git"
 ---
 
-**Table of Contents**
-
-- Getting set up
-- Windows setup
-- Hello World
-- Navigation
-- Tab auto-completion
-- Flags
-- Interrupting commands
-- Common development tasks
-- Managing dependencies
-- Running NPM scripts
-- Opening the project in your IDE
-- Reinstalling dependencies
-- Working with Git
-- Tricks
-- Cycling commands
-- Clearing the terminal
-- Switching to a GUI file explorer
-- Chaining commands
-- Conclusion
 
 Modern front-end frameworks like React, Angular, and Vue rely heavily on the terminal. If you're not comfortable with command line interfaces, you'll struggle to run a local development server or build your application!
 
