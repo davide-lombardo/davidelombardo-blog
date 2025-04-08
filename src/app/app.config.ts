@@ -1,6 +1,7 @@
-import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideZoneChangeDetection, SecurityContext } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
-import { provideMarkdown } from 'ngx-markdown';
+import {  provideMarkdown } from 'ngx-markdown';
+
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -25,6 +26,7 @@ export const appConfig: ApplicationConfig = {
           smartypants: false,
         },
       },
+      sanitize: SecurityContext.NONE,
     }),
   ],
 };

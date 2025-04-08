@@ -1,7 +1,7 @@
 <aside class="post-sidebar">
   <!-- About me section -->
   <div class="post-sidebar-card">
-    <h2>about me</h2>
+    <h3>about me</h3>
     <p>
       hello and thanks for visiting! my name is
       <a class="post-sidebar-link" [routerLink]="'/about-me'">
@@ -14,7 +14,7 @@
 
   <!-- Post details section -->
   <div class="post-sidebar-card">
-    <h2>post details</h2>
+    <h3>post details</h3>
     <ul>
       <li>
         <strong>published:</strong>
@@ -34,7 +34,7 @@
     </ul>
 
     <!-- Tags section -->
-    <h2>tags</h2>
+    <h3>tags</h3>
     @if (tags().length > 0) {
       <div class="tags">
         @for (tag of tags(); track tag) {

@@ -178,7 +178,7 @@ ARIA (Accessible Rich Internet Applications) attributes can enhance accessibilit
 
 But remember the first rule of ARIA: "No ARIA is better than bad ARIA." Use native HTML elements whenever possible, and add ARIA only when necessary.
 
-## Common ARIA Attributes:
+### Common ARIA Attributes
 
 - `aria-label`: Provides a text label for elements without visible text.
 - `aria-live`: Announces dynamic content changes to the user.

@@ -14,7 +14,6 @@ export class BlogSidebarComponent implements OnInit {
   date = input.required<string>();
   tags = input.required<string[]>();
 
-
   category!: string;
 
   ngOnInit(): void {

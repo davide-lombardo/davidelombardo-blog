@@ -13,7 +13,7 @@ infoPanel: {
 }
 ---
 
-## **Operating System**
+## Operating System
 
 > The software a computer runs on.
 > 
@@ -24,7 +24,7 @@ infoPanel: {
 
 I use Windows for its versatility and broad compatibility with a wide range of development tools. It supports a powerful suite of applications for development, from native Windows software to Windows Subsystem for Linux (WSL), which enables access to Linux-based tools and commands directly within the OS. Windows also integrates seamlessly with popular IDEs like Visual Studio Code, and it’s well-suited for working with Docker, virtual machines, and other essential tools for web development. Additionally, Windows provides robust system management features, making it a flexible choice for both personal projects and team-based workflows.
 
-## **Browser**
+## Browser
 
 > The program used for navigating the internet.
 > 
@@ -58,7 +58,7 @@ As a front end web developer, you should have all the browsers downloaded for te
 
 I prefer Angular because of its strong opinions about application architecture, which helps enforce consistent structure and practices across projects. With features like dependency injection, a comprehensive CLI, built-in form handling, and RxJS integration for managing asynchronous operations, Angular suits complex, large-scale applications that require reliability and maintainability over time. Additionally, TypeScript support out of the box enhances type safety and improves development productivity.
 
-## **Text Editor / IDE**
+## Text Editor / IDE
 
 > The program used to write code and edit text files.
 > 
@@ -69,7 +69,7 @@ I prefer Angular because of its strong opinions about application architecture, 
 
 Visual Studio Code is my go-to because it has extensive customization options, allowing me to set up a personalized workflow. Plus, the large user community means finding help or new extensions is easy, and Microsoft’s active development keeps it up to date.
 
-### **Extensions**
+### Extensions
 
 To install all extensions bring up the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of VS Code or the View: Extensions command **`Ctrl+Shift+X`**.
 
@@ -88,7 +88,7 @@ To install all extensions bring up the Extensions view by clicking on the Extens
 - **Project Manager** - enables quick switching and organizing of multiple projects.
 - **SVG Preview** - renders previews of SVG files directly in the editor.
 
-### **Configuration**
+### Configuration
 
 How to open VsCode settings.json? -> COMMAND + , Then scroll to Extensions -> Edit in settings.json & Replace with below code. 
 
@@ -127,7 +127,7 @@ How to open VsCode settings.json? -> COMMAND + , Then scroll to Extensions -> Ed
 }
 ```
 
-## **CSS Preprocessor**
+## CSS Preprocessor
 
 > Extend the features of CSS and compile it back into CSS.
 > 
@@ -138,7 +138,7 @@ How to open VsCode settings.json? -> COMMAND + , Then scroll to Extensions -> Ed
 
 A preprocessor is a program that takes a bit of code and compiles it into a different bit of code. In the case of CSS preprocessors, we’re compiling the Sass language into regular CSS that the browser can interpret. I like having the ability to define variables, nest, create loops, and organize my project into multiple files, all of which and more I can do with Sass, specifically the **`.scss`** extension.
 
-## **CSS Framework**
+## CSS Framework
 
 > A base stylesheet used as a starting point for designing a website.
 > 
@@ -149,7 +149,7 @@ A preprocessor is a program that takes a bit of code and compiles it into a diff
 
 I prefer Tailwind CSS for its utility-first approach, which lets me apply small, single-purpose classes directly in HTML without writing custom CSS for every design element. This results in quicker styling and cleaner, more maintainable code. Tailwind also enables responsive design out of the box, so building flexible layouts is simple, and I can customize styles to fit each project’s unique needs without worrying about conflicting stylesheets.
 
-### **Miscellaneous**
+### Miscellaneous
 
 A few other programs I use on a regular basis.
 
@@ -158,7 +158,7 @@ A few other programs I use on a regular basis.
 - [Figma](https://www.figma.com/) - a collaborative design tool for creating prototypes and wireframes.
 
 
-## **Conclusion**
+## Conclusion
 
 Web development’s got a lot of moving parts, and everyone’s setup looks a little different. What I’ve shared here is just what works best for me, from OS choice to the last touches on performance and analytics. There’s no one-size-fits-all answer, though—it’s all about finding the right tools that click with your style and workflow.
 

@@ -1,0 +1,22 @@
+<div class="content">
+  <ng-content></ng-content>
+</div>
+
+<div class="sidebar" role="navigation" aria-label="Table of contents">
+  <app-scrollspy-nav
+    [headings]="headings()"
+    [ariaLabel]="'On this page'"
+  ></app-scrollspy-nav>
+
+  @if (showScrollUpButton) {
+    <button
+      class="scrollup-button"
+      (click)="onScrollUp()"
+      [@zoomAnimation]
+      aria-label="Scroll to top"
+      title="Scroll to top"
+    >
+      <span class="theme-toggle__icon" [innerHTML]="chevronIcon" aria-hidden="true"></span>
+    </button>
+  }
+</div>

@@ -27,7 +27,7 @@
     color: var(--font-color-heading);
 
     &-text {
-      font-size: 1.25rem;
+      font-size: 1.15rem;
       font-weight: 600;
       margin-left: 0.5rem;
     }
@@ -188,7 +188,6 @@
   }
 }
 
-// Media Queries
 @media (max-width: $breakpoint-medium-lg) {
   .header__container {
     padding: 1rem;
@@ -199,8 +198,7 @@
   }
 }
 
-// Mobile Layout
-@media (max-width: 768px) {
+@media (max-width: $breakpoint-small) {
   .desktop-nav {
     display: none;
   }

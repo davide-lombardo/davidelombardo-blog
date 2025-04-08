@@ -1,0 +1,12 @@
+@import '../../../styles/mixins';
+
+.scrollup-button {
+  margin: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+  @include shadow-medium();
+}
+
+.sidebar {
+  height: fit-content;
+}

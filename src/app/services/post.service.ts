@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { PostMetadata, PostDetail } from '../models/post.model';
-import matter from 'gray-matter-browser';
+import fm, { FrontMatterResult } from 'front-matter';
 
 @Injectable({
   providedIn: 'root',
@@ -11,15 +11,12 @@ export class PostService {
 
   constructor(private http: HttpClient) {}
 
-  // Method to fetch and process post markdown data
-  getPostDetail(
-    slug: string
-  ): Observable<{ content: string; metadata: PostDetail }> {
+  getPostDetail(slug: string): Observable<{ content: string; metadata: PostDetail }> {
     return this.http
       .get(`assets/posts/${slug}/post.md`, { responseType: 'text' })
       .pipe(
         map((markdownFile: string) => {
-          const matterResult = matter(markdownFile);
+          const matterResult: FrontMatterResult<PostDetail> = fm(markdownFile);
           
           const {
             title = '',
@@ -28,7 +25,7 @@ export class PostService {
             tags = '',
             comments_off = false,
             infoPanel,
-          } = matterResult.data;
+          } = matterResult.attributes;
           
           const tagsArray = typeof tags === 'string' 
             ? tags.split(',').map((tag: string) => tag.trim())
@@ -43,12 +40,11 @@ export class PostService {
             infoPanel,
           };
 
-          return { content: matterResult.content, metadata: postMeta };
+          return { content: matterResult.body, metadata: postMeta };
         })
       );
   }
 
-  // Fetch post metadata (for list view)
   getPostMetadata(getLatest: boolean = false): Observable<PostMetadata[]> {
     return this.http.get<PostMetadata[]>('assets/posts/post-metadata.json').pipe(
       map(posts => {
