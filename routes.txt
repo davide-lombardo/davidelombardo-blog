@@ -8,3 +8,4 @@
 /posts/the-front-end-developer-guide-to-the-terminal
 /posts/design-for-developers
 /posts/basic-accessibility-fixes-for-frontend-developers
+/posts/angular-routing-essentials-building-navigation-that-scales

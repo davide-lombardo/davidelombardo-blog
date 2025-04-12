@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit, signal } from '@angular/core';
 import { HeroComponent } from "../../components/hero/hero.component";
 import { PostListComponent } from "../../components/post-list/post-list.component";
 import { ContainerComponent } from "../../components/container/container.component";
@@ -16,12 +16,11 @@ import { Subject, takeUntil } from 'rxjs';
 })
 export class ArticlesComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject();
+  private postService = inject(PostService);
   
   posts = signal<PostMetadata[]>([])
   title = 'articles';
   description = 'guides, references, and tutorials on programming, web development, and design.';
-
-  constructor(private postService: PostService) {}
 
   ngOnInit(): void {
     this.loadPosts(false);

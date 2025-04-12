@@ -8,7 +8,6 @@ import fm, { FrontMatterResult } from 'front-matter';
   providedIn: 'root',
 })
 export class PostService {
-
   constructor(private http: HttpClient) {}
 
   getPostDetail(slug: string): Observable<{ content: string; metadata: PostDetail }> {

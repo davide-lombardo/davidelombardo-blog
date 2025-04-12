@@ -1,6 +1,7 @@
 import {
   Component,
   effect,
+  inject,
   Inject, PLATFORM_ID,
   Signal
 } from '@angular/core';
@@ -17,9 +18,10 @@ import { ThemeService } from '../../services/theme.service';
 export class CommentsComponent {
   isDarkTheme: Signal<boolean>;
 
+  private themeService = inject(ThemeService);
+
   constructor(
     @Inject(PLATFORM_ID) private platformId: object,
-    private themeService: ThemeService
   ) {
     this.isDarkTheme = this.themeService.isDarkTheme$;
     effect(() => {

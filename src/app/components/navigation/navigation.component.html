@@ -69,6 +69,9 @@
       (click)="toggleMobileMenu()"
       class="theme-toggle"
       aria-label="Close Navigation Menu"
+      [attr.aria-hidden]="!isMobileMenuOpen"
+      [tabIndex]="isMobileMenuOpen ? 0 : -1"
+      [ariaHidden]="!isMobileMenuOpen"
     >
       <span class="theme-toggle__icon" [innerHTML]="closeIcon"></span>
     </button>
@@ -79,6 +82,7 @@
     <a
       [routerLink]="item.url"
       routerLinkActive="mobile-menu__nav-item--active"
+      [tabIndex]="isMobileMenuOpen ? 0 : -1"
       [routerLinkActiveOptions]="{ exact: true }"
       class="mobile-menu__nav-item"
       (click)="closeMenuOnNavigation()"
@@ -91,6 +95,7 @@
       <button
         (click)="toggleTheme()"
         class="theme-toggle mobile-menu__toggle"
+        [tabIndex]="isMobileMenuOpen ? 0 : -1"
         [attr.aria-label]="
           isDarkTheme() ? 'Switch to light theme' : 'Switch to dark theme'
         "
@@ -102,6 +107,7 @@
       <button
         (click)="toggleTerminal()"
         class="theme-toggle mobile-menu__toggle"
+        [tabIndex]="isMobileMenuOpen ? 0 : -1"
         aria-label="Toggle Terminal"
       >
         <span class="theme-toggle__icon" [innerHTML]="terminalIcon"></span>

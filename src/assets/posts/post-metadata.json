@@ -28,5 +28,11 @@
     "title": "Design for Developers",
     "date": "2025-01-27",
     "tags": ["design"]
+  },
+  {
+    "slug": "angular-routing-essentials-building-navigation-that-scales",
+    "title": "Angular Routing Essentials",
+    "date": "2025-04-12",
+    "tags": ["angular", "routing"]
   }
 ]

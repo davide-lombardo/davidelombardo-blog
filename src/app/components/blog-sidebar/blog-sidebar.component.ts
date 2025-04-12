@@ -1,5 +1,10 @@
 import { DatePipe } from '@angular/common';
-import { Component, input, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  input,
+  OnInit,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { slugify } from '../../utils/helper';
 
@@ -8,7 +13,8 @@ import { slugify } from '../../utils/helper';
   standalone: true,
   imports: [RouterLink, DatePipe],
   templateUrl: './blog-sidebar.component.html',
-  styleUrl: './blog-sidebar.component.scss'
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrl: './blog-sidebar.component.scss',
 })
 export class BlogSidebarComponent implements OnInit {
   date = input.required<string>();
@@ -17,7 +23,7 @@ export class BlogSidebarComponent implements OnInit {
   category!: string;
 
   ngOnInit(): void {
-    this.tags().filter(tag => tag.trim() !== '')
+    this.tags().filter(tag => tag.trim() !== '');
   }
 
   // Helper method to generate slug from category/tag

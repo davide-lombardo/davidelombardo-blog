@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   HostListener,
+  inject,
   input,
 } from '@angular/core';
 import { ZOOM_ANIMATION } from '../scrollspy-nav/scrollspy-nav.animation';
@@ -24,7 +25,9 @@ export class ScrollspyNavLayoutComponent {
   readonly chevronIcon: SafeHtml;
   public showScrollUpButton = false;
 
-  constructor(private sanitizer: DomSanitizer) {
+  private sanitizer = inject(DomSanitizer);
+
+  constructor() {
     this.chevronIcon = getSanitizedIcon('CHEVRON_UP', this.sanitizer);
   }
 

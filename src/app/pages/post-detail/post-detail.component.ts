@@ -3,6 +3,7 @@ import {
   Component,
   ElementRef,
   HostListener,
+  inject,
   Inject,
   OnDestroy,
   OnInit,
@@ -43,6 +44,10 @@ export class PostDetailComponent
   implements OnInit, OnDestroy, AfterViewChecked
 {
   private destroy$: Subject<void> = new Subject();
+  private anchorService = inject(AnchorService);
+  private postService = inject(PostService);
+  private titleService = inject(Title);
+  private metaService = inject(MetaService);
 
   private contentRendered = false;
   private isBrowser = false;
@@ -59,11 +64,7 @@ export class PostDetailComponent
   };
 
   constructor(
-    private titleService: Title,
     private route: ActivatedRoute,
-    private postService: PostService,
-    private metaService: MetaService,
-    private anchorService: AnchorService,
     private elementRef: ElementRef<HTMLElement>,
     @Inject(PLATFORM_ID) platformId: object
   ) {

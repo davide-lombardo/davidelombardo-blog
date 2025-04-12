@@ -1,4 +1,4 @@
-import { Component, Inject, PLATFORM_ID, Signal } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { LayoutComponent } from './components/layout/layout.component';
 import { RouterOutlet } from '@angular/router';
 import { MetaService } from './services/meta.service';
@@ -17,14 +17,13 @@ import { ContainerComponent } from "./components/container/container.component";
 export class AppComponent {
   isDarkTheme: Signal<boolean>;
   isTerminalVisible: Signal<boolean>;
+
+  private metaService = inject(MetaService);
+  private themeService = inject(ThemeService);
+  private terminalService = inject(TerminalService); 
   
 
-  constructor(
-    private metaService: MetaService, 
-    private themeService: ThemeService,
-    private terminalService: TerminalService,
-    @Inject(PLATFORM_ID) private platformId: object
-  ) {
+  constructor() {
     this.isDarkTheme = this.themeService.isDarkTheme$;
     this.isTerminalVisible = this.terminalService.isTerminalVisible$
 

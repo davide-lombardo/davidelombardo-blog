@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
@@ -33,11 +33,11 @@ export class NavigationComponent {
     { url: '/about-me', label: 'about me' },
   ];
 
-  constructor(
-    private themeService: ThemeService,
-    private sanitizer: DomSanitizer,
-    private terminalService: TerminalService
-  ) {
+  private themeService = inject(ThemeService);
+  private terminalService = inject(TerminalService);
+  private sanitizer = inject(DomSanitizer);
+
+  constructor() {
     this.isDarkTheme = this.themeService.isDarkTheme$;
     this.sunIcon = getSanitizedIcon('SUN', this.sanitizer);
     this.moonIcon = getSanitizedIcon('SUN', this.sanitizer);

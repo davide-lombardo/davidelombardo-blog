@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit, AfterViewChecked } from '@angular/core';
+import { Component, ElementRef, ViewChild, AfterViewInit, AfterViewChecked, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThemeService } from '../../services/theme.service';
 
@@ -33,7 +33,8 @@ export class TerminalComponent implements AfterViewInit, AfterViewChecked {
     sloth: 'An Easter egg for sloth lovers!',
   };
 
-  constructor(private router: Router, private themeService: ThemeService) {}
+  private router = inject(Router);
+  private themeService = inject(ThemeService);
 
   ngAfterViewInit(): void {
     this.animateWelcomeMessage();

@@ -1,4 +1,4 @@
-import { Component, Signal } from '@angular/core';
+import { Component, inject, Signal } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
 
 @Component({
@@ -9,8 +9,9 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class FooterComponent {
   isDarkTheme: Signal<boolean>;
+  private themeService = inject(ThemeService);
 
-  constructor(private themeService: ThemeService) {
+  constructor() {
     this.isDarkTheme = this.themeService.isDarkTheme$;
   }
 

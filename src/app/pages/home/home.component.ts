@@ -1,4 +1,10 @@
-import { Component, OnDestroy, OnInit, Signal } from '@angular/core';
+import {
+  Component,
+  inject,
+  OnDestroy,
+  OnInit,
+  Signal,
+} from '@angular/core';
 import { PostMetadata } from '../../models/post.model';
 import { HeadingComponent } from '../../components/heading/heading.component';
 import { PostListComponent } from '../../components/post-list/post-list.component';
@@ -11,8 +17,7 @@ import { RepositoryService } from '../../services/repository.service';
 import { Subject, takeUntil } from 'rxjs';
 import { ProjectSkeletonComponent } from '../../components/skeleton/project-skeleton.component';
 import { ThemeService } from '../../services/theme.service';
-import { ContainerComponent } from "../../components/container/container.component";
-import { TerminalService } from '../../services/terminal.service';
+import { ContainerComponent } from '../../components/container/container.component';
 
 export type HomeData = {
   posts: string[];
@@ -29,7 +34,7 @@ export type HomeData = {
     DatePipe,
     ProjectSkeletonComponent,
     ContainerComponent,
-],
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
@@ -44,19 +49,14 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   posts: PostMetadata[] = [];
 
-  pinnedRepoConfig = [
-    '886964977',
-    '949538935',
-    '930545595',
-  ];
+  pinnedRepoConfig = ['886964977', '949538935', '930545595'];
 
-  constructor(
-    private postService: PostService,
-    private repositoryService: RepositoryService,
-    private themeService: ThemeService,
-    private terminalService: TerminalService
-  ) {
-    this.isDarkTheme = this.themeService.isDarkTheme$
+  private postService = inject(PostService);
+  private repositoryService = inject(RepositoryService);
+  private themeService = inject(ThemeService);
+
+  constructor() {
+    this.isDarkTheme = this.themeService.isDarkTheme$;
   }
 
   ngOnInit(): void {
@@ -70,23 +70,22 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   private loadPosts(getLatest: boolean): void {
-    this.postService.getPostMetadata(getLatest).pipe(
-      takeUntil(this.destroy$)
-    )
-    .subscribe({
-      next: (posts) => {
-        this.posts = posts;
-      },
-      error: error => console.error('Error loading post metadata:', error),
-    });
+    this.postService
+      .getPostMetadata(getLatest)
+      .pipe(takeUntil(this.destroy$))
+      .subscribe({
+        next: posts => {
+          this.posts = posts;
+        },
+        error: error => console.error('Error loading post metadata:', error),
+      });
   }
 
   private loadPinnedProjects(includePinned: boolean): void {
     this.isLoading = true;
-    this.repositoryService.getRepositories(includePinned, this.pinnedRepoConfig)
-      .pipe(
-        takeUntil(this.destroy$)
-      )
+    this.repositoryService
+      .getRepositories(includePinned, this.pinnedRepoConfig)
+      .pipe(takeUntil(this.destroy$))
       .subscribe({
         next: data => {
           this.projectsList = data;

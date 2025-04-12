@@ -1,10 +1,16 @@
 @import '../../../styles/mixins';
 
 .scrollup-button {
-  margin: 0.875rem;
-  padding: 0.5rem 0.75rem;
+  margin: 0;
+  margin-left: 0.8rem;
+  padding: 0;
+  font-size: 0.8rem;
+  background-color: transparent;
   border: none;
-  @include shadow-medium();
+
+  &__text {
+    color: var(--font-color-base);
+  }
 }
 
 .sidebar {
